@@ -553,6 +553,11 @@ h6 {
 		box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 		margin-top: 10px;
 	}
+
+	.bx-wrapper {
+		margin: 0 auto !important;
+		max-width: 350px !important;
+	}
 }
 
 @media (max-width: 768px) {
