@@ -61,44 +61,10 @@ h6 {
 	padding: 10px 0;
 }
 
-.navbar-brand {
-	position: relative;
-	display: flex;
-	align-items: center;
-	width: 120px;
-	/* Ensure space for logo */
-	height: 50px;
-}
-
 .navbar-brand img {
 	height: 40px;
 	width: auto;
-	transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-	position: absolute;
-	left: 0;
-	top: 50%;
-	transform: translateY(-50%);
-}
-
-.logo-white {
-	opacity: 1;
-	transform: translateY(-50%) scale(1);
-}
-
-.logo-dark {
-	opacity: 0;
-	transform: translateY(-50%) scale(0.8) rotate(-5deg);
-	/* Start slightly rotated and small */
-}
-
-.nav-scroll .logo-white {
-	opacity: 0;
-	transform: translateY(-50%) scale(0.8) rotate(5deg);
-}
-
-.nav-scroll .logo-dark {
-	opacity: 1;
-	transform: translateY(-50%) scale(1) rotate(0deg);
+	transition: all 0.3s ease;
 }
 
 .nav-link {
@@ -268,6 +234,28 @@ h6 {
 	box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
 }
 
+.single-feature {
+	margin-bottom: 50px;
+	margin-top: 30px;
+	padding: 10px 0;
+}
+
+.single-feature h5 {
+	font-size: 16px;
+}
+
+.media-right-margin {
+	margin-right: 35px;
+}
+
+.single-feature p {
+	font-size: 13px;
+}
+
+
+
+/* Removed conflicting icon-border styles */
+
 .feature-mobile {
 	position: relative;
 }
@@ -353,10 +341,6 @@ h6 {
 
 .store-badge {
 	height: 50px;
-}
-
-.media-right-margin {
-	margin-right: 35px;
 }
 
 .store-badge-lg {
@@ -448,6 +432,93 @@ h6 {
 	height: 100%;
 }
 
+.navbar-brand {
+	position: relative;
+	display: flex;
+	align-items: center;
+	width: 120px;
+	/* Ensure space for logo */
+	height: 50px;
+}
+
+.navbar-brand img {
+	height: 40px;
+	width: auto;
+	transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+	position: absolute;
+	left: 0;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+.logo-white {
+	opacity: 1;
+	transform: translateY(-50%) scale(1);
+}
+
+.logo-dark {
+	opacity: 0;
+	transform: translateY(-50%) scale(0.8) rotate(-5deg);
+	/* Start slightly rotated and small */
+}
+
+.nav-scroll .logo-white {
+	opacity: 0;
+	transform: translateY(-50%) scale(0.8) rotate(5deg);
+}
+
+.nav-scroll .logo-dark {
+	opacity: 1;
+	transform: translateY(-50%) scale(1) rotate(0deg);
+}
+
+/* Operators Section */
+.operators {
+	background-color: #f7fafc;
+}
+
+.operator-card {
+	height: 100%;
+	transition: all 0.3s ease;
+	border: 1px solid rgba(255, 255, 255, 0.6);
+	min-height: 250px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	cursor: default;
+	/* Not clickable */
+}
+
+.operator-card:hover {
+	transform: translateY(-5px);
+	box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+.operator-icon {
+	height: 60px;
+	width: 60px;
+	margin: 0 auto;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 50%;
+	background: rgba(255, 255, 255, 0.5);
+	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* Adjust bxSlider */
+.bx-wrapper {
+	box-shadow: none !important;
+	border: none !important;
+	background: transparent !important;
+}
+
+.bx-viewport {
+	padding-top: 10px;
+	padding-bottom: 20px;
+	/* Space for shadows */
+}
+
 /* Mobile Responsiveness */
 @media (max-width: 991px) {
 	.banner {
@@ -457,12 +528,6 @@ h6 {
 
 	.banner-text {
 		margin-bottom: 50px;
-	}
-
-	.single-feature {
-		margin-bottom: 50px;
-		margin-top: 30px;
-		padding: 10px 0;
 	}
 
 	.hero-phone {
