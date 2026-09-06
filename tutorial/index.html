@@ -72,12 +72,13 @@
             <div class="input-group-prepend">
               <span class="input-group-text bg-white border-0 pl-4 text-muted"><i class="fas fa-search"></i></span>
             </div>
-            <input type="text" id="tutorialSearch" class="form-control border-0 py-4 shadow-none" placeholder="Search tutorials (e.g. stop preview, routes, offline, favorites)..." aria-label="Search tutorials">
+            <input type="text" id="tutorialSearch" class="form-control border-0 py-4 shadow-none" placeholder="Search tutorials" aria-label="Search tutorials">
           </div>
 
           <!-- Filter Pills -->
           <div class="filter-pills-wrapper">
             <button class="filter-btn active" data-filter="all">All Guides</button>
+            <button class="filter-btn" data-filter="planner">Trip Planner</button>
             <button class="filter-btn" data-filter="map">Map & Navigation</button>
             <button class="filter-btn" data-filter="shortcuts">Gestures & Shortcuts</button>
             <button class="filter-btn" data-filter="schedules">Schedules & Realtime</button>
@@ -111,12 +112,12 @@
       <div class="col-md-6 col-lg-4 mb-4 tutorial-item" data-category="map shortcuts">
         <a href="stop-preview.html" class="tutorial-card">
           <div class="tutorial-card-thumb">
-            <img src="stop_preview_thumb.jpg" alt="Hold to Preview Stop" style="width: 100%; height: 100%; object-fit: cover;">
+            <img src="stop_preview_thumb.jpg" alt="Preview Any Stop on the Map" style="width: 100%; height: 100%; object-fit: cover;">
             <div class="thumb-play-overlay">
               <i class="fas fa-play ml-1"></i>
             </div>
             <span class="badge badge-primary position-absolute" style="top: 14px; left: 14px; background: var(--primary-gradient); font-size: 0.75rem; padding: 6px 12px; border-radius: 30px;">
-              Featured Gesture
+              Hold Gesture
             </span>
           </div>
           <div class="tutorial-card-body">
@@ -124,9 +125,9 @@
               <span><i class="far fa-clock"></i> 2 min</span>
               <span><i class="fas fa-hand-point-up"></i> Gesture</span>
             </div>
-            <h4 class="tutorial-card-title">Hold to Preview Any Stop</h4>
+            <h4 class="tutorial-card-title">Preview Any Stop on the Map</h4>
             <p class="tutorial-card-desc">
-              Long-press any departure or stop card in your list to instantly focus the map on its exact street position. Release to resume.
+              Long-press any departure in your list to instantly zoom the map onto that bus stop. Release to return.
             </p>
             <div class="tutorial-card-footer">
               <span>Read Guide</span>
@@ -140,7 +141,7 @@
       <div class="col-md-6 col-lg-4 mb-4 tutorial-item" data-category="map schedules">
         <a href="schedule.html" class="tutorial-card">
           <div class="tutorial-card-thumb">
-            <img src="schedule_thumb.jpg" alt="Real-Time Bus Tracking & Full Schedule" style="width: 100%; height: 100%; object-fit: cover;">
+            <img src="schedule_thumb.jpg" alt="Track Live Buses in Real Time" style="width: 100%; height: 100%; object-fit: cover;">
             <div class="thumb-play-overlay">
               <i class="fas fa-play ml-1"></i>
             </div>
@@ -153,9 +154,9 @@
               <span><i class="far fa-clock"></i> 2 min</span>
               <span><i class="fas fa-satellite-dish"></i> Real-Time GPS</span>
             </div>
-            <h4 class="tutorial-card-title">Full Schedule & Live Bus Tracking</h4>
+            <h4 class="tutorial-card-title">Track Live Buses in Real Time</h4>
             <p class="tutorial-card-desc">
-              Tap any departure item to view all future arrival times, watch live buses moving on the map, and star favorite stops.
+              Watch buses moving along their route live on the map and check accurate arrival countdowns.
             </p>
             <div class="tutorial-card-footer">
               <span>Read Guide</span>
@@ -169,7 +170,7 @@
       <div class="col-md-6 col-lg-4 mb-4 tutorial-item" data-category="schedules">
         <a href="timetable.html" class="tutorial-card">
           <div class="tutorial-card-thumb">
-            <img src="timetable_thumb.jpg" alt="All-Day Timetables & Calendar Schedules" style="width: 100%; height: 100%; object-fit: cover;">
+            <img src="timetable_thumb.jpg" alt="View Full Daily Timetables" style="width: 100%; height: 100%; object-fit: cover;">
             <div class="thumb-play-overlay">
               <i class="fas fa-play ml-1"></i>
             </div>
@@ -180,11 +181,11 @@
           <div class="tutorial-card-body">
             <div class="tutorial-meta">
               <span><i class="far fa-clock"></i> 2 min</span>
-              <span><i class="fas fa-calendar-alt"></i> Calendar Picker</span>
+              <span><i class="fas fa-calendar-alt"></i> Calendar</span>
             </div>
-            <h4 class="tutorial-card-title">Full Timetable & Calendar Schedules</h4>
+            <h4 class="tutorial-card-title">View Full Daily Timetables</h4>
             <p class="tutorial-card-desc">
-              View all daily departures from morning to night, check the last bus indicator, and select future dates on the calendar.
+              Browse all departure times from morning to night and pick any future date on the calendar.
             </p>
             <div class="tutorial-card-footer">
               <span>Read Guide</span>
@@ -194,16 +195,45 @@
         </a>
       </div>
 
-      <!-- Card 4: Browse Transit Routes & Stop Timelines (Active) -->
-      <div class="col-md-6 col-lg-4 mb-4 tutorial-item" data-category="map schedules shortcuts">
-        <a href="route.html" class="tutorial-card">
+      <!-- Card 4: Travel Planner (Active) -->
+      <div class="col-md-6 col-lg-4 mb-4 tutorial-item" data-category="planner map schedules shortcuts">
+        <a href="travel-planner.html" class="tutorial-card">
           <div class="tutorial-card-thumb">
-            <img src="route_thumb.jpg" alt="Browse Transit Routes & Stop Arrival Times" style="width: 100%; height: 100%; object-fit: cover;">
+            <img src="travel_planner_thumb.jpg" alt="Plan a Trip to Any Destination" style="width: 100%; height: 100%; object-fit: cover;">
             <div class="thumb-play-overlay">
               <i class="fas fa-play ml-1"></i>
             </div>
             <span class="badge badge-primary position-absolute" style="top: 14px; left: 14px; background: var(--primary-gradient); font-size: 0.75rem; padding: 6px 12px; border-radius: 30px;">
-              Route Guide
+              Trip Planner
+            </span>
+          </div>
+          <div class="tutorial-card-body">
+            <div class="tutorial-meta">
+              <span><i class="far fa-clock"></i> 2 min</span>
+              <span><i class="fas fa-directions"></i> Smart Navigation</span>
+            </div>
+            <h4 class="tutorial-card-title">Plan a Trip to Any Destination</h4>
+            <p class="tutorial-card-desc">
+              Enter where you want to go to get instant route suggestions, transfer stops, and directions.
+            </p>
+            <div class="tutorial-card-footer">
+              <span>Read Guide</span>
+              <i class="fas fa-chevron-right"></i>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <!-- Card 5: Browse Transit Routes (Active) -->
+      <div class="col-md-6 col-lg-4 mb-4 tutorial-item" data-category="map schedules shortcuts">
+        <a href="route.html" class="tutorial-card">
+          <div class="tutorial-card-thumb">
+            <img src="route_thumb.jpg" alt="Browse Bus Routes" style="width: 100%; height: 100%; object-fit: cover;">
+            <div class="thumb-play-overlay">
+              <i class="fas fa-play ml-1"></i>
+            </div>
+            <span class="badge badge-primary position-absolute" style="top: 14px; left: 14px; background: var(--primary-gradient); font-size: 0.75rem; padding: 6px 12px; border-radius: 30px;">
+              Routes
             </span>
           </div>
           <div class="tutorial-card-body">
@@ -211,9 +241,9 @@
               <span><i class="far fa-clock"></i> 2 min</span>
               <span><i class="fas fa-route"></i> Stops Sequence</span>
             </div>
-            <h4 class="tutorial-card-title">Browse Routes & Stop Sequences</h4>
+            <h4 class="tutorial-card-title">Browse Bus Routes</h4>
             <p class="tutorial-card-desc">
-              Select your transit operator, browse complete route lists, inspect the sequence of stops, and tap any stop for live arrivals.
+              Explore transit lines for your operator, see every stop on the line, and check arrival times.
             </p>
             <div class="tutorial-card-footer">
               <span>Read Guide</span>
@@ -223,26 +253,26 @@
         </a>
       </div>
 
-      <!-- Card 5: Stops & Multi-Route Arrival Times (Active) -->
+      <!-- Card 6: Browse Transit Stops (Active) -->
       <div class="col-md-6 col-lg-4 mb-4 tutorial-item" data-category="map schedules">
         <a href="stop.html" class="tutorial-card">
           <div class="tutorial-card-thumb">
-            <img src="stop_thumb.jpg" alt="View Stops & Multi-Route Arrival Times" style="width: 100%; height: 100%; object-fit: cover;">
+            <img src="stop_thumb.jpg" alt="Browse Bus Stops" style="width: 100%; height: 100%; object-fit: cover;">
             <div class="thumb-play-overlay">
               <i class="fas fa-play ml-1"></i>
             </div>
             <span class="badge badge-primary position-absolute" style="top: 14px; left: 14px; background: var(--primary-gradient); font-size: 0.75rem; padding: 6px 12px; border-radius: 30px;">
-              Stop Guide
+              Stop Hub
             </span>
           </div>
           <div class="tutorial-card-body">
             <div class="tutorial-meta">
               <span><i class="far fa-clock"></i> 2 min</span>
-              <span><i class="fas fa-map-pin"></i> Multi-Route Hub</span>
+              <span><i class="fas fa-map-pin"></i> Stop Code</span>
             </div>
-            <h4 class="tutorial-card-title">Stops & Multi-Route Departures</h4>
+            <h4 class="tutorial-card-title">Browse Bus Stops</h4>
             <p class="tutorial-card-desc">
-              Find stops by 4-digit stop code, view all bus lines serving that stop, and tap any arrival time to jump to live tracking.
+              Find stops by 4-digit code to see all incoming bus lines, and tap arrivals for live tracking.
             </p>
             <div class="tutorial-card-footer">
               <span>Read Guide</span>
@@ -252,26 +282,26 @@
         </a>
       </div>
 
-      <!-- Card 6: Save & Manage Favorites (Active) -->
+      <!-- Card 7: Save & Manage Favorites (Active) -->
       <div class="col-md-6 col-lg-4 mb-4 tutorial-item" data-category="shortcuts schedules">
         <a href="favorites.html" class="tutorial-card">
           <div class="tutorial-card-thumb">
-            <img src="favorites_thumb.jpg" alt="Save & Manage Favorites" style="width: 100%; height: 100%; object-fit: cover;">
+            <img src="favorites_thumb.jpg" alt="Save Favorite Routes & Stops" style="width: 100%; height: 100%; object-fit: cover;">
             <div class="thumb-play-overlay">
               <i class="fas fa-play ml-1"></i>
             </div>
             <span class="badge badge-warning text-dark position-absolute" style="top: 14px; left: 14px; background: #fbbf24; font-size: 0.75rem; padding: 6px 12px; border-radius: 30px;">
-              Favorites Hub
+              Favorites
             </span>
           </div>
           <div class="tutorial-card-body">
             <div class="tutorial-meta">
               <span><i class="far fa-clock"></i> 2 min</span>
-              <span><i class="fas fa-star"></i> Bookmarks</span>
+              <span><i class="fas fa-star"></i> 1-Tap Star</span>
             </div>
-            <h4 class="tutorial-card-title">Save & Manage Favorites</h4>
+            <h4 class="tutorial-card-title">Save Favorite Routes & Stops</h4>
             <p class="tutorial-card-desc">
-              Star your frequent schedules, routes, and stops for instant one-tap access in the dedicated Favorites tab. Tap star again to remove.
+              Tap the star icon to bookmark frequent schedules, routes, and stops for instant 1-tap access.
             </p>
             <div class="tutorial-card-footer">
               <span>Read Guide</span>
@@ -281,11 +311,11 @@
         </a>
       </div>
 
-      <!-- Card 7: Download Transit Data for Offline Use (Active) -->
+      <!-- Card 8: Download Transit Data for Offline Use (Active) -->
       <div class="col-md-6 col-lg-4 mb-4 tutorial-item" data-category="schedules shortcuts">
         <a href="offline_data.html" class="tutorial-card">
           <div class="tutorial-card-thumb">
-            <img src="offline_data_thumb.jpg" alt="Download Transit Data for Offline Use" style="width: 100%; height: 100%; object-fit: cover;">
+            <img src="offline_data_thumb.jpg" alt="Download Offline Schedules" style="width: 100%; height: 100%; object-fit: cover;">
             <div class="thumb-play-overlay">
               <i class="fas fa-play ml-1"></i>
             </div>
@@ -296,11 +326,11 @@
           <div class="tutorial-card-body">
             <div class="tutorial-meta">
               <span><i class="far fa-clock"></i> 2 min</span>
-              <span><i class="fas fa-download"></i> Offline Schedules</span>
+              <span><i class="fas fa-download"></i> No Internet</span>
             </div>
-            <h4 class="tutorial-card-title">Download Transit Data for Offline Use</h4>
+            <h4 class="tutorial-card-title">Download Offline Schedules</h4>
             <p class="tutorial-card-desc">
-              Download complete local transit schedule packages to check bus and train timetables without cell reception or internet.
+              Save local timetable packages to check bus and train times in subway tunnels without signal.
             </p>
             <div class="tutorial-card-footer">
               <span>Read Guide</span>
@@ -310,16 +340,16 @@
         </a>
       </div>
 
-      <!-- Card 8: Select & Manage Transit Agencies (Active) -->
+      <!-- Card 9: Select & Manage Transit Agencies (Active) -->
       <div class="col-md-6 col-lg-4 mb-4 tutorial-item" data-category="map schedules shortcuts">
         <a href="agencies.html" class="tutorial-card">
           <div class="tutorial-card-thumb">
-            <img src="agencies_thumb.jpg" alt="Select & Manage Transit Agencies" style="width: 100%; height: 100%; object-fit: cover;">
+            <img src="agencies_thumb.jpg" alt="Switch Transit Operators & Cities" style="width: 100%; height: 100%; object-fit: cover;">
             <div class="thumb-play-overlay">
               <i class="fas fa-play ml-1"></i>
             </div>
             <span class="badge badge-success position-absolute" style="top: 14px; left: 14px; background: #10b981; font-size: 0.75rem; padding: 6px 12px; border-radius: 30px;">
-              Multi-Operator
+              Agencies
             </span>
           </div>
           <div class="tutorial-card-body">
@@ -327,9 +357,9 @@
               <span><i class="far fa-clock"></i> 2 min</span>
               <span><i class="fas fa-globe"></i> Operator Switcher</span>
             </div>
-            <h4 class="tutorial-card-title">Select & Manage Transit Agencies</h4>
+            <h4 class="tutorial-card-title">Switch Transit Operators & Cities</h4>
             <p class="tutorial-card-desc">
-              Search transit agencies by name, city, or country, multi-select several operators, and toggle between them seamlessly.
+              Search by city or agency name, add multiple operators, and switch networks with a single tap.
             </p>
             <div class="tutorial-card-footer">
               <span>Read Guide</span>

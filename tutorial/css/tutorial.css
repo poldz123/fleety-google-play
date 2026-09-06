@@ -92,19 +92,31 @@
   line-height: 1.7;
 }
 
-/* Category Filter Pills */
+/* Category Filter Pills (Mobile First Horizontal Scrolling) */
 .filter-pills-wrapper {
-  margin-top: 24px;
+  margin-top: 20px;
   display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  gap: 10px;
+  padding-bottom: 8px;
+  padding-top: 4px;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE/Edge */
+}
+
+.filter-pills-wrapper::-webkit-scrollbar {
+  display: none; /* Chrome/Safari */
 }
 
 .filter-btn {
+  flex-shrink: 0;
+  white-space: nowrap;
   background: rgba(255, 255, 255, 0.18);
   color: #fff;
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  padding: 7px 18px;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  padding: 8px 18px;
   border-radius: 50px;
   font-size: 0.85rem;
   font-weight: 500;
@@ -112,15 +124,31 @@
   transition: all 0.2s ease;
   backdrop-filter: blur(6px);
   touch-action: manipulation;
+  display: inline-flex;
+  align-items: center;
+  user-select: none;
 }
 
 .filter-btn:hover,
 .filter-btn.active {
   background: #ffffff;
-  color: var(--primary-color);
+  color: var(--primary-color) !important;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
   border-color: #ffffff;
 }
+
+@media (min-width: 992px) {
+  .filter-pills-wrapper {
+    flex-wrap: wrap;
+    overflow-x: visible;
+  }
+}
+
+/* Flex Gap Utilities for Bootstrap 4 Compatibility */
+.gap-1 { gap: 4px !important; }
+.gap-2 { gap: 8px !important; }
+.gap-3 { gap: 12px !important; }
+.gap-4 { gap: 16px !important; }
 
 /* Featured Tutorial Card */
 .featured-tutorial-card {
