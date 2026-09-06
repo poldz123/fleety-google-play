@@ -4,9 +4,9 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <title>How to Preview Stops Instantly (Hold to Preview) | Fleety Tutorial</title>
+  <title>How to View Full Schedules & Real-Time Bus Tracking | Fleety Tutorial</title>
   <meta name="description"
-    content="Learn how to preview transit stops on the map in Fleety. Hold click on any schedule item to zoom directly into that stop, and release to reset your map view.">
+    content="Learn how to view full transit schedules, live vehicle GPS tracking, and upcoming arrival times in Fleety. Tap any departure item to open detailed real-time tracking.">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
     integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css"
@@ -62,27 +62,27 @@
         <ol class="breadcrumb tutorial-breadcrumb px-0">
           <li class="breadcrumb-item"><a href="../index.html">Home</a></li>
           <li class="breadcrumb-item"><a href="index.html">Tutorials</a></li>
-          <li class="breadcrumb-item active" aria-current="page">Stop Preview</li>
+          <li class="breadcrumb-item active" aria-current="page">Full Schedule & Tracking</li>
         </ol>
       </nav>
 
       <div class="row align-items-center">
         <div class="col-lg-10">
           <div class="d-flex flex-wrap align-items-center gap-2 mb-3">
-            <span class="badge badge-pill badge-warning text-dark font-weight-bold px-3 py-1 mr-2">
-              <i class="fas fa-bolt mr-1"></i> Gesture Shortcut
+            <span class="badge badge-pill badge-success font-weight-bold px-3 py-1 mr-2" style="background: #10b981;">
+              <i class="fas fa-satellite-dish mr-1"></i> Real-Time GPS
             </span>
             <span class="badge badge-pill badge-light text-primary font-weight-bold px-3 py-1 mr-2">
-              <i class="fas fa-map-marker-alt mr-1"></i> Map Navigation
+              <i class="fas fa-calendar-alt mr-1"></i> Schedules & Arrivals
             </span>
             <span class="text-white-50 small mt-1 mt-sm-0">
               <i class="far fa-clock mr-1"></i> 2 min read &bull; iOS & Android
             </span>
           </div>
 
-          <h1 class="font-weight-bold mb-3">How to Preview Stops Instantly with Hold-to-Preview</h1>
+          <h1 class="font-weight-bold mb-3">How to View Full Schedules & Real-Time Bus Tracking</h1>
           <p class="lead mb-0">
-            Check the exact location of any bus or train stop on the map in seconds. Press and hold any schedule card to zoom in, and release your finger to snap right back.
+            Tap any transit departure to open the detailed Schedule screen. Watch buses moving live along their route on the map, view all upcoming arrival times, and bookmark your frequent stops.
           </p>
         </div>
       </div>
@@ -100,8 +100,8 @@
           <!-- Video Container in Phone Mockup Frame -->
           <div class="phone-mockup-container">
             <div class="phone-mockup-screen">
-              <video id="tutorialVideo" autoplay loop muted playsinline poster="stop_preview_thumb.jpg">
-                <source src="stop_preview.mp4" type="video/mp4">
+              <video id="tutorialVideo" autoplay loop muted playsinline poster="schedule_thumb.jpg">
+                <source src="schedule.mp4" type="video/mp4">
                 Your browser does not support HTML5 video.
               </video>
             </div>
@@ -132,34 +132,34 @@
 
             <div class="mb-3 small pb-2 border-bottom">
               <div class="d-flex justify-content-between mb-1">
-                <strong class="text-dark"><i class="fas fa-compass text-muted mr-1"></i> 00:00 – 00:01</strong>
-                <span class="badge badge-light">Nearby View</span>
+                <strong class="text-dark"><i class="fas fa-list text-muted mr-1"></i> 00:00 – 00:01</strong>
+                <span class="badge badge-light">Nearby List</span>
               </div>
-              <p class="text-muted mb-0">Rider browses upcoming departures for routes 51, 85, and 87.</p>
+              <p class="text-muted mb-0">Rider browses upcoming departures for routes 51 and 85.</p>
             </div>
 
             <div class="mb-3 small pb-2 border-bottom">
               <div class="d-flex justify-content-between mb-1">
-                <strong class="text-primary"><i class="fas fa-hand-rock mr-1"></i> 00:01 – 00:02</strong>
-                <span class="badge badge-warning text-dark">Hold Action</span>
+                <strong class="text-primary"><i class="fas fa-hand-pointer mr-1"></i> 00:01 – 00:03</strong>
+                <span class="badge badge-primary" style="background: var(--primary-gradient);">Single Tap</span>
               </div>
-              <p class="text-muted mb-0">Holding down on Route 51 zooms straight into the Carling/Fox stop with an orange focus halo.</p>
+              <p class="text-muted mb-0">Tapping Route 51 opens the Schedule screen with live vehicle map and upcoming arrival times (14 min, 27 min, 57 min, 7:44 pm).</p>
             </div>
 
             <div class="mb-3 small pb-2 border-bottom">
               <div class="d-flex justify-content-between mb-1">
-                <strong class="text-success"><i class="fas fa-undo mr-1"></i> 00:03 – 00:04</strong>
-                <span class="badge badge-success">Release</span>
+                <strong class="text-muted"><i class="fas fa-times-circle mr-1"></i> 00:04</strong>
+                <span class="badge badge-light">Close View</span>
               </div>
-              <p class="text-muted mb-0">Lifting finger smoothly pulls the map back to the wide overview.</p>
+              <p class="text-muted mb-0">Tapping the Close (X) button returns seamlessly back to the Nearby overview.</p>
             </div>
 
             <div class="small">
               <div class="d-flex justify-content-between mb-1">
-                <strong class="text-primary"><i class="fas fa-hand-rock mr-1"></i> 00:05 – 00:07</strong>
-                <span class="badge badge-warning text-dark">Next Stop</span>
+                <strong class="text-success"><i class="fas fa-bus mr-1"></i> 00:05 – 00:09</strong>
+                <span class="badge badge-success">Live Buses</span>
               </div>
-              <p class="text-muted mb-0">Holding down on Route 57 inspects the stop on Carling Ave at Lincoln Fields.</p>
+              <p class="text-muted mb-0">Tapping Route 51 Britannia displays active buses traveling in real-time along the route with precise GPS countdowns.</p>
             </div>
           </div>
 
@@ -179,26 +179,36 @@
         <!-- Quick Summary Box (Mobile Friendly) -->
         <div class="gesture-summary-card">
           <h5 class="font-weight-bold text-dark mb-3">
-            <i class="fas fa-hand-pointer text-primary mr-2"></i> The Gesture at a Glance
+            <i class="fas fa-clock text-primary mr-2"></i> Key Features of the Schedule Screen
           </h5>
           <div class="row">
-            <div class="col-sm-6 mb-2 mb-sm-0">
+            <div class="col-sm-4 mb-2 mb-sm-0">
               <div class="bg-white p-3 rounded-12 shadow-sm border h-100" style="border-radius: 12px;">
                 <div class="text-primary font-weight-bold mb-1">
-                  <i class="fas fa-hand-rock mr-1 text-warning"></i> 1. Press & Hold
+                  <i class="fas fa-hand-pointer mr-1 text-primary"></i> 1. Quick Tap
                 </div>
                 <p class="text-muted small mb-0">
-                  Touch and hold any schedule row to dynamically swoop down and focus on that stop.
+                  Tap any schedule row to immediately view full route arrival times.
                 </p>
               </div>
             </div>
-            <div class="col-sm-6">
+            <div class="col-sm-4 mb-2 mb-sm-0">
               <div class="bg-white p-3 rounded-12 shadow-sm border h-100" style="border-radius: 12px;">
                 <div class="text-success font-weight-bold mb-1">
-                  <i class="fas fa-hand-paper mr-1 text-success"></i> 2. Release Finger
+                  <i class="fas fa-bus mr-1 text-success"></i> 2. Live Buses
                 </div>
                 <p class="text-muted small mb-0">
-                  Lift your finger to instantly bounce back to your neighborhood map without losing your spot.
+                  Watch live transit vehicles moving along the line on the map.
+                </p>
+              </div>
+            </div>
+            <div class="col-sm-4">
+              <div class="bg-white p-3 rounded-12 shadow-sm border h-100" style="border-radius: 12px;">
+                <div class="text-warning font-weight-bold mb-1" style="color: #d97706 !important;">
+                  <i class="fas fa-star mr-1 text-warning"></i> 3. Favorites
+                </div>
+                <p class="text-muted small mb-0">
+                  Tap the star icon to pin this stop for instant one-tap access.
                 </p>
               </div>
             </div>
@@ -215,36 +225,36 @@
             <!-- Step 1 -->
             <div class="step-item">
               <div class="step-number">1</div>
-              <h4 class="step-title">Open Nearby or Transit</h4>
+              <h4 class="step-title">Find Your Route in Nearby or Transit</h4>
               <p class="step-desc">
-                Launch Fleety on your iPhone or Android phone. On the bottom navigation bar, tap on <strong>Nearby</strong> to see live transit stops and upcoming departures around you.
+                Open Fleety and look at your departure list. You'll see route numbers, terminal destinations, stop names, and the estimated minutes until arrival.
               </p>
             </div>
 
             <!-- Step 2 -->
             <div class="step-item">
               <div class="step-number">2</div>
-              <h4 class="step-title">Press & Hold the Schedule Item</h4>
+              <h4 class="step-title">Single Tap on the Schedule Item</h4>
               <p class="step-desc">
-                Find the bus or train departure you want to check. Instead of a fast tap, <strong>press and hold your thumb down</strong> on the schedule card row.
+                Simply <strong>tap once</strong> on the schedule card row. Fleety smoothly transitions you to the dedicated Schedule screen for that specific route and stop.
               </p>
             </div>
 
             <!-- Step 3 -->
             <div class="step-item">
               <div class="step-number">3</div>
-              <h4 class="step-title">Inspect the Stop Location on the Map</h4>
+              <h4 class="step-title">Track Live Vehicles on the Map</h4>
               <p class="step-desc">
-                While your finger is held down, the map camera animates and zooms directly into the stop. You will see an <strong>orange target halo</strong> highlighting the exact curb, stop pole, and nearby cross-streets.
+                Look at the interactive map above the schedule. You will see the entire route path and <strong>live vehicle icons</strong> showing exactly where each bus or train currently is in real-time.
               </p>
             </div>
 
             <!-- Step 4 -->
             <div class="step-item">
               <div class="step-number">4</div>
-              <h4 class="step-title">Release to Return to Your Map</h4>
+              <h4 class="step-title">Browse Upcoming Arrival Times</h4>
               <p class="step-desc">
-                Lift your finger when you’re done. The camera smoothly pulls back out to your full overview map. You stay right where you were in the schedule list, with zero back buttons needed.
+                The bottom sheet lists all upcoming arrivals for the rest of the day — from immediate departures (with live radio signal indicators) to scheduled evening trips.
               </p>
             </div>
           </div>
@@ -253,18 +263,53 @@
         <!-- Pro Commuter Tips -->
         <section class="mb-5">
           <div class="pro-tip-box">
-            <h5><i class="fas fa-lightbulb text-warning"></i> Why This Gesture is a Game Changer</h5>
+            <h5><i class="fas fa-lightbulb text-warning"></i> Pro Commuter Tips</h5>
             <ul class="mb-0 pl-3 text-muted" style="line-height: 1.8;">
               <li class="mb-2">
-                <strong>Which side of the intersection?</strong> Quickly verify whether your bus stops before or after crossing a busy intersection before you start walking.
+                <strong>Real-Time vs Scheduled Times:</strong> When you see the signal icon next to a minute countdown (e.g. <code>14 min</code>), it is calculated from the vehicle's live GPS satellite feed. Times shown as clock hours (e.g. <code>7:44 pm</code>) represent scheduled timetable runs.
               </li>
               <li class="mb-2">
-                <strong>Compare routes instantly:</strong> Hold on Route A to preview its stop, release, and hold on Route B to immediately see which one is closer to your current location.
+                <strong>One-Tap Favorites:</strong> Tap the <strong>Star (⭐️)</strong> button in the top right corner of the schedule screen to save this stop. It will appear immediately in your Favorites tab for lightning-fast commute checks.
               </li>
               <li>
-                <strong>No loading delays:</strong> Because stop coordinates are pre-cached on your device, the map zoom animation is instant with zero lag.
+                <strong>Center on Vehicles:</strong> Tap the crosshairs target button in the top bar to instantly center the map on the closest approaching vehicle.
               </li>
             </ul>
+          </div>
+        </section>
+
+        <!-- Single Tap vs Hold-to-Preview Comparison Card -->
+        <section class="mb-5">
+          <h3 class="font-weight-bold mb-3" style="font-size: 1.35rem;">Single Tap vs. Hold: Which to Use?</h3>
+          <div class="glass-card p-3 p-md-4" style="background: #ffffff;">
+            <div class="table-responsive">
+              <table class="table table-borderless mb-0">
+                <thead>
+                  <tr class="border-bottom">
+                    <th class="text-muted small text-uppercase">Gesture</th>
+                    <th class="text-muted small text-uppercase">Action</th>
+                    <th class="text-muted small text-uppercase">Best For</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="border-bottom">
+                    <td><span class="badge badge-primary font-weight-bold px-2 py-1" style="background: var(--primary-gradient);">Single Tap</span></td>
+                    <td class="font-weight-bold text-dark">Opens Full Schedule</td>
+                    <td class="text-muted small">Tracking live bus positions, seeing future trips, and bookmarking to favorites.</td>
+                  </tr>
+                  <tr>
+                    <td><span class="badge badge-warning text-dark font-weight-bold px-2 py-1">Hold & Release</span></td>
+                    <td class="font-weight-bold text-dark">Stop Preview</td>
+                    <td class="text-muted small">Quickly checking which side of the street the stop is on without leaving your list.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="mt-3 pt-2 text-right">
+              <a href="stop-preview.html" class="small text-primary font-weight-bold">
+                Learn more about Stop Preview <i class="fas fa-arrow-right ml-1"></i>
+              </a>
+            </div>
           </div>
         </section>
 
@@ -274,28 +319,28 @@
 
           <div class="card border-0 mb-3 glass-card p-3">
             <h6 class="font-weight-bold text-dark mb-2">
-              <i class="fas fa-question-circle text-primary mr-2"></i> What does a normal tap do?
+              <i class="fas fa-question-circle text-primary mr-2"></i> How frequently do the live bus positions update?
             </h6>
             <p class="text-muted small mb-0">
-              A regular quick tap opens the complete schedule view, live bus GPS tracking, and future arrival countdowns. <a href="schedule.html" class="font-weight-bold text-primary">Read the Full Schedule tutorial →</a>
+              Fleety receives real-time GTFS-RT telemetry directly from transit agencies, updating vehicle GPS coordinates approximately every 10 to 15 seconds.
             </p>
           </div>
 
           <div class="card border-0 mb-3 glass-card p-3">
             <h6 class="font-weight-bold text-dark mb-2">
-              <i class="fas fa-question-circle text-primary mr-2"></i> Does it work with my saved Favorites?
+              <i class="fas fa-question-circle text-primary mr-2"></i> How do I go back to the main nearby list?
             </h6>
             <p class="text-muted small mb-0">
-              Yes! You can use hold-to-preview from the Nearby tab, search results, and your saved Favorites list.
+              Tap the close button (<strong>X</strong>) in the top-left corner of the screen to smoothly dismiss the schedule and return to your list.
             </p>
           </div>
 
           <div class="card border-0 mb-3 glass-card p-3">
             <h6 class="font-weight-bold text-dark mb-2">
-              <i class="fas fa-question-circle text-primary mr-2"></i> Which cities and transit agencies support this?
+              <i class="fas fa-question-circle text-primary mr-2"></i> Can I view stops going in the opposite direction?
             </h6>
             <p class="text-muted small mb-0">
-              Every city supported by Fleety! Whether you commute on TTC, OC Transpo, STM, MTA, CTA, or other agencies across Canada and the US.
+              Yes! You can tap the reverse-direction icon in the schedule header to toggle between inbound and outbound trips on that line.
             </p>
           </div>
         </section>
@@ -331,13 +376,13 @@
     </div>
   </main>
 
-  <!-- Explore More Guides Section -->
+  <!-- More Tutorials Section -->
   <section class="py-5" style="background: #f1f5f9; border-top: 1px solid #e2e8f0;">
     <div class="container">
       <div class="d-flex align-items-center justify-content-between mb-4">
         <div>
           <h4 class="font-weight-bold mb-1">Explore More Guides</h4>
-          <p class="text-muted mb-0 small">Continue learning Fleety features</p>
+          <p class="text-muted mb-0 small">Master all features of Fleety</p>
         </div>
         <a href="index.html" class="btn btn-outline-primary btn-sm rounded-pill font-weight-bold px-3">
           View All Guides <i class="fas fa-arrow-right ml-1"></i>
@@ -345,15 +390,15 @@
       </div>
 
       <div class="row">
-        <!-- Next Tutorial: Full Schedule & Live Bus Tracking -->
+        <!-- Stop Preview Card -->
         <div class="col-md-4 mb-3">
-          <a href="schedule.html" class="card p-3 border-0 glass-card h-100 text-decoration-none">
+          <a href="stop-preview.html" class="card p-3 border-0 glass-card h-100 text-decoration-none">
             <div class="d-flex align-items-center mb-2">
-              <span class="badge badge-success mr-2" style="background: #10b981;">New Guide</span>
+              <span class="badge badge-primary mr-2" style="background: var(--primary-gradient);">Featured Guide</span>
               <span class="small text-muted"><i class="far fa-clock mr-1"></i> 2 min</span>
             </div>
-            <h6 class="font-weight-bold mb-1 text-dark">Full Schedule & Live Bus Tracking</h6>
-            <p class="text-muted small mb-2">Tap any departure to watch live buses move on the map and see all future arrival times.</p>
+            <h6 class="font-weight-bold mb-1 text-dark">Hold to Preview Any Stop</h6>
+            <p class="text-muted small mb-2">Long-press any departure card to quickly zoom in on its exact street position.</p>
             <span class="small text-primary font-weight-bold mt-auto">Read Guide →</span>
           </a>
         </div>
@@ -395,7 +440,7 @@
           <h3 class="display-4 font-weight-bold text-white mb-3" style="font-size: 2.2rem;">Try It in Fleety Now</h3>
           <div class="line mx-auto my-3 bg-white"></div>
           <p class="text-white opacity-8 mb-4" style="font-size: 1.05rem;">
-            Download Fleety for free on iOS and Android to preview stops and track transit live across Canada and the US.
+            Download Fleety for free on iOS and Android to view live bus GPS tracking and reliable transit schedules across Canada and the US.
           </p>
           <div class="d-flex flex-wrap justify-content-center gap-3">
             <a href="https://play.google.com/store/apps/details?id=com.transport.fleety" target="_blank" class="mr-3 mb-2">
