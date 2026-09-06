@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>How to Preview Stops Instantly (Hold to Preview) | Fleety Tutorial</title>
+  <meta name="description"
+    content="Learn how to preview transit stops on the map in Fleety. Hold click on any schedule item to zoom directly into that stop, and release to reset your map view.">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+    integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css"
+    integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="../style.css" />
+  <link rel="stylesheet" type="text/css" href="css/tutorial.css" />
+  <link rel="icon" href="../favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg tutorial-nav fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="../index.html">
+        <img src="../images/logo-black.png" alt="Fleety" style="height: 38px;">
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#tutorialNavbar"
+        aria-controls="tutorialNavbar" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="fas fa-bars text-dark"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="tutorialNavbar">
+        <ul class="navbar-nav ml-auto align-items-lg-center">
+          <li class="nav-item">
+            <a class="nav-link" href="../index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../index.html#features">Features</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active font-weight-bold" href="index.html">Tutorials</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../privacy/index.html">Privacy</a>
+          </li>
+          <li class="nav-item ml-lg-3 mt-2 mt-lg-0">
+            <a class="btn-glow" href="https://play.google.com/store/apps/details?id=com.transport.fleety" target="_blank">
+              <i class="fab fa-google-play mr-1"></i> Download
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Breadcrumb & Header Section -->
+  <header class="tutorial-hero tutorial-hero-detail">
+    <div class="container">
+      <!-- Breadcrumb -->
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb tutorial-breadcrumb px-0">
+          <li class="breadcrumb-item"><a href="../index.html">Home</a></li>
+          <li class="breadcrumb-item"><a href="index.html">Tutorials</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Stop Preview</li>
+        </ol>
+      </nav>
+
+      <div class="row align-items-center">
+        <div class="col-lg-10">
+          <div class="d-flex flex-wrap align-items-center gap-2 mb-3">
+            <span class="badge badge-pill badge-warning text-dark font-weight-bold px-3 py-1 mr-2">
+              <i class="fas fa-bolt mr-1"></i> Gesture Shortcut
+            </span>
+            <span class="badge badge-pill badge-light text-primary font-weight-bold px-3 py-1 mr-2">
+              <i class="fas fa-map-marker-alt mr-1"></i> Map Navigation
+            </span>
+            <span class="text-white-50 small mt-1 mt-sm-0">
+              <i class="far fa-clock mr-1"></i> 2 min read &bull; iOS & Android
+            </span>
+          </div>
+
+          <h1 class="font-weight-bold mb-3">How to Preview Stops Instantly with Hold-to-Preview</h1>
+          <p class="lead mb-0">
+            Check the exact location of any bus or train stop on the map in seconds. Press and hold any schedule card to zoom in, and release your finger to snap right back.
+          </p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content Layout (Mobile First) -->
+  <main class="container py-4 py-md-5">
+    <div class="row">
+
+      <!-- Right Column on Desktop, Top on Mobile (Video Showcase) -->
+      <div class="col-lg-5 order-lg-2 mb-5 mb-lg-0">
+        <div style="position: sticky; top: 90px;">
+          
+          <!-- Video Container in Phone Mockup Frame -->
+          <div class="phone-mockup-container">
+            <div class="phone-mockup-screen">
+              <video id="tutorialVideo" autoplay loop muted playsinline poster="stop_preview_thumb.jpg">
+                <source src="stop_preview.mp4" type="video/mp4">
+                Your browser does not support HTML5 video.
+              </video>
+            </div>
+          </div>
+
+          <!-- Video Playback Controls -->
+          <div class="video-control-bar">
+            <button class="video-ctrl-btn" id="playPauseBtn" onclick="togglePlayPause()" aria-label="Toggle Play/Pause">
+              <i class="fas fa-pause mr-1" id="playPauseIcon"></i>
+              <span id="playPauseText">Pause</span>
+            </button>
+            <button class="video-ctrl-btn" onclick="restartVideo()" aria-label="Replay Video">
+              <i class="fas fa-redo-alt mr-1"></i>
+              <span>Replay</span>
+            </button>
+            <button class="video-ctrl-btn" id="speedBtn" onclick="toggleSpeed()" aria-label="Change Speed">
+              <i class="fas fa-tachometer-alt mr-1"></i>
+              <span id="speedText">1.0x</span>
+            </button>
+          </div>
+
+          <!-- Video Timeline Guide -->
+          <div class="glass-card p-3 p-md-4 mt-4" style="background: #ffffff;">
+            <h6 class="font-weight-bold mb-3 d-flex align-items-center">
+              <i class="fas fa-film text-primary mr-2"></i>
+              <span>What Happens in the Video</span>
+            </h6>
+
+            <div class="mb-3 small pb-2 border-bottom">
+              <div class="d-flex justify-content-between mb-1">
+                <strong class="text-dark"><i class="fas fa-compass text-muted mr-1"></i> 00:00 – 00:01</strong>
+                <span class="badge badge-light">Nearby View</span>
+              </div>
+              <p class="text-muted mb-0">Rider browses upcoming departures for routes 51, 85, and 87.</p>
+            </div>
+
+            <div class="mb-3 small pb-2 border-bottom">
+              <div class="d-flex justify-content-between mb-1">
+                <strong class="text-primary"><i class="fas fa-hand-rock mr-1"></i> 00:01 – 00:02</strong>
+                <span class="badge badge-warning text-dark">Hold Action</span>
+              </div>
+              <p class="text-muted mb-0">Holding down on Route 51 zooms straight into the Carling/Fox stop with an orange focus halo.</p>
+            </div>
+
+            <div class="mb-3 small pb-2 border-bottom">
+              <div class="d-flex justify-content-between mb-1">
+                <strong class="text-success"><i class="fas fa-undo mr-1"></i> 00:03 – 00:04</strong>
+                <span class="badge badge-success">Release</span>
+              </div>
+              <p class="text-muted mb-0">Lifting finger smoothly pulls the map back to the wide overview.</p>
+            </div>
+
+            <div class="small">
+              <div class="d-flex justify-content-between mb-1">
+                <strong class="text-primary"><i class="fas fa-hand-rock mr-1"></i> 00:05 – 00:07</strong>
+                <span class="badge badge-warning text-dark">Next Stop</span>
+              </div>
+              <p class="text-muted mb-0">Holding down on Route 57 inspects the stop on Carling Ave at Lincoln Fields.</p>
+            </div>
+          </div>
+
+          <!-- Back to Hub Link -->
+          <div class="text-center mt-3 d-none d-lg-block">
+            <a href="index.html" class="text-primary font-weight-bold small d-inline-flex align-items-center">
+              <i class="fas fa-arrow-left mr-2"></i> Back to all Fleety Tutorials
+            </a>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Left Column on Desktop, Bottom on Mobile (Step-by-Step Guide) -->
+      <div class="col-lg-7 order-lg-1 pr-lg-5">
+
+        <!-- Quick Summary Box (Mobile Friendly) -->
+        <div class="gesture-summary-card">
+          <h5 class="font-weight-bold text-dark mb-3">
+            <i class="fas fa-hand-pointer text-primary mr-2"></i> The Gesture at a Glance
+          </h5>
+          <div class="row">
+            <div class="col-sm-6 mb-2 mb-sm-0">
+              <div class="bg-white p-3 rounded-12 shadow-sm border h-100" style="border-radius: 12px;">
+                <div class="text-primary font-weight-bold mb-1">
+                  <i class="fas fa-hand-rock mr-1 text-warning"></i> 1. Press & Hold
+                </div>
+                <p class="text-muted small mb-0">
+                  Touch and hold any schedule row to dynamically swoop down and focus on that stop.
+                </p>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="bg-white p-3 rounded-12 shadow-sm border h-100" style="border-radius: 12px;">
+                <div class="text-success font-weight-bold mb-1">
+                  <i class="fas fa-hand-paper mr-1 text-success"></i> 2. Release Finger
+                </div>
+                <p class="text-muted small mb-0">
+                  Lift your finger to instantly bounce back to your neighborhood map without losing your spot.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Detailed Steps -->
+        <section class="mb-5">
+          <h2 class="font-weight-bold mb-4" style="font-size: 1.55rem; color: var(--text-dark);">
+            Step-by-Step Instructions
+          </h2>
+
+          <div class="tutorial-steps">
+            <!-- Step 1 -->
+            <div class="step-item">
+              <div class="step-number">1</div>
+              <h4 class="step-title">Open Nearby or Transit</h4>
+              <p class="step-desc">
+                Launch Fleety on your iPhone or Android phone. On the bottom navigation bar, tap on <strong>Nearby</strong> to see live transit stops and upcoming departures around you.
+              </p>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="step-item">
+              <div class="step-number">2</div>
+              <h4 class="step-title">Press & Hold the Schedule Item</h4>
+              <p class="step-desc">
+                Find the bus or train departure you want to check. Instead of a fast tap, <strong>press and hold your thumb down</strong> on the schedule card row.
+              </p>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="step-item">
+              <div class="step-number">3</div>
+              <h4 class="step-title">Inspect the Stop Location on the Map</h4>
+              <p class="step-desc">
+                While your finger is held down, the map camera animates and zooms directly into the stop. You will see an <strong>orange target halo</strong> highlighting the exact curb, stop pole, and nearby cross-streets.
+              </p>
+            </div>
+
+            <!-- Step 4 -->
+            <div class="step-item">
+              <div class="step-number">4</div>
+              <h4 class="step-title">Release to Return to Your Map</h4>
+              <p class="step-desc">
+                Lift your finger when you’re done. The camera smoothly pulls back out to your full overview map. You stay right where you were in the schedule list, with zero back buttons needed.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Pro Commuter Tips -->
+        <section class="mb-5">
+          <div class="pro-tip-box">
+            <h5><i class="fas fa-lightbulb text-warning"></i> Why This Gesture is a Game Changer</h5>
+            <ul class="mb-0 pl-3 text-muted" style="line-height: 1.8;">
+              <li class="mb-2">
+                <strong>Which side of the intersection?</strong> Quickly verify whether your bus stops before or after crossing a busy intersection before you start walking.
+              </li>
+              <li class="mb-2">
+                <strong>Compare routes instantly:</strong> Hold on Route A to preview its stop, release, and hold on Route B to immediately see which one is closer to your current location.
+              </li>
+              <li>
+                <strong>No loading delays:</strong> Because stop coordinates are pre-cached on your device, the map zoom animation is instant with zero lag.
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="mb-5">
+          <h3 class="font-weight-bold mb-3" style="font-size: 1.35rem;">Frequently Asked Questions</h3>
+
+          <div class="card border-0 mb-3 glass-card p-3">
+            <h6 class="font-weight-bold text-dark mb-2">
+              <i class="fas fa-question-circle text-primary mr-2"></i> What does a normal tap do?
+            </h6>
+            <p class="text-muted small mb-0">
+              A regular quick tap opens the complete route timeline and schedule details for that trip. Press and hold is reserved specifically for the fast map preview.
+            </p>
+          </div>
+
+          <div class="card border-0 mb-3 glass-card p-3">
+            <h6 class="font-weight-bold text-dark mb-2">
+              <i class="fas fa-question-circle text-primary mr-2"></i> Does it work with my saved Favorites?
+            </h6>
+            <p class="text-muted small mb-0">
+              Yes! You can use hold-to-preview from the Nearby tab, search results, and your saved Favorites list.
+            </p>
+          </div>
+
+          <div class="card border-0 mb-3 glass-card p-3">
+            <h6 class="font-weight-bold text-dark mb-2">
+              <i class="fas fa-question-circle text-primary mr-2"></i> Which cities and transit agencies support this?
+            </h6>
+            <p class="text-muted small mb-0">
+              Every city supported by Fleety! Whether you commute on TTC, OC Transpo, STM, MTA, CTA, or other agencies across Canada and the US.
+            </p>
+          </div>
+        </section>
+
+        <!-- Feedback Card -->
+        <div class="helpful-feedback-card mb-4">
+          <div>
+            <h6 class="font-weight-bold mb-1">Was this tutorial helpful?</h6>
+            <span class="text-muted small">Help us improve Fleety guides</span>
+          </div>
+          <div class="d-flex gap-2" id="feedbackActions">
+            <button class="helpful-btn mr-2" onclick="recordFeedback(true)" aria-label="Yes, helpful">
+              <i class="far fa-thumbs-up text-success"></i> Helpful
+            </button>
+            <button class="helpful-btn" onclick="recordFeedback(false)" aria-label="Needs work">
+              <i class="far fa-thumbs-down text-danger"></i> Needs work
+            </button>
+          </div>
+          <div id="feedbackThanks" class="d-none text-success font-weight-bold small">
+            <i class="fas fa-check-circle mr-1"></i> Thank you for your feedback!
+          </div>
+        </div>
+
+        <!-- Back to All Tutorials Button (Mobile Visible) -->
+        <div class="text-center mt-4 mb-2 d-lg-none">
+          <a href="index.html" class="btn btn-outline-primary btn-sm rounded-pill font-weight-bold px-4 py-2">
+            <i class="fas fa-arrow-left mr-2"></i> View All Fleety Tutorials
+          </a>
+        </div>
+
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Download Section -->
+  <section class="download section-padding" style="background: var(--primary-gradient);">
+    <div class="container text-center text-white">
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <h3 class="display-4 font-weight-bold text-white mb-3" style="font-size: 2.2rem;">Try It in Fleety Now</h3>
+          <div class="line mx-auto my-3 bg-white"></div>
+          <p class="text-white opacity-8 mb-4" style="font-size: 1.05rem;">
+            Download Fleety for free on iOS and Android to preview stops and track transit live across Canada and the US.
+          </p>
+          <div class="d-flex flex-wrap justify-content-center gap-3">
+            <a href="https://play.google.com/store/apps/details?id=com.transport.fleety" target="_blank" class="mr-3 mb-2">
+              <img src="../images/playstore.png" class="store-badge-lg" alt="Get it on Google Play" style="height: 48px;">
+            </a>
+            <a href="https://apps.apple.com/us/app/id6748264047" target="_blank" class="mb-2">
+              <img src="../images/appstore.png" class="store-badge-lg" alt="Download on App Store" style="height: 48px;">
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer-copy py-4" style="background: #ffffff; border-top: 1px solid #edf2f7;">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-6 text-center text-md-left mb-2 mb-md-0">
+          <p class="mb-0 text-muted small">© 2026 Fleety. All rights reserved.</p>
+        </div>
+        <div class="col-md-6 text-center text-md-right">
+          <ul class="list-inline mb-0 small">
+            <li class="list-inline-item"><a href="../index.html" class="text-muted">Home</a></li>
+            <li class="list-inline-item mx-2 text-muted">&bull;</li>
+            <li class="list-inline-item"><a href="index.html" class="text-primary font-weight-bold">Tutorials</a></li>
+            <li class="list-inline-item mx-2 text-muted">&bull;</li>
+            <li class="list-inline-item"><a href="../privacy/index.html" class="text-muted">Privacy Policy</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"
+    integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+    crossorigin="anonymous"></script>
+
+  <!-- Video Playback & Feedback Script -->
+  <script>
+    const video = document.getElementById('tutorialVideo');
+    const playPauseBtn = document.getElementById('playPauseBtn');
+    const playPauseIcon = document.getElementById('playPauseIcon');
+    const playPauseText = document.getElementById('playPauseText');
+    const speedBtn = document.getElementById('speedBtn');
+    const speedText = document.getElementById('speedText');
+
+    function togglePlayPause() {
+      if (video.paused) {
+        video.play();
+        playPauseIcon.className = 'fas fa-pause mr-1';
+        playPauseText.textContent = 'Pause';
+      } else {
+        video.pause();
+        playPauseIcon.className = 'fas fa-play mr-1';
+        playPauseText.textContent = 'Play';
+      }
+    }
+
+    function restartVideo() {
+      video.currentTime = 0;
+      video.play();
+      playPauseIcon.className = 'fas fa-pause mr-1';
+      playPauseText.textContent = 'Pause';
+    }
+
+    const speeds = [1.0, 0.75, 0.5];
+    let currentSpeedIndex = 0;
+
+    function toggleSpeed() {
+      currentSpeedIndex = (currentSpeedIndex + 1) % speeds.length;
+      const newSpeed = speeds[currentSpeedIndex];
+      video.playbackRate = newSpeed;
+      speedText.textContent = newSpeed.toFixed(2) + 'x';
+    }
+
+    // Feedback logic
+    function recordFeedback(isPositive) {
+      $('#feedbackActions').addClass('d-none');
+      $('#feedbackThanks').removeClass('d-none');
+    }
+  </script>
+</body>
+
+</html>
