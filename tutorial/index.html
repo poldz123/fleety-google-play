@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Fleety Tutorials & Guides | Learn How to Use Fleety</title>
   <meta name="description"
-    content="Step-by-step guides, shortcuts, and video tutorials for Fleety. Learn how to preview stops on the map, track buses in real-time, and commute smarter across Canada and the US.">
+    content="Step-by-step guides, gestures, and video tutorials for Fleety. Learn how to preview stops on the map, track buses in real-time, bookmark favorites, use offline schedules, and commute smarter.">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
     integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css"
@@ -64,7 +64,7 @@
           </span>
           <h1 class="display-4 font-weight-bold mb-3">Tutorials & Transit Guides</h1>
           <p class="lead mb-4">
-            Master your daily transit commute with quick visual guides, practical gestures, and hidden shortcuts built right into Fleety.
+            Master your daily transit commute with quick visual guides, practical gestures, and shortcuts built right into Fleety.
           </p>
 
           <!-- Search Bar -->
@@ -72,7 +72,7 @@
             <div class="input-group-prepend">
               <span class="input-group-text bg-white border-0 pl-4 text-muted"><i class="fas fa-search"></i></span>
             </div>
-            <input type="text" id="tutorialSearch" class="form-control border-0 py-4 shadow-none" placeholder="Search tutorials (e.g., stop preview, map, alerts)..." aria-label="Search tutorials">
+            <input type="text" id="tutorialSearch" class="form-control border-0 py-4 shadow-none" placeholder="Search tutorials (e.g. stop preview, routes, offline, favorites)..." aria-label="Search tutorials">
           </div>
 
           <!-- Filter Pills -->
@@ -91,65 +91,14 @@
     </div>
   </header>
 
-  <!-- Featured Tutorial Spotlight -->
-  <section class="container mb-5">
-    <div class="featured-tutorial-card p-4 p-md-5">
-      <div class="row align-items-center">
-        <div class="col-lg-7 pr-lg-5">
-          <div class="d-flex align-items-center mb-3">
-            <span class="featured-badge mr-3">
-              <i class="fas fa-star"></i> Featured Tutorial
-            </span>
-            <span class="badge badge-light text-muted font-weight-bold py-1 px-3" style="border: 1px solid #e2e8f0;">
-              <i class="fas fa-video text-danger mr-1"></i> Includes Video
-            </span>
-          </div>
-          <h2 class="font-weight-bold mb-3" style="color: var(--text-dark); font-size: 2rem; line-height: 1.3;">
-            Hold to Preview Any Stop on the Map
-          </h2>
-          <p class="text-muted mb-4" style="font-size: 1.05rem; line-height: 1.8;">
-            Want to see exactly where a bus or train stop is without losing your schedule view? Press and hold any schedule row to dynamically zoom into that stop location. When you let go, the map seamlessly resets back!
-          </p>
 
-          <div class="tutorial-meta">
-            <span><i class="far fa-clock text-primary"></i> 2 min read</span>
-            <span><i class="fas fa-map-marker-alt text-danger"></i> Map & Shortcuts</span>
-            <span><i class="fas fa-signal text-success"></i> All Skill Levels</span>
-          </div>
-
-          <div class="mt-4">
-            <a href="stop-preview.html" class="btn btn-glow px-4 py-3 d-inline-flex align-items-center font-weight-bold">
-              <span>View Tutorial & Video Demo</span>
-              <i class="fas fa-arrow-right ml-2"></i>
-            </a>
-          </div>
-        </div>
-
-        <div class="col-lg-5 mt-4 mt-lg-0">
-          <a href="stop-preview.html" class="d-block position-relative rounded-20 overflow-hidden shadow-lg" style="border-radius: 20px; max-height: 340px; background: #0f172a;">
-            <img src="stop_preview_thumb.jpg" alt="Hold to Preview Stop" style="width: 100%; height: 340px; object-fit: cover; display: block;">
-            <div class="position-absolute" style="top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(180deg, rgba(0,0,0,0.05) 0%, rgba(15,23,42,0.65) 100%);"></div>
-            <div class="thumb-play-overlay">
-              <i class="fas fa-play ml-1"></i>
-            </div>
-            <div class="position-absolute" style="bottom: 16px; left: 18px; right: 18px; color: #fff;">
-              <div class="d-flex align-items-center justify-content-between">
-                <span class="small font-weight-bold"><i class="fas fa-video mr-1 text-warning"></i> Video Guide</span>
-                <span class="badge badge-dark" style="background: rgba(0,0,0,0.65);">0:07 HD</span>
-              </div>
-            </div>
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
 
   <!-- Tutorials Catalog Grid -->
   <section class="container py-5">
     <div class="d-flex flex-column flex-md-row align-items-md-center justify-content-between mb-4">
       <div>
         <h3 class="font-weight-bold mb-1">Browse All Tutorials</h3>
-        <p class="text-muted mb-0">Learn every feature of Fleety step-by-step</p>
+        <p class="text-muted mb-0">Learn every feature of Fleety step-by-step with HD video guides</p>
       </div>
       <div class="text-muted small mt-2 mt-md-0" id="tutorialCount">
         Showing all available guides
@@ -167,7 +116,7 @@
               <i class="fas fa-play ml-1"></i>
             </div>
             <span class="badge badge-primary position-absolute" style="top: 14px; left: 14px; background: var(--primary-gradient); font-size: 0.75rem; padding: 6px 12px; border-radius: 30px;">
-              Featured Guide
+              Featured Gesture
             </span>
           </div>
           <div class="tutorial-card-body">
@@ -262,7 +211,7 @@
               <span><i class="far fa-clock"></i> 2 min</span>
               <span><i class="fas fa-route"></i> Stops Sequence</span>
             </div>
-            <h4 class="tutorial-card-title">Browse Routes & Stop Arrival Times</h4>
+            <h4 class="tutorial-card-title">Browse Routes & Stop Sequences</h4>
             <p class="tutorial-card-desc">
               Select your transit operator, browse complete route lists, inspect the sequence of stops, and tap any stop for live arrivals.
             </p>
@@ -303,108 +252,91 @@
         </a>
       </div>
 
-      <!-- Card 6: Smart Arrival Alerts (Upcoming) -->
-      <div class="col-md-6 col-lg-4 mb-4 tutorial-item" data-category="schedules shortcuts">
-        <div class="tutorial-card" style="cursor: default;">
-          <div class="tutorial-card-thumb" style="background: linear-gradient(135deg, #475569 0%, #64748b 100%);">
-            <i class="fas fa-bell text-white" style="font-size: 54px; opacity: 0.8;"></i>
-            <span class="upcoming-badge position-absolute" style="top: 14px; right: 14px;">
-              Coming Soon
-            </span>
-          </div>
-          <div class="tutorial-card-body">
-            <div class="tutorial-meta">
-              <span><i class="far fa-clock"></i> 2 min</span>
-              <span><i class="fas fa-bell"></i> Alerts</span>
-            </div>
-            <h4 class="tutorial-card-title">Set Smart Arrival Notifications</h4>
-            <p class="tutorial-card-desc">
-              Configure automatic departure alerts so you get warned 5 or 10 minutes before your transit arrives at your stop.
-            </p>
-            <div class="tutorial-card-footer text-muted">
-              <span>Tutorial in preparation</span>
-              <i class="far fa-clock"></i>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Card 4: Managing Favorites (Upcoming) -->
+      <!-- Card 6: Save & Manage Favorites (Active) -->
       <div class="col-md-6 col-lg-4 mb-4 tutorial-item" data-category="shortcuts schedules">
-        <div class="tutorial-card" style="cursor: default;">
-          <div class="tutorial-card-thumb" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
-            <i class="fas fa-star text-white" style="font-size: 54px; opacity: 0.85;"></i>
-            <span class="upcoming-badge position-absolute" style="top: 14px; right: 14px;">
-              Coming Soon
+        <a href="favorites.html" class="tutorial-card">
+          <div class="tutorial-card-thumb">
+            <img src="favorites_thumb.jpg" alt="Save & Manage Favorites" style="width: 100%; height: 100%; object-fit: cover;">
+            <div class="thumb-play-overlay">
+              <i class="fas fa-play ml-1"></i>
+            </div>
+            <span class="badge badge-warning text-dark position-absolute" style="top: 14px; left: 14px; background: #fbbf24; font-size: 0.75rem; padding: 6px 12px; border-radius: 30px;">
+              Favorites Hub
             </span>
           </div>
           <div class="tutorial-card-body">
             <div class="tutorial-meta">
               <span><i class="far fa-clock"></i> 2 min</span>
-              <span><i class="fas fa-star"></i> Personalization</span>
+              <span><i class="fas fa-star"></i> Bookmarks</span>
             </div>
-            <h4 class="tutorial-card-title">Bookmark Favorite Stops & Lines</h4>
+            <h4 class="tutorial-card-title">Save & Manage Favorites</h4>
             <p class="tutorial-card-desc">
-              Pin frequent transit routes and commute stops for instant one-tap schedule checks as soon as you open the app.
+              Star your frequent schedules, routes, and stops for instant one-tap access in the dedicated Favorites tab. Tap star again to remove.
             </p>
-            <div class="tutorial-card-footer text-muted">
-              <span>Tutorial in preparation</span>
-              <i class="far fa-clock"></i>
+            <div class="tutorial-card-footer">
+              <span>Read Guide</span>
+              <i class="fas fa-chevron-right"></i>
             </div>
           </div>
-        </div>
+        </a>
       </div>
 
-      <!-- Card 5: Walking Distance Radius (Upcoming) -->
-      <div class="col-md-6 col-lg-4 mb-4 tutorial-item" data-category="map">
-        <div class="tutorial-card" style="cursor: default;">
-          <div class="tutorial-card-thumb" style="background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);">
-            <i class="fas fa-walking text-white" style="font-size: 54px; opacity: 0.85;"></i>
-            <span class="upcoming-badge position-absolute" style="top: 14px; right: 14px;">
-              Coming Soon
+      <!-- Card 7: Download Transit Data for Offline Use (Active) -->
+      <div class="col-md-6 col-lg-4 mb-4 tutorial-item" data-category="schedules shortcuts">
+        <a href="offline_data.html" class="tutorial-card">
+          <div class="tutorial-card-thumb">
+            <img src="offline_data_thumb.jpg" alt="Download Transit Data for Offline Use" style="width: 100%; height: 100%; object-fit: cover;">
+            <div class="thumb-play-overlay">
+              <i class="fas fa-play ml-1"></i>
+            </div>
+            <span class="badge badge-info text-white position-absolute" style="top: 14px; left: 14px; background: #0284c7; font-size: 0.75rem; padding: 6px 12px; border-radius: 30px;">
+              Offline Mode
             </span>
           </div>
           <div class="tutorial-card-body">
             <div class="tutorial-meta">
               <span><i class="far fa-clock"></i> 2 min</span>
-              <span><i class="fas fa-compass"></i> Radius Search</span>
+              <span><i class="fas fa-download"></i> Offline Schedules</span>
             </div>
-            <h4 class="tutorial-card-title">Discover Nearby Transit Stops</h4>
+            <h4 class="tutorial-card-title">Download Transit Data for Offline Use</h4>
             <p class="tutorial-card-desc">
-              Understand the radar boundary circle on your map to spot all active bus and train stops within walking range.
+              Download complete local transit schedule packages to check bus and train timetables without cell reception or internet.
             </p>
-            <div class="tutorial-card-footer text-muted">
-              <span>Tutorial in preparation</span>
-              <i class="far fa-clock"></i>
+            <div class="tutorial-card-footer">
+              <span>Read Guide</span>
+              <i class="fas fa-chevron-right"></i>
             </div>
           </div>
-        </div>
+        </a>
       </div>
 
-      <!-- Card 6: Agency Switching (Upcoming) -->
-      <div class="col-md-6 col-lg-4 mb-4 tutorial-item" data-category="map schedules">
-        <div class="tutorial-card" style="cursor: default;">
-          <div class="tutorial-card-thumb" style="background: linear-gradient(135deg, #0d9488 0%, #115e59 100%);">
-            <i class="fas fa-subway text-white" style="font-size: 54px; opacity: 0.85;"></i>
-            <span class="upcoming-badge position-absolute" style="top: 14px; right: 14px;">
-              Coming Soon
+      <!-- Card 8: Select & Manage Transit Agencies (Active) -->
+      <div class="col-md-6 col-lg-4 mb-4 tutorial-item" data-category="map schedules shortcuts">
+        <a href="agencies.html" class="tutorial-card">
+          <div class="tutorial-card-thumb">
+            <img src="agencies_thumb.jpg" alt="Select & Manage Transit Agencies" style="width: 100%; height: 100%; object-fit: cover;">
+            <div class="thumb-play-overlay">
+              <i class="fas fa-play ml-1"></i>
+            </div>
+            <span class="badge badge-success position-absolute" style="top: 14px; left: 14px; background: #10b981; font-size: 0.75rem; padding: 6px 12px; border-radius: 30px;">
+              Multi-Operator
             </span>
           </div>
           <div class="tutorial-card-body">
             <div class="tutorial-meta">
-              <span><i class="far fa-clock"></i> 3 min</span>
-              <span><i class="fas fa-exchange-alt"></i> Multi-Agency</span>
+              <span><i class="far fa-clock"></i> 2 min</span>
+              <span><i class="fas fa-globe"></i> Operator Switcher</span>
             </div>
-            <h4 class="tutorial-card-title">Multi-Agency Transfers & Schedules</h4>
+            <h4 class="tutorial-card-title">Select & Manage Transit Agencies</h4>
             <p class="tutorial-card-desc">
-              How to seamlessly check connections between municipal bus lines, subways, and regional commuter trains in one unified view.
+              Search transit agencies by name, city, or country, multi-select several operators, and toggle between them seamlessly.
             </p>
-            <div class="tutorial-card-footer text-muted">
-              <span>Tutorial in preparation</span>
-              <i class="far fa-clock"></i>
+            <div class="tutorial-card-footer">
+              <span>Read Guide</span>
+              <i class="fas fa-chevron-right"></i>
             </div>
           </div>
-        </div>
+        </a>
       </div>
 
     </div>
@@ -429,8 +361,8 @@
           <p class="text-muted mb-4">
             We are constantly publishing new tips and video walkthroughs to make Fleety the most user-friendly transit app. Let us know what you'd like us to explain next!
           </p>
-          <a href="mailto:support@fleety.app?subject=Tutorial%20Suggestion" class="btn btn-outline-primary rounded-pill px-4 py-2 font-weight-bold">
-            <i class="far fa-envelope mr-1"></i> Send a Feature Suggestion
+          <a href="mailto:support@fleetytransit.com?subject=Tutorial%20Suggestion" class="btn btn-outline-primary rounded-pill px-4 py-2 font-weight-bold">
+            <i class="far fa-envelope mr-1"></i> Send Suggestion to support@fleetytransit.com
           </a>
         </div>
       </div>

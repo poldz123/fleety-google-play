@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>How to Save & Manage Favorites | Fleety Tutorial</title>
+  <meta name="description"
+    content="Learn how to star schedules, routes, and stops in Fleety. Access your saved bookmarks in dedicated sub-tabs and remove them with one tap.">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+    integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css"
+    integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="../style.css" />
+  <link rel="stylesheet" type="text/css" href="css/tutorial.css" />
+  <link rel="icon" href="../favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg tutorial-nav fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="../index.html">
+        <img src="../images/logo-black.png" alt="Fleety" style="height: 38px;">
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#tutorialNavbar"
+        aria-controls="tutorialNavbar" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="fas fa-bars text-dark"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="tutorialNavbar">
+        <ul class="navbar-nav ml-auto align-items-lg-center">
+          <li class="nav-item">
+            <a class="nav-link" href="../index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../index.html#features">Features</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active font-weight-bold" href="index.html">Tutorials</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../privacy/index.html">Privacy</a>
+          </li>
+          <li class="nav-item ml-lg-3 mt-2 mt-lg-0">
+            <a class="btn-glow" href="https://play.google.com/store/apps/details?id=com.transport.fleety" target="_blank">
+              <i class="fab fa-google-play mr-1"></i> Download
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Breadcrumb & Header Section -->
+  <header class="tutorial-hero tutorial-hero-detail">
+    <div class="container">
+      <!-- Breadcrumb -->
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb tutorial-breadcrumb px-0">
+          <li class="breadcrumb-item"><a href="../index.html">Home</a></li>
+          <li class="breadcrumb-item"><a href="index.html">Tutorials</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Favorites & Bookmarks</li>
+        </ol>
+      </nav>
+
+      <div class="row align-items-center">
+        <div class="col-lg-10">
+          <div class="d-flex flex-wrap align-items-center gap-2 mb-3">
+            <span class="badge badge-pill badge-primary font-weight-bold px-3 py-1 mr-2" style="background: var(--primary-gradient);">
+              <i class="fas fa-star mr-1"></i> Favorites Hub
+            </span>
+            <span class="badge badge-pill badge-warning text-dark font-weight-bold px-3 py-1 mr-2">
+              <i class="fas fa-bookmark mr-1"></i> One-Tap Access
+            </span>
+            <span class="text-white-50 small mt-1 mt-sm-0">
+              <i class="far fa-clock mr-1"></i> 2 min read &bull; iOS & Android
+            </span>
+          </div>
+
+          <h1 class="font-weight-bold mb-3">How to Save & Manage Favorites in Fleety</h1>
+          <p class="lead mb-0">
+            Bookmark your daily bus routes, frequent stops, and specific schedules with a single tap of the star icon. Access everything in the Favorites tab, or tap the star again to remove it.
+          </p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content Layout (Mobile First) -->
+  <main class="container py-4 py-md-5">
+    <div class="row">
+
+      <!-- Right Column on Desktop, Top on Mobile (Video Showcase) -->
+      <div class="col-lg-5 order-lg-2 mb-5 mb-lg-0">
+        <div style="position: sticky; top: 90px;">
+          
+          <!-- Video Container in Phone Mockup Frame -->
+          <div class="phone-mockup-container">
+            <div class="phone-mockup-screen">
+              <video id="tutorialVideo" autoplay loop muted playsinline poster="favorites_thumb.jpg">
+                <source src="favorites.mp4" type="video/mp4">
+                Your browser does not support HTML5 video.
+              </video>
+            </div>
+          </div>
+
+          <!-- Video Playback Controls -->
+          <div class="video-control-bar">
+            <button class="video-ctrl-btn" id="playPauseBtn" onclick="togglePlayPause()" aria-label="Toggle Play/Pause">
+              <i class="fas fa-pause mr-1" id="playPauseIcon"></i>
+              <span id="playPauseText">Pause</span>
+            </button>
+            <button class="video-ctrl-btn" onclick="restartVideo()" aria-label="Replay Video">
+              <i class="fas fa-redo-alt mr-1"></i>
+              <span>Replay</span>
+            </button>
+            <button class="video-ctrl-btn" id="speedBtn" onclick="toggleSpeed()" aria-label="Change Speed">
+              <i class="fas fa-tachometer-alt mr-1"></i>
+              <span id="speedText">1.0x</span>
+            </button>
+          </div>
+
+          <!-- Video Timeline Guide -->
+          <div class="glass-card p-3 p-md-4 mt-4" style="background: #ffffff;">
+            <h6 class="font-weight-bold mb-3 d-flex align-items-center">
+              <i class="fas fa-film text-primary mr-2"></i>
+              <span>What Happens in the Video</span>
+            </h6>
+
+            <div class="mb-3 small pb-2 border-bottom">
+              <div class="d-flex justify-content-between mb-1">
+                <strong class="text-primary"><i class="fas fa-star text-warning mr-1"></i> 00:00 – 00:02</strong>
+                <span class="badge badge-warning text-dark">Star Route</span>
+              </div>
+              <p class="text-muted mb-0">Rider opens Route 2 (Limebank) and taps the star icon in the top right to save it (<code>Added to favorite</code>).</p>
+            </div>
+
+            <div class="mb-3 small pb-2 border-bottom">
+              <div class="d-flex justify-content-between mb-1">
+                <strong class="text-danger"><i class="fas fa-map-marker-alt mr-1"></i> 00:03 – 00:06</strong>
+                <span class="badge badge-light">Star Stop</span>
+              </div>
+              <p class="text-muted mb-0">Rider opens Stop #2132 (Carling / Richardson) and taps the star button to bookmark the entire stop.</p>
+            </div>
+
+            <div class="mb-3 small pb-2 border-bottom">
+              <div class="d-flex justify-content-between mb-1">
+                <strong class="text-dark"><i class="fas fa-th-large text-primary mr-1"></i> 00:07 – 00:10</strong>
+                <span class="badge badge-primary" style="background: var(--primary-gradient);">Favorites Tab</span>
+              </div>
+              <p class="text-muted mb-0">Opening the Favorites tab shows dedicated sub-tabs: <code>Schedules</code>, <code>Routes</code>, and <code>Stops</code>.</p>
+            </div>
+
+            <div class="small">
+              <div class="d-flex justify-content-between mb-1">
+                <strong class="text-success"><i class="fas fa-check-circle mr-1"></i> 00:11 – 00:12</strong>
+                <span class="badge badge-success">One-Tap Toggle</span>
+              </div>
+              <p class="text-muted mb-0">Tapping the active star icon on any favorited item toggles it off and removes it from the list.</p>
+            </div>
+          </div>
+
+          <!-- Back to Hub Link -->
+          <div class="text-center mt-3 d-none d-lg-block">
+            <a href="index.html" class="text-primary font-weight-bold small d-inline-flex align-items-center">
+              <i class="fas fa-arrow-left mr-2"></i> Back to all Fleety Tutorials
+            </a>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Left Column on Desktop, Bottom on Mobile (Step-by-Step Guide) -->
+      <div class="col-lg-7 order-lg-1 pr-lg-5">
+
+        <!-- Quick Summary Box (Mobile Friendly) -->
+        <div class="gesture-summary-card">
+          <h5 class="font-weight-bold text-dark mb-3">
+            <i class="fas fa-star text-warning mr-2"></i> Favorites at a Glance
+          </h5>
+          <div class="row">
+            <div class="col-sm-4 mb-2 mb-sm-0">
+              <div class="bg-white p-3 rounded-12 shadow-sm border h-100" style="border-radius: 12px;">
+                <div class="text-warning font-weight-bold mb-1" style="color: #d97706 !important;">
+                  <i class="fas fa-star mr-1 text-warning"></i> 1. Star Anything
+                </div>
+                <p class="text-muted small mb-0">
+                  Tap the top-right star icon on any schedule, route, or stop.
+                </p>
+              </div>
+            </div>
+            <div class="col-sm-4 mb-2 mb-sm-0">
+              <div class="bg-white p-3 rounded-12 shadow-sm border h-100" style="border-radius: 12px;">
+                <div class="text-primary font-weight-bold mb-1">
+                  <i class="fas fa-folder mr-1 text-primary"></i> 2. 3 Sub-Tabs
+                </div>
+                <p class="text-muted small mb-0">
+                  Open the Favorites tab to browse by Schedules, Routes, or Stops.
+                </p>
+              </div>
+            </div>
+            <div class="col-sm-4">
+              <div class="bg-white p-3 rounded-12 shadow-sm border h-100" style="border-radius: 12px;">
+                <div class="text-danger font-weight-bold mb-1">
+                  <i class="fas fa-trash-alt mr-1 text-danger"></i> 3. Quick Remove
+                </div>
+                <p class="text-muted small mb-0">
+                  Tap the filled star again anytime to remove an item.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Detailed Steps -->
+        <section class="mb-5">
+          <h2 class="font-weight-bold mb-4" style="font-size: 1.55rem; color: var(--text-dark);">
+            Step-by-Step Instructions
+          </h2>
+
+          <div class="tutorial-steps">
+            <!-- Step 1 -->
+            <div class="step-item">
+              <div class="step-number">1</div>
+              <h4 class="step-title">Tap the Star Icon on Any Screen</h4>
+              <p class="step-desc">
+                Whenever you are viewing a <strong>Route</strong>, a <strong>Stop</strong>, or an upcoming <strong>Schedule</strong>, look at the top-right corner of the screen. Tap the <strong>Star (⭐️)</strong> icon.
+              </p>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="step-item">
+              <div class="step-number">2</div>
+              <h4 class="step-title">Check the Confirmation Toast</h4>
+              <p class="step-desc">
+                Fleety displays a bottom toast: <code>Added to favorite</code>. The star fills in solid to indicate that the item is saved.
+              </p>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="step-item">
+              <div class="step-number">3</div>
+              <h4 class="step-title">Open the Favorites Tab</h4>
+              <p class="step-desc">
+                From the bottom navigation bar, tap the <strong>Favorites (⭐️)</strong> tab. Here, all your saved transit items are neatly grouped into three dedicated sub-tabs:
+              </p>
+              <ul class="text-muted small mt-2" style="line-height: 1.8;">
+                <li><strong>Schedules:</strong> Your most-watched departures with live minute countdowns.</li>
+                <li><strong>Routes:</strong> Direct one-tap access to your daily bus and train lines.</li>
+                <li><strong>Stops:</strong> Saved physical stop hubs showing all passing routes.</li>
+              </ul>
+            </div>
+
+            <!-- Step 4 -->
+            <div class="step-item">
+              <div class="step-number">4</div>
+              <h4 class="step-title">Remove a Favorite Anytime</h4>
+              <p class="step-desc">
+                Changed your routine? Simply tap the filled star icon again on that item's screen or use the edit pencil button in the Favorites tab to delete it instantly.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Pro Commuter Tips -->
+        <section class="mb-5">
+          <div class="pro-tip-box">
+            <h5><i class="fas fa-lightbulb text-warning"></i> Pro Commuter Tips</h5>
+            <ul class="mb-0 pl-3 text-muted" style="line-height: 1.8;">
+              <li class="mb-2">
+                <strong>Morning vs. Evening Commute:</strong> Star the departure for your morning stop heading downtown, and star the evening return stop. You can check both in seconds without searching!
+              </li>
+              <li class="mb-2">
+                <strong>Instant Offline Access:</strong> When you favorite an item, Fleety automatically caches its timetable and route coordinates on your device so you can view it even in subway tunnels.
+              </li>
+              <li>
+                <strong>One-Tap Route Timelines:</strong> Favoriting an entire route lets you open its complete stop timeline and destination switcher with a single tap right from the home screen.
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="mb-5">
+          <h3 class="font-weight-bold mb-3" style="font-size: 1.35rem;">Frequently Asked Questions</h3>
+
+          <div class="card border-0 mb-3 glass-card p-3">
+            <h6 class="font-weight-bold text-dark mb-2">
+              <i class="fas fa-question-circle text-primary mr-2"></i> Is there a limit to how many items I can favorite?
+            </h6>
+            <p class="text-muted small mb-0">
+              No! You can save as many schedules, routes, and stops as you need across multiple transit operators.
+            </p>
+          </div>
+
+          <div class="card border-0 mb-3 glass-card p-3">
+            <h6 class="font-weight-bold text-dark mb-2">
+              <i class="fas fa-question-circle text-primary mr-2"></i> Do favorites sync across devices?
+            </h6>
+            <p class="text-muted small mb-0">
+              Favorites are securely stored locally on your device for instant offline access and maximum battery efficiency.
+            </p>
+          </div>
+
+          <div class="card border-0 mb-3 glass-card p-3">
+            <h6 class="font-weight-bold text-dark mb-2">
+              <i class="fas fa-question-circle text-primary mr-2"></i> Can I reorder my favorites?
+            </h6>
+            <p class="text-muted small mb-0">
+              Yes! Tap the blue pencil floating button in the bottom right of the Favorites screen to reorder or batch delete saved items.
+            </p>
+          </div>
+        </section>
+
+        <!-- Feedback Card -->
+        <div class="helpful-feedback-card mb-4">
+          <div>
+            <h6 class="font-weight-bold mb-1">Was this tutorial helpful?</h6>
+            <span class="text-muted small">Help us improve Fleety guides</span>
+          </div>
+          <div class="d-flex gap-2" id="feedbackActions">
+            <button class="helpful-btn mr-2" onclick="recordFeedback(true)" aria-label="Yes, helpful">
+              <i class="far fa-thumbs-up text-success"></i> Helpful
+            </button>
+            <button class="helpful-btn" onclick="recordFeedback(false)" aria-label="Needs work">
+              <i class="far fa-thumbs-down text-danger"></i> Needs work
+            </button>
+          </div>
+          <div id="feedbackThanks" class="d-none text-success font-weight-bold small">
+            <i class="fas fa-check-circle mr-1"></i> Thank you for your feedback!
+          </div>
+        </div>
+
+        <!-- Back to All Tutorials Button (Mobile Visible) -->
+        <div class="text-center mt-4 mb-2 d-lg-none">
+          <a href="index.html" class="btn btn-outline-primary btn-sm rounded-pill font-weight-bold px-4 py-2">
+            <i class="fas fa-arrow-left mr-2"></i> View All Fleety Tutorials
+          </a>
+        </div>
+
+      </div>
+
+    </div>
+  </main>
+
+  <!-- More Tutorials Section -->
+  <section class="py-5" style="background: #f1f5f9; border-top: 1px solid #e2e8f0;">
+    <div class="container">
+      <div class="d-flex align-items-center justify-content-between mb-4">
+        <div>
+          <h4 class="font-weight-bold mb-1">Explore More Guides</h4>
+          <p class="text-muted mb-0 small">Master all features of Fleety</p>
+        </div>
+        <a href="index.html" class="btn btn-outline-primary btn-sm rounded-pill font-weight-bold px-3">
+          View All Guides <i class="fas fa-arrow-right ml-1"></i>
+        </a>
+      </div>
+
+      <div class="row">
+        <!-- Stop Preview Card -->
+        <div class="col-md-4 mb-3">
+          <a href="stop-preview.html" class="card p-3 border-0 glass-card h-100 text-decoration-none">
+            <div class="d-flex align-items-center mb-2">
+              <span class="badge badge-primary mr-2" style="background: var(--primary-gradient);">Featured Guide</span>
+              <span class="small text-muted"><i class="far fa-clock mr-1"></i> 2 min</span>
+            </div>
+            <h6 class="font-weight-bold mb-1 text-dark">Hold to Preview Any Stop</h6>
+            <p class="text-muted small mb-2">Long-press any departure card to quickly zoom in on its exact position.</p>
+            <span class="small text-primary font-weight-bold mt-auto">Read Guide →</span>
+          </a>
+        </div>
+
+        <!-- Stop Hub Card -->
+        <div class="col-md-4 mb-3">
+          <a href="stop.html" class="card p-3 border-0 glass-card h-100 text-decoration-none">
+            <div class="d-flex align-items-center mb-2">
+              <span class="badge badge-primary mr-2" style="background: var(--primary-gradient);">Stop Hub</span>
+              <span class="small text-muted"><i class="far fa-clock mr-1"></i> 2 min</span>
+            </div>
+            <h6 class="font-weight-bold mb-1 text-dark">Stops & Multi-Route Departures</h6>
+            <p class="text-muted small mb-2">Find stops by 4-digit code and view all routes serving that stop.</p>
+            <span class="small text-primary font-weight-bold mt-auto">Read Guide →</span>
+          </a>
+        </div>
+
+        <!-- Schedule & Live Tracking Card -->
+        <div class="col-md-4 mb-3">
+          <a href="schedule.html" class="card p-3 border-0 glass-card h-100 text-decoration-none">
+            <div class="d-flex align-items-center mb-2">
+              <span class="badge badge-success mr-2" style="background: #10b981;">Live Tracking</span>
+              <span class="small text-muted"><i class="far fa-clock mr-1"></i> 2 min</span>
+            </div>
+            <h6 class="font-weight-bold mb-1 text-dark">Full Schedule & Live Bus Tracking</h6>
+            <p class="text-muted small mb-2">Watch live transit buses moving along their route in real-time.</p>
+            <span class="small text-primary font-weight-bold mt-auto">Read Guide →</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Download Section -->
+  <section class="download section-padding" style="background: var(--primary-gradient);">
+    <div class="container text-center text-white">
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <h3 class="display-4 font-weight-bold text-white mb-3" style="font-size: 2.2rem;">Try It in Fleety Now</h3>
+          <div class="line mx-auto my-3 bg-white"></div>
+          <p class="text-white opacity-8 mb-4" style="font-size: 1.05rem;">
+            Download Fleety for free on iOS and Android to bookmark your daily favorites and track transit live across Canada and the US.
+          </p>
+          <div class="d-flex flex-wrap justify-content-center gap-3">
+            <a href="https://play.google.com/store/apps/details?id=com.transport.fleety" target="_blank" class="mr-3 mb-2">
+              <img src="../images/playstore.png" class="store-badge-lg" alt="Get it on Google Play" style="height: 48px;">
+            </a>
+            <a href="https://apps.apple.com/us/app/id6748264047" target="_blank" class="mb-2">
+              <img src="../images/appstore.png" class="store-badge-lg" alt="Download on App Store" style="height: 48px;">
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer-copy py-4" style="background: #ffffff; border-top: 1px solid #edf2f7;">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-6 text-center text-md-left mb-2 mb-md-0">
+          <p class="mb-0 text-muted small">© 2026 Fleety. All rights reserved.</p>
+        </div>
+        <div class="col-md-6 text-center text-md-right">
+          <ul class="list-inline mb-0 small">
+            <li class="list-inline-item"><a href="../index.html" class="text-muted">Home</a></li>
+            <li class="list-inline-item mx-2 text-muted">&bull;</li>
+            <li class="list-inline-item"><a href="index.html" class="text-primary font-weight-bold">Tutorials</a></li>
+            <li class="list-inline-item mx-2 text-muted">&bull;</li>
+            <li class="list-inline-item"><a href="../privacy/index.html" class="text-muted">Privacy Policy</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"
+    integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+    crossorigin="anonymous"></script>
+
+  <!-- Video Playback & Feedback Script -->
+  <script>
+    const video = document.getElementById('tutorialVideo');
+    const playPauseBtn = document.getElementById('playPauseBtn');
+    const playPauseIcon = document.getElementById('playPauseIcon');
+    const playPauseText = document.getElementById('playPauseText');
+    const speedBtn = document.getElementById('speedBtn');
+    const speedText = document.getElementById('speedText');
+
+    function togglePlayPause() {
+      if (video.paused) {
+        video.play();
+        playPauseIcon.className = 'fas fa-pause mr-1';
+        playPauseText.textContent = 'Pause';
+      } else {
+        video.pause();
+        playPauseIcon.className = 'fas fa-play mr-1';
+        playPauseText.textContent = 'Play';
+      }
+    }
+
+    function restartVideo() {
+      video.currentTime = 0;
+      video.play();
+      playPauseIcon.className = 'fas fa-pause mr-1';
+      playPauseText.textContent = 'Pause';
+    }
+
+    const speeds = [1.0, 0.75, 0.5];
+    let currentSpeedIndex = 0;
+
+    function toggleSpeed() {
+      currentSpeedIndex = (currentSpeedIndex + 1) % speeds.length;
+      const newSpeed = speeds[currentSpeedIndex];
+      video.playbackRate = newSpeed;
+      speedText.textContent = newSpeed.toFixed(2) + 'x';
+    }
+
+    // Feedback logic
+    function recordFeedback(isPositive) {
+      $('#feedbackActions').addClass('d-none');
+      $('#feedbackThanks').removeClass('d-none');
+    }
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>How to Select & Manage Transit Agencies | Fleety Tutorial</title>
+  <meta name="description"
+    content="Learn how to choose and switch transit operators in Fleety. Search by city, country, or operator name, and add multiple agencies to your quick-switch menu.">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+    integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css"
+    integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="../style.css" />
+  <link rel="stylesheet" type="text/css" href="css/tutorial.css" />
+  <link rel="icon" href="../favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg tutorial-nav fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="../index.html">
+        <img src="../images/logo-black.png" alt="Fleety" style="height: 38px;">
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#tutorialNavbar"
+        aria-controls="tutorialNavbar" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="fas fa-bars text-dark"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="tutorialNavbar">
+        <ul class="navbar-nav ml-auto align-items-lg-center">
+          <li class="nav-item">
+            <a class="nav-link" href="../index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../index.html#features">Features</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active font-weight-bold" href="index.html">Tutorials</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../privacy/index.html">Privacy</a>
+          </li>
+          <li class="nav-item ml-lg-3 mt-2 mt-lg-0">
+            <a class="btn-glow" href="https://play.google.com/store/apps/details?id=com.transport.fleety" target="_blank">
+              <i class="fab fa-google-play mr-1"></i> Download
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Breadcrumb & Header Section -->
+  <header class="tutorial-hero tutorial-hero-detail">
+    <div class="container">
+      <!-- Breadcrumb -->
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb tutorial-breadcrumb px-0">
+          <li class="breadcrumb-item"><a href="../index.html">Home</a></li>
+          <li class="breadcrumb-item"><a href="index.html">Tutorials</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Transit Agencies</li>
+        </ol>
+      </nav>
+
+      <div class="row align-items-center">
+        <div class="col-lg-10">
+          <div class="d-flex flex-wrap align-items-center gap-2 mb-3">
+            <span class="badge badge-pill badge-primary font-weight-bold px-3 py-1 mr-2" style="background: var(--primary-gradient);">
+              <i class="fas fa-city mr-1"></i> Multi-Operator
+            </span>
+            <span class="badge badge-pill badge-success text-white font-weight-bold px-3 py-1 mr-2" style="background: #10b981;">
+              <i class="fas fa-globe mr-1"></i> City & Country Search
+            </span>
+            <span class="text-white-50 small mt-1 mt-sm-0">
+              <i class="far fa-clock mr-1"></i> 2 min read &bull; iOS & Android
+            </span>
+          </div>
+
+          <h1 class="font-weight-bold mb-3">How to Select & Manage Transit Operators in Fleety</h1>
+          <p class="lead mb-0">
+            Commute between multiple cities or regional transit systems? Search transit agencies by name, city, or country, add several operators at once, and toggle between them seamlessly with the top switcher.
+          </p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content Layout (Mobile First) -->
+  <main class="container py-4 py-md-5">
+    <div class="row">
+
+      <!-- Right Column on Desktop, Top on Mobile (Video Showcase) -->
+      <div class="col-lg-5 order-lg-2 mb-5 mb-lg-0">
+        <div style="position: sticky; top: 90px;">
+          
+          <!-- Video Container in Phone Mockup Frame -->
+          <div class="phone-mockup-container">
+            <div class="phone-mockup-screen">
+              <video id="tutorialVideo" autoplay loop muted playsinline poster="agencies_thumb.jpg">
+                <source src="agencies.mp4" type="video/mp4">
+                Your browser does not support HTML5 video.
+              </video>
+            </div>
+          </div>
+
+          <!-- Video Playback Controls -->
+          <div class="video-control-bar">
+            <button class="video-ctrl-btn" id="playPauseBtn" onclick="togglePlayPause()" aria-label="Toggle Play/Pause">
+              <i class="fas fa-pause mr-1" id="playPauseIcon"></i>
+              <span id="playPauseText">Pause</span>
+            </button>
+            <button class="video-ctrl-btn" onclick="restartVideo()" aria-label="Replay Video">
+              <i class="fas fa-redo-alt mr-1"></i>
+              <span>Replay</span>
+            </button>
+            <button class="video-ctrl-btn" id="speedBtn" onclick="toggleSpeed()" aria-label="Change Speed">
+              <i class="fas fa-tachometer-alt mr-1"></i>
+              <span id="speedText">1.0x</span>
+            </button>
+          </div>
+
+          <!-- Video Timeline Guide -->
+          <div class="glass-card p-3 p-md-4 mt-4" style="background: #ffffff;">
+            <h6 class="font-weight-bold mb-3 d-flex align-items-center">
+              <i class="fas fa-film text-primary mr-2"></i>
+              <span>What Happens in the Video</span>
+            </h6>
+
+            <div class="mb-3 small pb-2 border-bottom">
+              <div class="d-flex justify-content-between mb-1">
+                <strong class="text-primary"><i class="fas fa-caret-down mr-1"></i> 00:00 – 00:06</strong>
+                <span class="badge badge-light">Open Operator Menu</span>
+              </div>
+              <p class="text-muted mb-0">Rider taps the active agency selector at the top and taps <strong>"+ Add/Remove Transit"</strong>.</p>
+            </div>
+
+            <div class="mb-3 small pb-2 border-bottom">
+              <div class="d-flex justify-content-between mb-1">
+                <strong class="text-info"><i class="fas fa-search mr-1"></i> 00:07 – 00:14</strong>
+                <span class="badge badge-info text-white">Search by City / Name</span>
+              </div>
+              <p class="text-muted mb-0">Rider filters by country (Canada) and searches for <em>Toronto</em>, listing municipal & regional agencies.</p>
+            </div>
+
+            <div class="mb-3 small pb-2 border-bottom">
+              <div class="d-flex justify-content-between mb-1">
+                <strong class="text-success"><i class="fas fa-check-square mr-1"></i> 00:15 – 00:20</strong>
+                <span class="badge badge-success">Multi-Select Agencies</span>
+              </div>
+              <p class="text-muted mb-0">Rider selects multiple operators (TTC, GO Transit, MiWay) with simple checkmarks.</p>
+            </div>
+
+            <div class="small">
+              <div class="d-flex justify-content-between mb-1">
+                <strong class="text-primary"><i class="fas fa-exchange-alt mr-1"></i> 00:21 – 00:25</strong>
+                <span class="badge badge-light">Instant Switcher</span>
+              </div>
+              <p class="text-muted mb-0">The newly selected agencies populate the dropdown list for immediate one-tap switching.</p>
+            </div>
+          </div>
+
+          <!-- Back to Hub Link -->
+          <div class="text-center mt-3 d-none d-lg-block">
+            <a href="index.html" class="text-primary font-weight-bold small d-inline-flex align-items-center">
+              <i class="fas fa-arrow-left mr-2"></i> Back to all Fleety Tutorials
+            </a>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Left Column on Desktop, Bottom on Mobile (Step-by-Step Guide) -->
+      <div class="col-lg-7 order-lg-1 pr-lg-5">
+
+        <!-- Quick Summary Box (Mobile Friendly) -->
+        <div class="gesture-summary-card">
+          <h5 class="font-weight-bold text-dark mb-3">
+            <i class="fas fa-city text-primary mr-2"></i> Operator Management at a Glance
+          </h5>
+          <div class="row">
+            <div class="col-sm-4 mb-2 mb-sm-0">
+              <div class="bg-white p-3 rounded-12 shadow-sm border h-100" style="border-radius: 12px;">
+                <div class="text-primary font-weight-bold mb-1">
+                  <i class="fas fa-caret-down mr-1 text-primary"></i> 1. Open Menu
+                </div>
+                <p class="text-muted small mb-0">
+                  Tap the top operator bar and select "+ Add/Remove Transit".
+                </p>
+              </div>
+            </div>
+            <div class="col-sm-4 mb-2 mb-sm-0">
+              <div class="bg-white p-3 rounded-12 shadow-sm border h-100" style="border-radius: 12px;">
+                <div class="text-success font-weight-bold mb-1" style="color: #10b981 !important;">
+                  <i class="fas fa-search mr-1"></i> 2. Search City/Name
+                </div>
+                <p class="text-muted small mb-0">
+                  Filter by country and type your city or agency abbreviation.
+                </p>
+              </div>
+            </div>
+            <div class="col-sm-4">
+              <div class="bg-white p-3 rounded-12 shadow-sm border h-100" style="border-radius: 12px;">
+                <div class="text-info font-weight-bold mb-1" style="color: #0284c7 !important;">
+                  <i class="fas fa-check-double mr-1"></i> 3. Multi-Select
+                </div>
+                <p class="text-muted small mb-0">
+                  Add multiple transit networks and switch in one tap.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Detailed Steps -->
+        <section class="mb-5">
+          <h2 class="font-weight-bold mb-4" style="font-size: 1.55rem; color: var(--text-dark);">
+            Step-by-Step Instructions
+          </h2>
+
+          <div class="tutorial-steps">
+            <!-- Step 1 -->
+            <div class="step-item">
+              <div class="step-number">1</div>
+              <h4 class="step-title">Tap the Operator Selector</h4>
+              <p class="step-desc">
+                On the top navigation bar of Fleety, tap your currently active transit operator name (or the dropdown arrow). Tap the <strong>"+ Add/Remove Transit"</strong> button to open the operator directory.
+              </p>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="step-item">
+              <div class="step-number">2</div>
+              <h4 class="step-title">Select Your Country or Region</h4>
+              <p class="step-desc">
+                Choose your country tab (such as <strong>Canada</strong> or <strong>United States</strong>) to focus on transit agencies operating in your region.
+              </p>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="step-item">
+              <div class="step-number">3</div>
+              <h4 class="step-title">Search by City, Region, or Operator Name</h4>
+              <p class="step-desc">
+                Use the search input field to type a municipality (e.g. <em>Toronto</em>, <em>Ottawa</em>, <em>Kingston</em>, <em>New York</em>) or a specific agency abbreviation like <em>TTC</em>, <em>GO</em>, or <em>MTA</em>. Fleety filters results in real time.
+              </p>
+            </div>
+
+            <!-- Step 4 -->
+            <div class="step-item">
+              <div class="step-number">4</div>
+              <h4 class="step-title">Multi-Select Your Commuter Agencies</h4>
+              <p class="step-desc">
+                Check the checkbox next to every transit network you ride. You can select multiple operators at once (for example, combining local municipal buses with regional commuter rail). Uncheck any agencies you no longer use.
+              </p>
+            </div>
+
+            <!-- Step 5 -->
+            <div class="step-item">
+              <div class="step-number">5</div>
+              <h4 class="step-title">Switch Between Networks with One Tap</h4>
+              <p class="step-desc">
+                Confirm your selection. All chosen operators are now pinned to your quick-switch dropdown menu at the top of Fleety. Tap any operator name to instantly reload routes, stops, and live GPS vehicles for that system.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Pro Commuter Tips -->
+        <section class="mb-5">
+          <div class="pro-tip-box">
+            <h5><i class="fas fa-lightbulb text-warning"></i> Pro Commuter Tips</h5>
+            <ul class="mb-0 pl-3 text-muted" style="line-height: 1.8;">
+              <li class="mb-2">
+                <strong>Regional Commuters:</strong> If you take a commuter rail train (such as GO Transit) and transfer to a municipal subway/bus (such as TTC or MiWay), add both to your quick list for rapid transfers.
+              </li>
+              <li class="mb-2">
+                <strong>Favorites Stay Intact:</strong> When you switch operators, your bookmarked favorite routes and stops for other agencies are safely saved in your Favorites tab.
+              </li>
+              <li class="mb-2">
+                <strong>Travel Ready:</strong> Visiting another city? Add that city's transit provider before you depart, download offline schedules, and hit the ground running.
+              </li>
+              <li>
+                <strong>Suggest an Agency:</strong> Missing your hometown transit system? Email <a href="mailto:support@fleetytransit.com">support@fleetytransit.com</a> with your city name and we will look into adding it!
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="mb-5">
+          <h3 class="font-weight-bold mb-3" style="font-size: 1.35rem;">Frequently Asked Questions</h3>
+
+          <div class="card border-0 mb-3 glass-card p-3">
+            <h6 class="font-weight-bold text-dark mb-2">
+              <i class="fas fa-question-circle text-primary mr-2"></i> How many transit agencies can I add to Fleety?
+            </h6>
+            <p class="text-muted small mb-0">
+              There is no limit! You can add as many municipal, regional, and rail operators as you need for daily commutes and travel.
+            </p>
+          </div>
+
+          <div class="card border-0 mb-3 glass-card p-3">
+            <h6 class="font-weight-bold text-dark mb-2">
+              <i class="fas fa-question-circle text-primary mr-2"></i> Does Fleety support both Canada and the United States?
+            </h6>
+            <p class="text-muted small mb-0">
+              Yes! Fleety supports major transit authorities across Canadian provinces and US metropolitan areas, with new GTFS feeds continuously added.
+            </p>
+          </div>
+
+          <div class="card border-0 mb-3 glass-card p-3">
+            <h6 class="font-weight-bold text-dark mb-2">
+              <i class="fas fa-question-circle text-primary mr-2"></i> Does switching agencies delete my offline data?
+            </h6>
+            <p class="text-muted small mb-0">
+              No. Offline schedule bundles remain cached per agency on your phone until you explicitly delete them in settings.
+            </p>
+          </div>
+        </section>
+
+        <!-- Feedback Card -->
+        <div class="helpful-feedback-card mb-4">
+          <div>
+            <h6 class="font-weight-bold mb-1">Was this tutorial helpful?</h6>
+            <span class="text-muted small">Help us improve Fleety guides</span>
+          </div>
+          <div class="d-flex gap-2" id="feedbackActions">
+            <button class="helpful-btn mr-2" onclick="recordFeedback(true)" aria-label="Yes, helpful">
+              <i class="far fa-thumbs-up text-success"></i> Helpful
+            </button>
+            <button class="helpful-btn" onclick="recordFeedback(false)" aria-label="Needs work">
+              <i class="far fa-thumbs-down text-danger"></i> Needs work
+            </button>
+          </div>
+          <div id="feedbackThanks" class="d-none text-success font-weight-bold small">
+            <i class="fas fa-check-circle mr-1"></i> Thank you for your feedback!
+          </div>
+        </div>
+
+        <!-- Back to All Tutorials Button (Mobile Visible) -->
+        <div class="text-center mt-4 mb-2 d-lg-none">
+          <a href="index.html" class="btn btn-outline-primary btn-sm rounded-pill font-weight-bold px-4 py-2">
+            <i class="fas fa-arrow-left mr-2"></i> View All Fleety Tutorials
+          </a>
+        </div>
+
+      </div>
+
+    </div>
+  </main>
+
+  <!-- More Tutorials Section -->
+  <section class="py-5" style="background: #f1f5f9; border-top: 1px solid #e2e8f0;">
+    <div class="container">
+      <div class="d-flex align-items-center justify-content-between mb-4">
+        <div>
+          <h4 class="font-weight-bold mb-1">Explore More Guides</h4>
+          <p class="text-muted mb-0 small">Master all features of Fleety</p>
+        </div>
+        <a href="index.html" class="btn btn-outline-primary btn-sm rounded-pill font-weight-bold px-3">
+          View All Guides <i class="fas fa-arrow-right ml-1"></i>
+        </a>
+      </div>
+
+      <div class="row">
+        <!-- Offline Data Card -->
+        <div class="col-md-4 mb-3">
+          <a href="offline_data.html" class="card p-3 border-0 glass-card h-100 text-decoration-none">
+            <div class="d-flex align-items-center mb-2">
+              <span class="badge badge-info mr-2" style="background: #0284c7;">Offline Mode</span>
+              <span class="small text-muted"><i class="far fa-clock mr-1"></i> 2 min</span>
+            </div>
+            <h6 class="font-weight-bold mb-1 text-dark">Download Transit Data Offline</h6>
+            <p class="text-muted small mb-2">Save local schedule timetables to check departures without cellular reception.</p>
+            <span class="small text-primary font-weight-bold mt-auto">Read Guide →</span>
+          </a>
+        </div>
+
+        <!-- Route Guide Card -->
+        <div class="col-md-4 mb-3">
+          <a href="route.html" class="card p-3 border-0 glass-card h-100 text-decoration-none">
+            <div class="d-flex align-items-center mb-2">
+              <span class="badge badge-primary mr-2" style="background: var(--primary-gradient);">Route Guide</span>
+              <span class="small text-muted"><i class="far fa-clock mr-1"></i> 2 min</span>
+            </div>
+            <h6 class="font-weight-bold mb-1 text-dark">Browse Routes & Stops</h6>
+            <p class="text-muted small mb-2">Inspect full stop sequences along any route and tap any stop for arrival times.</p>
+            <span class="small text-primary font-weight-bold mt-auto">Read Guide →</span>
+          </a>
+        </div>
+
+        <!-- Schedule Card -->
+        <div class="col-md-4 mb-3">
+          <a href="schedule.html" class="card p-3 border-0 glass-card h-100 text-decoration-none">
+            <div class="d-flex align-items-center mb-2">
+              <span class="badge badge-success mr-2" style="background: #10b981;">Live Tracking</span>
+              <span class="small text-muted"><i class="far fa-clock mr-1"></i> 2 min</span>
+            </div>
+            <h6 class="font-weight-bold mb-1 text-dark">Schedule & Live Bus Tracking</h6>
+            <p class="text-muted small mb-2">Watch live transit buses moving along their route and check upcoming countdowns.</p>
+            <span class="small text-primary font-weight-bold mt-auto">Read Guide →</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Download Section -->
+  <section class="download section-padding" style="background: var(--primary-gradient);">
+    <div class="container text-center text-white">
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <h3 class="display-4 font-weight-bold text-white mb-3" style="font-size: 2.2rem;">Try It in Fleety Now</h3>
+          <div class="line mx-auto my-3 bg-white"></div>
+          <p class="text-white opacity-8 mb-4" style="font-size: 1.05rem;">
+            Download Fleety for free on iOS and Android to manage multiple transit operators and track live vehicles across North America.
+          </p>
+          <div class="d-flex flex-wrap justify-content-center gap-3">
+            <a href="https://play.google.com/store/apps/details?id=com.transport.fleety" target="_blank" class="mr-3 mb-2">
+              <img src="../images/playstore.png" class="store-badge-lg" alt="Get it on Google Play" style="height: 48px;">
+            </a>
+            <a href="https://apps.apple.com/us/app/id6748264047" target="_blank" class="mb-2">
+              <img src="../images/appstore.png" class="store-badge-lg" alt="Download on App Store" style="height: 48px;">
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer-copy py-4" style="background: #ffffff; border-top: 1px solid #edf2f7;">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-6 text-center text-md-left mb-2 mb-md-0">
+          <p class="mb-0 text-muted small">© 2026 Fleety. All rights reserved.</p>
+        </div>
+        <div class="col-md-6 text-center text-md-right">
+          <ul class="list-inline mb-0 small">
+            <li class="list-inline-item"><a href="../index.html" class="text-muted">Home</a></li>
+            <li class="list-inline-item mx-2 text-muted">&bull;</li>
+            <li class="list-inline-item"><a href="index.html" class="text-primary font-weight-bold">Tutorials</a></li>
+            <li class="list-inline-item mx-2 text-muted">&bull;</li>
+            <li class="list-inline-item"><a href="../privacy/index.html" class="text-muted">Privacy Policy</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"
+    integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+    crossorigin="anonymous"></script>
+
+  <!-- Video Playback & Feedback Script -->
+  <script>
+    const video = document.getElementById('tutorialVideo');
+    const playPauseBtn = document.getElementById('playPauseBtn');
+    const playPauseIcon = document.getElementById('playPauseIcon');
+    const playPauseText = document.getElementById('playPauseText');
+    const speedBtn = document.getElementById('speedBtn');
+    const speedText = document.getElementById('speedText');
+
+    function togglePlayPause() {
+      if (video.paused) {
+        video.play();
+        playPauseIcon.className = 'fas fa-pause mr-1';
+        playPauseText.textContent = 'Pause';
+      } else {
+        video.pause();
+        playPauseIcon.className = 'fas fa-play mr-1';
+        playPauseText.textContent = 'Play';
+      }
+    }
+
+    function restartVideo() {
+      video.currentTime = 0;
+      video.play();
+      playPauseIcon.className = 'fas fa-pause mr-1';
+      playPauseText.textContent = 'Pause';
+    }
+
+    const speeds = [1.0, 0.75, 0.5];
+    let currentSpeedIndex = 0;
+
+    function toggleSpeed() {
+      currentSpeedIndex = (currentSpeedIndex + 1) % speeds.length;
+      const newSpeed = speeds[currentSpeedIndex];
+      video.playbackRate = newSpeed;
+      speedText.textContent = newSpeed.toFixed(2) + 'x';
+    }
+
+    // Feedback logic
+    function recordFeedback(isPositive) {
+      $('#feedbackActions').addClass('d-none');
+      $('#feedbackThanks').removeClass('d-none');
+    }
+  </script>
+</body>
+
+</html>

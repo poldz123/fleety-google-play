@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>How to Download Transit Data for Offline Use | Fleety Tutorial</title>
+  <meta name="description"
+    content="Learn how to download local transit schedules for offline use in Fleety. Access complete bus and train timetables even without cellular data or Wi-Fi.">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+    integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css"
+    integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="../style.css" />
+  <link rel="stylesheet" type="text/css" href="css/tutorial.css" />
+  <link rel="icon" href="../favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg tutorial-nav fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="../index.html">
+        <img src="../images/logo-black.png" alt="Fleety" style="height: 38px;">
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#tutorialNavbar"
+        aria-controls="tutorialNavbar" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="fas fa-bars text-dark"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="tutorialNavbar">
+        <ul class="navbar-nav ml-auto align-items-lg-center">
+          <li class="nav-item">
+            <a class="nav-link" href="../index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../index.html#features">Features</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active font-weight-bold" href="index.html">Tutorials</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../privacy/index.html">Privacy</a>
+          </li>
+          <li class="nav-item ml-lg-3 mt-2 mt-lg-0">
+            <a class="btn-glow" href="https://play.google.com/store/apps/details?id=com.transport.fleety" target="_blank">
+              <i class="fab fa-google-play mr-1"></i> Download
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Breadcrumb & Header Section -->
+  <header class="tutorial-hero tutorial-hero-detail">
+    <div class="container">
+      <!-- Breadcrumb -->
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb tutorial-breadcrumb px-0">
+          <li class="breadcrumb-item"><a href="../index.html">Home</a></li>
+          <li class="breadcrumb-item"><a href="index.html">Tutorials</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Offline Transit Data</li>
+        </ol>
+      </nav>
+
+      <div class="row align-items-center">
+        <div class="col-lg-10">
+          <div class="d-flex flex-wrap align-items-center gap-2 mb-3">
+            <span class="badge badge-pill badge-primary font-weight-bold px-3 py-1 mr-2" style="background: var(--primary-gradient);">
+              <i class="fas fa-download mr-1"></i> Offline Mode
+            </span>
+            <span class="badge badge-pill badge-info text-white font-weight-bold px-3 py-1 mr-2" style="background: #0284c7;">
+              <i class="fas fa-plane mr-1"></i> No Signal Required
+            </span>
+            <span class="text-white-50 small mt-1 mt-sm-0">
+              <i class="far fa-clock mr-1"></i> 2 min read &bull; iOS & Android
+            </span>
+          </div>
+
+          <h1 class="font-weight-bold mb-3">How to Download Transit Data for Offline Use</h1>
+          <p class="lead mb-0">
+            Commuting through underground subway tunnels or low-reception areas? Save complete schedule timetables directly to your device and lookup departure times anytime without cellular data or Wi-Fi.
+          </p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content Layout (Mobile First) -->
+  <main class="container py-4 py-md-5">
+    <div class="row">
+
+      <!-- Right Column on Desktop, Top on Mobile (Video Showcase) -->
+      <div class="col-lg-5 order-lg-2 mb-5 mb-lg-0">
+        <div style="position: sticky; top: 90px;">
+          
+          <!-- Video Container in Phone Mockup Frame -->
+          <div class="phone-mockup-container">
+            <div class="phone-mockup-screen">
+              <video id="tutorialVideo" autoplay loop muted playsinline poster="offline_data_thumb.jpg">
+                <source src="offline_data.mp4" type="video/mp4">
+                Your browser does not support HTML5 video.
+              </video>
+            </div>
+          </div>
+
+          <!-- Video Playback Controls -->
+          <div class="video-control-bar">
+            <button class="video-ctrl-btn" id="playPauseBtn" onclick="togglePlayPause()" aria-label="Toggle Play/Pause">
+              <i class="fas fa-pause mr-1" id="playPauseIcon"></i>
+              <span id="playPauseText">Pause</span>
+            </button>
+            <button class="video-ctrl-btn" onclick="restartVideo()" aria-label="Replay Video">
+              <i class="fas fa-redo-alt mr-1"></i>
+              <span>Replay</span>
+            </button>
+            <button class="video-ctrl-btn" id="speedBtn" onclick="toggleSpeed()" aria-label="Change Speed">
+              <i class="fas fa-tachometer-alt mr-1"></i>
+              <span id="speedText">1.0x</span>
+            </button>
+          </div>
+
+          <!-- Video Timeline Guide -->
+          <div class="glass-card p-3 p-md-4 mt-4" style="background: #ffffff;">
+            <h6 class="font-weight-bold mb-3 d-flex align-items-center">
+              <i class="fas fa-film text-primary mr-2"></i>
+              <span>What Happens in the Video</span>
+            </h6>
+
+            <div class="mb-3 small pb-2 border-bottom">
+              <div class="d-flex justify-content-between mb-1">
+                <strong class="text-primary"><i class="fas fa-cog mr-1"></i> 00:00 – 00:05</strong>
+                <span class="badge badge-light">Open Transit Settings</span>
+              </div>
+              <p class="text-muted mb-0">Rider opens the Transit operator settings or preferences to view offline download options.</p>
+            </div>
+
+            <div class="mb-3 small pb-2 border-bottom">
+              <div class="d-flex justify-content-between mb-1">
+                <strong class="text-info"><i class="fas fa-toggle-on mr-1"></i> 00:06 – 00:11</strong>
+                <span class="badge badge-info text-white">Enable Download</span>
+              </div>
+              <p class="text-muted mb-0">Rider toggles <strong>"Download transit schedule data"</strong> and Fleety downloads the offline package.</p>
+            </div>
+
+            <div class="mb-3 small pb-2 border-bottom">
+              <div class="d-flex justify-content-between mb-1">
+                <strong class="text-success"><i class="fas fa-check-circle mr-1"></i> 00:12 – 00:15</strong>
+                <span class="badge badge-success">Saved to Device</span>
+              </div>
+              <p class="text-muted mb-0">The download bar completes, caching all routes, stops, and schedules locally on phone.</p>
+            </div>
+
+            <div class="small">
+              <div class="d-flex justify-content-between mb-1">
+                <strong class="text-danger"><i class="fas fa-trash-alt mr-1"></i> 00:16 – 00:18</strong>
+                <span class="badge badge-light">Manage Storage</span>
+              </div>
+              <p class="text-muted mb-0">Rider can delete downloaded schedule bundles at any time to free up local phone storage.</p>
+            </div>
+          </div>
+
+          <!-- Back to Hub Link -->
+          <div class="text-center mt-3 d-none d-lg-block">
+            <a href="index.html" class="text-primary font-weight-bold small d-inline-flex align-items-center">
+              <i class="fas fa-arrow-left mr-2"></i> Back to all Fleety Tutorials
+            </a>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Left Column on Desktop, Bottom on Mobile (Step-by-Step Guide) -->
+      <div class="col-lg-7 order-lg-1 pr-lg-5">
+
+        <!-- Quick Summary Box (Mobile Friendly) -->
+        <div class="gesture-summary-card">
+          <h5 class="font-weight-bold text-dark mb-3">
+            <i class="fas fa-download text-primary mr-2"></i> Offline Mode at a Glance
+          </h5>
+          <div class="row">
+            <div class="col-sm-4 mb-2 mb-sm-0">
+              <div class="bg-white p-3 rounded-12 shadow-sm border h-100" style="border-radius: 12px;">
+                <div class="text-primary font-weight-bold mb-1">
+                  <i class="fas fa-cog mr-1 text-primary"></i> 1. Open Settings
+                </div>
+                <p class="text-muted small mb-0">
+                  Navigate to Transit options to view offline data management.
+                </p>
+              </div>
+            </div>
+            <div class="col-sm-4 mb-2 mb-sm-0">
+              <div class="bg-white p-3 rounded-12 shadow-sm border h-100" style="border-radius: 12px;">
+                <div class="text-info font-weight-bold mb-1" style="color: #0284c7 !important;">
+                  <i class="fas fa-toggle-on mr-1"></i> 2. Toggle Download
+                </div>
+                <p class="text-muted small mb-0">
+                  Turn on download switch to store timetable bundles locally.
+                </p>
+              </div>
+            </div>
+            <div class="col-sm-4">
+              <div class="bg-white p-3 rounded-12 shadow-sm border h-100" style="border-radius: 12px;">
+                <div class="text-success font-weight-bold mb-1">
+                  <i class="fas fa-plane mr-1 text-success"></i> 3. Ride Offline
+                </div>
+                <p class="text-muted small mb-0">
+                  Lookup schedules with zero cell signal in subway tunnels.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Detailed Steps -->
+        <section class="mb-5">
+          <h2 class="font-weight-bold mb-4" style="font-size: 1.55rem; color: var(--text-dark);">
+            Step-by-Step Instructions
+          </h2>
+
+          <div class="tutorial-steps">
+            <!-- Step 1 -->
+            <div class="step-item">
+              <div class="step-number">1</div>
+              <h4 class="step-title">Open Transit Operator Preferences</h4>
+              <p class="step-desc">
+                From the bottom navigation bar, navigate to the <strong>Transit</strong> tab or tap your operator selector at the top. Access the configuration menu for your active transit agency (e.g., OC Transpo, TTC, or GO Transit).
+              </p>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="step-item">
+              <div class="step-number">2</div>
+              <h4 class="step-title">Enable "Download Transit Schedule Data"</h4>
+              <p class="step-desc">
+                Turn on the switch labeled <strong>"Download transit schedule data for offline use"</strong>. Fleety immediately establishes a connection to fetch the latest complete GTFS schedule package.
+              </p>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="step-item">
+              <div class="step-number">3</div>
+              <h4 class="step-title">Watch the Download Progress</h4>
+              <p class="step-desc">
+                A blue progress bar will indicate download and indexing progress. Once completed, a confirmation badge displays with the cached package size (typically 3 to 15 MB) and the date saved.
+              </p>
+            </div>
+
+            <!-- Step 4 -->
+            <div class="step-item">
+              <div class="step-number">4</div>
+              <h4 class="step-title">Browse Full Schedules Offline</h4>
+              <p class="step-desc">
+                You're ready to commute! Turn on Airplane Mode or enter an underground subway station—Fleety automatically serves stops, route sequences, and full daily timetables instantly from your phone's memory.
+              </p>
+            </div>
+
+            <!-- Step 5 -->
+            <div class="step-item">
+              <div class="step-number">5</div>
+              <h4 class="step-title">Manage Storage or Delete Anytime</h4>
+              <p class="step-desc">
+                Need to free up space or refresh seasonal schedules? Tap <strong>Delete</strong> or toggle the switch off to purge the offline cache from your phone with a single tap.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Pro Commuter Tips -->
+        <section class="mb-5">
+          <div class="pro-tip-box">
+            <h5><i class="fas fa-lightbulb text-warning"></i> Pro Commuter Tips</h5>
+            <ul class="mb-0 pl-3 text-muted" style="line-height: 1.8;">
+              <li class="mb-2">
+                <strong>Download on Wi-Fi Before Your Trip:</strong> Save data bandwidth by downloading your daily agency's offline schedule bundle while connected to home or office Wi-Fi.
+              </li>
+              <li class="mb-2">
+                <strong>Subway Tunnel Essential:</strong> In underground rail stations where cellular signals cut out, offline mode allows you to check transfer timetables without waiting for reception.
+              </li>
+              <li class="mb-2">
+                <strong>Seamless Auto-Fallback:</strong> You do not need to manually toggle anything when entering dead zones—Fleety falls back to your local cache automatically.
+              </li>
+              <li>
+                <strong>Lightweight Storage:</strong> Even large metropolitan transit networks are compressed into a compact file footprint (typically under 12 MB).
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="mb-5">
+          <h3 class="font-weight-bold mb-3" style="font-size: 1.35rem;">Frequently Asked Questions</h3>
+
+          <div class="card border-0 mb-3 glass-card p-3">
+            <h6 class="font-weight-bold text-dark mb-2">
+              <i class="fas fa-question-circle text-primary mr-2"></i> Does offline mode show live moving buses on the map?
+            </h6>
+            <p class="text-muted small mb-0">
+              Live GPS tracking requires an active internet connection to receive real-time vehicle coordinates. In offline mode, Fleety displays the full planned scheduled arrival times.
+            </p>
+          </div>
+
+          <div class="card border-0 mb-3 glass-card p-3">
+            <h6 class="font-weight-bold text-dark mb-2">
+              <i class="fas fa-question-circle text-primary mr-2"></i> How often should I re-download offline schedules?
+            </h6>
+            <p class="text-muted small mb-0">
+              Most transit operators revise schedules every month or each season. Re-downloading once a month ensures you have the most up-to-date timetable changes.
+            </p>
+          </div>
+
+          <div class="card border-0 mb-3 glass-card p-3">
+            <h6 class="font-weight-bold text-dark mb-2">
+              <i class="fas fa-question-circle text-primary mr-2"></i> Can I download schedules for multiple transit agencies?
+            </h6>
+            <p class="text-muted small mb-0">
+              Yes! You can download offline schedules for each transit operator you have added to Fleety.
+            </p>
+          </div>
+        </section>
+
+        <!-- Feedback Card -->
+        <div class="helpful-feedback-card mb-4">
+          <div>
+            <h6 class="font-weight-bold mb-1">Was this tutorial helpful?</h6>
+            <span class="text-muted small">Help us improve Fleety guides</span>
+          </div>
+          <div class="d-flex gap-2" id="feedbackActions">
+            <button class="helpful-btn mr-2" onclick="recordFeedback(true)" aria-label="Yes, helpful">
+              <i class="far fa-thumbs-up text-success"></i> Helpful
+            </button>
+            <button class="helpful-btn" onclick="recordFeedback(false)" aria-label="Needs work">
+              <i class="far fa-thumbs-down text-danger"></i> Needs work
+            </button>
+          </div>
+          <div id="feedbackThanks" class="d-none text-success font-weight-bold small">
+            <i class="fas fa-check-circle mr-1"></i> Thank you for your feedback!
+          </div>
+        </div>
+
+        <!-- Back to All Tutorials Button (Mobile Visible) -->
+        <div class="text-center mt-4 mb-2 d-lg-none">
+          <a href="index.html" class="btn btn-outline-primary btn-sm rounded-pill font-weight-bold px-4 py-2">
+            <i class="fas fa-arrow-left mr-2"></i> View All Fleety Tutorials
+          </a>
+        </div>
+
+      </div>
+
+    </div>
+  </main>
+
+  <!-- More Tutorials Section -->
+  <section class="py-5" style="background: #f1f5f9; border-top: 1px solid #e2e8f0;">
+    <div class="container">
+      <div class="d-flex align-items-center justify-content-between mb-4">
+        <div>
+          <h4 class="font-weight-bold mb-1">Explore More Guides</h4>
+          <p class="text-muted mb-0 small">Master all features of Fleety</p>
+        </div>
+        <a href="index.html" class="btn btn-outline-primary btn-sm rounded-pill font-weight-bold px-3">
+          View All Guides <i class="fas fa-arrow-right ml-1"></i>
+        </a>
+      </div>
+
+      <div class="row">
+        <!-- Agencies Card -->
+        <div class="col-md-4 mb-3">
+          <a href="agencies.html" class="card p-3 border-0 glass-card h-100 text-decoration-none">
+            <div class="d-flex align-items-center mb-2">
+              <span class="badge badge-success mr-2" style="background: #10b981;">Multi-Operator</span>
+              <span class="small text-muted"><i class="far fa-clock mr-1"></i> 2 min</span>
+            </div>
+            <h6 class="font-weight-bold mb-1 text-dark">Select & Manage Transit Agencies</h6>
+            <p class="text-muted small mb-2">Search operators by city or name and add multiple transit networks to Fleety.</p>
+            <span class="small text-primary font-weight-bold mt-auto">Read Guide →</span>
+          </a>
+        </div>
+
+        <!-- Timetable & Calendar Card -->
+        <div class="col-md-4 mb-3">
+          <a href="timetable.html" class="card p-3 border-0 glass-card h-100 text-decoration-none">
+            <div class="d-flex align-items-center mb-2">
+              <span class="badge badge-primary mr-2" style="background: var(--primary-gradient);">Timetable</span>
+              <span class="small text-muted"><i class="far fa-clock mr-1"></i> 2 min</span>
+            </div>
+            <h6 class="font-weight-bold mb-1 text-dark">Full Timetable & Calendar Schedules</h6>
+            <p class="text-muted small mb-2">Browse all daily departures and select future dates on the calendar.</p>
+            <span class="small text-primary font-weight-bold mt-auto">Read Guide →</span>
+          </a>
+        </div>
+
+        <!-- Stop Hub Card -->
+        <div class="col-md-4 mb-3">
+          <a href="stop.html" class="card p-3 border-0 glass-card h-100 text-decoration-none">
+            <div class="d-flex align-items-center mb-2">
+              <span class="badge badge-primary mr-2" style="background: var(--primary-gradient);">Stop Hub</span>
+              <span class="small text-muted"><i class="far fa-clock mr-1"></i> 2 min</span>
+            </div>
+            <h6 class="font-weight-bold mb-1 text-dark">Stops & Multi-Route Departures</h6>
+            <p class="text-muted small mb-2">Find stops by 4-digit code and view all routes serving that stop.</p>
+            <span class="small text-primary font-weight-bold mt-auto">Read Guide →</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Download Section -->
+  <section class="download section-padding" style="background: var(--primary-gradient);">
+    <div class="container text-center text-white">
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <h3 class="display-4 font-weight-bold text-white mb-3" style="font-size: 2.2rem;">Try It in Fleety Now</h3>
+          <div class="line mx-auto my-3 bg-white"></div>
+          <p class="text-white opacity-8 mb-4" style="font-size: 1.05rem;">
+            Download Fleety for free on iOS and Android to access reliable schedules, offline transit data, and live tracking across Canada and the US.
+          </p>
+          <div class="d-flex flex-wrap justify-content-center gap-3">
+            <a href="https://play.google.com/store/apps/details?id=com.transport.fleety" target="_blank" class="mr-3 mb-2">
+              <img src="../images/playstore.png" class="store-badge-lg" alt="Get it on Google Play" style="height: 48px;">
+            </a>
+            <a href="https://apps.apple.com/us/app/id6748264047" target="_blank" class="mb-2">
+              <img src="../images/appstore.png" class="store-badge-lg" alt="Download on App Store" style="height: 48px;">
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer-copy py-4" style="background: #ffffff; border-top: 1px solid #edf2f7;">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-6 text-center text-md-left mb-2 mb-md-0">
+          <p class="mb-0 text-muted small">© 2026 Fleety. All rights reserved.</p>
+        </div>
+        <div class="col-md-6 text-center text-md-right">
+          <ul class="list-inline mb-0 small">
+            <li class="list-inline-item"><a href="../index.html" class="text-muted">Home</a></li>
+            <li class="list-inline-item mx-2 text-muted">&bull;</li>
+            <li class="list-inline-item"><a href="index.html" class="text-primary font-weight-bold">Tutorials</a></li>
+            <li class="list-inline-item mx-2 text-muted">&bull;</li>
+            <li class="list-inline-item"><a href="../privacy/index.html" class="text-muted">Privacy Policy</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"
+    integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+    crossorigin="anonymous"></script>
+
+  <!-- Video Playback & Feedback Script -->
+  <script>
+    const video = document.getElementById('tutorialVideo');
+    const playPauseBtn = document.getElementById('playPauseBtn');
+    const playPauseIcon = document.getElementById('playPauseIcon');
+    const playPauseText = document.getElementById('playPauseText');
+    const speedBtn = document.getElementById('speedBtn');
+    const speedText = document.getElementById('speedText');
+
+    function togglePlayPause() {
+      if (video.paused) {
+        video.play();
+        playPauseIcon.className = 'fas fa-pause mr-1';
+        playPauseText.textContent = 'Pause';
+      } else {
+        video.pause();
+        playPauseIcon.className = 'fas fa-play mr-1';
+        playPauseText.textContent = 'Play';
+      }
+    }
+
+    function restartVideo() {
+      video.currentTime = 0;
+      video.play();
+      playPauseIcon.className = 'fas fa-pause mr-1';
+      playPauseText.textContent = 'Pause';
+    }
+
+    const speeds = [1.0, 0.75, 0.5];
+    let currentSpeedIndex = 0;
+
+    function toggleSpeed() {
+      currentSpeedIndex = (currentSpeedIndex + 1) % speeds.length;
+      const newSpeed = speeds[currentSpeedIndex];
+      video.playbackRate = newSpeed;
+      speedText.textContent = newSpeed.toFixed(2) + 'x';
+    }
+
+    // Feedback logic
+    function recordFeedback(isPositive) {
+      $('#feedbackActions').addClass('d-none');
+      $('#feedbackThanks').removeClass('d-none');
+    }
+  </script>
+</body>
+
+</html>
