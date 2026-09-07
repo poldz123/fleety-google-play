@@ -1,0 +1,1996 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Australia Supported Transit Operators | Fleety Real-Time Transit</title>
+  <meta name="description" content="Browse all 53 supported transit operators in Australia. Track buses, trains, trams, and ferries with Fleety.">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+    integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css"
+    integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="../style.css" />
+  <link rel="stylesheet" type="text/css" href="css/operators.css" />
+  <link rel="icon" href="../favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg operators-nav fixed-top">
+    <div class="container">
+      <a class="navbar-brand operators-brand" href="../index.html">Fleety</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#operatorsNavbar"
+        aria-controls="operatorsNavbar" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="fas fa-bars text-dark"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="operatorsNavbar">
+        <ul class="navbar-nav ml-auto align-items-lg-center">
+          <li class="nav-item">
+            <a class="nav-link" href="../index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../index.html#features">Features</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../tutorial/">Tutorials</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active font-weight-bold" href="index.html">Operators</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../privacy/">Privacy</a>
+          </li>
+          <li class="nav-item ml-lg-3 mt-2 mt-lg-0">
+            <a class="btn-glow" href="https://play.google.com/store/apps/details?id=com.transport.fleety" target="_blank">
+              <i class="fab fa-google-play mr-1"></i> Download
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="operators-hero">
+    <div class="container">
+      <!-- Breadcrumb -->
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb bg-transparent p-0 mb-3 small">
+          <li class="breadcrumb-item"><a href="../index.html" class="text-white-50">Home</a></li>
+          <li class="breadcrumb-item"><a href="index.html" class="text-white-50">Operators</a></li>
+          <li class="breadcrumb-item text-white active" aria-current="page">Australia</li>
+        </ol>
+      </nav>
+
+      <span class="badge badge-pill badge-light text-primary font-weight-bold py-2 px-3 mb-3 text-uppercase" style="letter-spacing: 1px;">
+        <i class="fas fa-globe mr-1"></i> Supported Transit Networks
+      </span>
+      <h1 class="display-4 font-weight-bold mb-3">Supported Transit Operators in Australia</h1>
+      <p class="lead mb-4">Real-time transit networks, train lines, buses, ferries, and light rail across Sydney, Melbourne, Brisbane, Perth, Adelaide, and beyond.</p>
+
+      <!-- Country Switcher Tabs -->
+      <div class="country-tabs-wrapper">
+        <a href="index.html" class="country-tab-btn "><i class="fas fa-globe-americas"></i> All Countries <span class="badge-count">408</span></a>
+<a href="australia.html" class="country-tab-btn active">🇦🇺 Australia <span class="badge-count">53</span></a>
+<a href="canada.html" class="country-tab-btn ">🇨🇦 Canada <span class="badge-count">142</span></a>
+<a href="united-states.html" class="country-tab-btn ">🇺🇸 United States <span class="badge-count">213</span></a>
+      </div>
+
+      <!-- Live Search Box -->
+      <div class="search-container">
+        <div class="search-box-input">
+          <i class="fas fa-search"></i>
+          <input type="text" id="operatorSearchInput" placeholder="Search operators by name, city, state, or transit mode..." autocomplete="off">
+          <button type="button" id="searchClearBtn" class="search-clear-btn" title="Clear search"><i class="fas fa-times"></i></button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content Container -->
+  <div class="container">
+    <!-- Stats Bar -->
+    <div class="stats-bar mb-4">
+      <div class="row">
+        <div class="col-6 col-md-3 mb-3 mb-md-0">
+          <div class="stat-item">
+            <div class="stat-num" id="visibleCount">53</div>
+            <div class="stat-label">Transit Agencies</div>
+          </div>
+        </div>
+        <div class="col-6 col-md-3 mb-3 mb-md-0">
+          <div class="stat-item">
+            <div class="stat-num">8,908</div>
+            <div class="stat-label">Routes Covered</div>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="stat-item">
+            <div class="stat-num">114,963</div>
+            <div class="stat-label">Transit Stops</div>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="stat-item">
+            <div class="stat-num">5</div>
+            <div class="stat-label">States / Provinces</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Filter Controls Card -->
+    <div class="filter-controls-card">
+      <div class="d-flex flex-column flex-md-row align-items-md-center justify-content-between mb-3">
+        <div class="font-weight-bold text-dark mb-2 mb-md-0">
+          <i class="fas fa-filter text-primary mr-1"></i> Filter by State / Province:
+        </div>
+        <div class="d-flex align-items-center">
+          <span class="text-muted small mr-2">Mode:</span>
+          <div class="btn-group btn-group-sm" role="group" id="modeFilterGroup">
+            <button type="button" class="btn btn-outline-secondary active" data-filter-mode="all">All</button>
+            <button type="button" class="btn btn-outline-secondary" data-filter-mode="bus"><i class="fas fa-bus mr-1"></i>Bus</button>
+            <button type="button" class="btn btn-outline-secondary" data-filter-mode="train"><i class="fas fa-train mr-1"></i>Train</button>
+            <button type="button" class="btn btn-outline-secondary" data-filter-mode="tram"><i class="fas fa-subway mr-1"></i>Tram</button>
+            <button type="button" class="btn btn-outline-secondary" data-filter-mode="ferry"><i class="fas fa-ship mr-1"></i>Ferry</button>
+          </div>
+        </div>
+      </div>
+      <div class="filter-pills-row" id="regionPillsContainer">
+        <button class="filter-pill active" data-filter-region="all">All Regions <span class="pill-count">(53)</span></button>
+<button class="filter-pill" data-filter-region="New South Wales">New South Wales <span class="pill-count">(30)</span></button>
+<button class="filter-pill" data-filter-region="Queensland">Queensland <span class="pill-count">(13)</span></button>
+<button class="filter-pill" data-filter-region="Victoria">Victoria <span class="pill-count">(8)</span></button>
+<button class="filter-pill" data-filter-region="South Australia">South Australia <span class="pill-count">(1)</span></button>
+<button class="filter-pill" data-filter-region="Western Australia">Western Australia <span class="pill-count">(1)</span></button>
+      </div>
+    </div>
+
+    <!-- Operator Cards Grid -->
+    <div class="row" id="operatorsGrid">
+      
+        <div class="col-lg-4 col-md-6 mb-4 operator-col" data-country="AU" data-region="New South Wales" data-mode="bus" data-search="blue mountains transit blue mountains new south wales bus &amp; transit au">
+          <div class="operator-card">
+            <div class="operator-card-top-accent" style="background: #005192;"></div>
+            <div class="operator-card-header">
+              <div class="operator-icon-box" style="background: #005192;">
+                <i class="fas fa-bus"></i>
+              </div>
+              <div class="operator-title-area">
+                <h4 class="operator-name">Blue Mountains Transit</h4>
+                <div class="operator-location">
+                  <i class="fas fa-map-marker-alt text-muted mr-1"></i> Blue Mountains, New South Wales
+                </div>
+              </div>
+            </div>
+            <div class="operator-meta-badges">
+              <span class="meta-badge badge-mode">
+                <i class="fas fa-bus"></i> Bus & Transit
+              </span>
+              <span class="meta-badge badge-routes">
+                <i class="fas fa-route"></i> 206 Routes
+              </span>
+              <span class="meta-badge badge-stops">
+                <i class="fas fa-map-pin"></i> 1,086 Stops
+              </span>
+            </div>
+            <div class="operator-footer-links">
+              <div><a href="https://transportnsw.info/news" target="_blank" rel="noopener noreferrer" title="Official News & Service Alerts"><i class="fas fa-bell"></i> Alerts</a> &bull; <a href="https://transportnsw.info/help-contact" target="_blank" rel="noopener noreferrer" title="Customer Support"><i class="fas fa-headset"></i> Support</a></div>
+              <span class="track-pill"><i class="fas fa-satellite-dish mr-1"></i>Live</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 mb-4 operator-col" data-country="AU" data-region="New South Wales" data-mode="bus" data-search="busways - lower north shore &amp;amp; north west sydney new south wales bus &amp; transit au">
+          <div class="operator-card">
+            <div class="operator-card-top-accent" style="background: #005192;"></div>
+            <div class="operator-card-header">
+              <div class="operator-icon-box" style="background: #005192;">
+                <i class="fas fa-bus"></i>
+              </div>
+              <div class="operator-title-area">
+                <h4 class="operator-name">Busways - Lower North Shore &amp; North West</h4>
+                <div class="operator-location">
+                  <i class="fas fa-map-marker-alt text-muted mr-1"></i> Sydney, New South Wales
+                </div>
+              </div>
+            </div>
+            <div class="operator-meta-badges">
+              <span class="meta-badge badge-mode">
+                <i class="fas fa-bus"></i> Bus & Transit
+              </span>
+              <span class="meta-badge badge-routes">
+                <i class="fas fa-route"></i> 243 Routes
+              </span>
+              <span class="meta-badge badge-stops">
+                <i class="fas fa-map-pin"></i> 2,630 Stops
+              </span>
+            </div>
+            <div class="operator-footer-links">
+              <div><a href="https://transportnsw.info/news" target="_blank" rel="noopener noreferrer" title="Official News & Service Alerts"><i class="fas fa-bell"></i> Alerts</a> &bull; <a href="https://transportnsw.info/help-contact" target="_blank" rel="noopener noreferrer" title="Customer Support"><i class="fas fa-headset"></i> Support</a></div>
+              <span class="track-pill"><i class="fas fa-satellite-dish mr-1"></i>Live</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 mb-4 operator-col" data-country="AU" data-region="New South Wales" data-mode="bus" data-search="busways - north coast coffs harbour new south wales bus &amp; transit au">
+          <div class="operator-card">
+            <div class="operator-card-top-accent" style="background: #005192;"></div>
+            <div class="operator-card-header">
+              <div class="operator-icon-box" style="background: #005192;">
+                <i class="fas fa-bus"></i>
+              </div>
+              <div class="operator-title-area">
+                <h4 class="operator-name">Busways - North Coast</h4>
+                <div class="operator-location">
+                  <i class="fas fa-map-marker-alt text-muted mr-1"></i> Coffs Harbour, New South Wales
+                </div>
+              </div>
+            </div>
+            <div class="operator-meta-badges">
+              <span class="meta-badge badge-mode">
+                <i class="fas fa-bus"></i> Bus & Transit
+              </span>
+              <span class="meta-badge badge-routes">
+                <i class="fas fa-route"></i> 454 Routes
+              </span>
+              <span class="meta-badge badge-stops">
+                <i class="fas fa-map-pin"></i> 2,414 Stops
+              </span>
+            </div>
+            <div class="operator-footer-links">
+              <div><a href="https://transportnsw.info/news" target="_blank" rel="noopener noreferrer" title="Official News & Service Alerts"><i class="fas fa-bell"></i> Alerts</a> &bull; <a href="https://transportnsw.info/help-contact" target="_blank" rel="noopener noreferrer" title="Customer Support"><i class="fas fa-headset"></i> Support</a></div>
+              <span class="track-pill"><i class="fas fa-satellite-dish mr-1"></i>Live</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 mb-4 operator-col" data-country="AU" data-region="New South Wales" data-mode="bus" data-search="busways - outer west &amp;amp; hawkesbury sydney new south wales bus &amp; transit au">
+          <div class="operator-card">
+            <div class="operator-card-top-accent" style="background: #005192;"></div>
+            <div class="operator-card-header">
+              <div class="operator-icon-box" style="background: #005192;">
+                <i class="fas fa-bus"></i>
+              </div>
+              <div class="operator-title-area">
+                <h4 class="operator-name">Busways - Outer West &amp; Hawkesbury</h4>
+                <div class="operator-location">
+                  <i class="fas fa-map-marker-alt text-muted mr-1"></i> Sydney, New South Wales
+                </div>
+              </div>
+            </div>
+            <div class="operator-meta-badges">
+              <span class="meta-badge badge-mode">
+                <i class="fas fa-bus"></i> Bus & Transit
+              </span>
+              <span class="meta-badge badge-routes">
+                <i class="fas fa-route"></i> 634 Routes
+              </span>
+              <span class="meta-badge badge-stops">
+                <i class="fas fa-map-pin"></i> 4,225 Stops
+              </span>
+            </div>
+            <div class="operator-footer-links">
+              <div><a href="https://transportnsw.info/news" target="_blank" rel="noopener noreferrer" title="Official News & Service Alerts"><i class="fas fa-bell"></i> Alerts</a> &bull; <a href="https://transportnsw.info/help-contact" target="_blank" rel="noopener noreferrer" title="Customer Support"><i class="fas fa-headset"></i> Support</a></div>
+              <span class="track-pill"><i class="fas fa-satellite-dish mr-1"></i>Live</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 mb-4 operator-col" data-country="AU" data-region="New South Wales" data-mode="bus" data-search="cdc nsw - central coast / red bus central coast new south wales bus &amp; transit au">
+          <div class="operator-card">
+            <div class="operator-card-top-accent" style="background: #005192;"></div>
+            <div class="operator-card-header">
+              <div class="operator-icon-box" style="background: #005192;">
+                <i class="fas fa-bus"></i>
+              </div>
+              <div class="operator-title-area">
+                <h4 class="operator-name">CDC NSW - Central Coast / Red Bus</h4>
+                <div class="operator-location">
+                  <i class="fas fa-map-marker-alt text-muted mr-1"></i> Central Coast, New South Wales
+                </div>
+              </div>
+            </div>
+            <div class="operator-meta-badges">
+              <span class="meta-badge badge-mode">
+                <i class="fas fa-bus"></i> Bus & Transit
+              </span>
+              <span class="meta-badge badge-routes">
+                <i class="fas fa-route"></i> 235 Routes
+              </span>
+              <span class="meta-badge badge-stops">
+                <i class="fas fa-map-pin"></i> 1,123 Stops
+              </span>
+            </div>
+            <div class="operator-footer-links">
+              <div><a href="https://transportnsw.info/news" target="_blank" rel="noopener noreferrer" title="Official News & Service Alerts"><i class="fas fa-bell"></i> Alerts</a> &bull; <a href="https://transportnsw.info/help-contact" target="_blank" rel="noopener noreferrer" title="Customer Support"><i class="fas fa-headset"></i> Support</a></div>
+              <span class="track-pill"><i class="fas fa-satellite-dish mr-1"></i>Live</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 mb-4 operator-col" data-country="AU" data-region="New South Wales" data-mode="bus" data-search="cdc nsw - hills district &amp;amp; north west sydney new south wales bus &amp; transit au">
+          <div class="operator-card">
+            <div class="operator-card-top-accent" style="background: #005192;"></div>
+            <div class="operator-card-header">
+              <div class="operator-icon-box" style="background: #005192;">
+                <i class="fas fa-bus"></i>
+              </div>
+              <div class="operator-title-area">
+                <h4 class="operator-name">CDC NSW - Hills District &amp; North West</h4>
+                <div class="operator-location">
+                  <i class="fas fa-map-marker-alt text-muted mr-1"></i> Sydney, New South Wales
+                </div>
+              </div>
+            </div>
+            <div class="operator-meta-badges">
+              <span class="meta-badge badge-mode">
+                <i class="fas fa-bus"></i> Bus & Transit
+              </span>
+              <span class="meta-badge badge-routes">
+                <i class="fas fa-route"></i> 577 Routes
+              </span>
+              <span class="meta-badge badge-stops">
+                <i class="fas fa-map-pin"></i> 3,224 Stops
+              </span>
+            </div>
+            <div class="operator-footer-links">
+              <div><a href="https://transportnsw.info/news" target="_blank" rel="noopener noreferrer" title="Official News & Service Alerts"><i class="fas fa-bell"></i> Alerts</a> &bull; <a href="https://transportnsw.info/help-contact" target="_blank" rel="noopener noreferrer" title="Customer Support"><i class="fas fa-headset"></i> Support</a></div>
+              <span class="track-pill"><i class="fas fa-satellite-dish mr-1"></i>Live</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 mb-4 operator-col" data-country="AU" data-region="New South Wales" data-mode="bus" data-search="cdc nsw - north shore &amp;amp; forest district sydney new south wales bus &amp; transit au">
+          <div class="operator-card">
+            <div class="operator-card-top-accent" style="background: #005192;"></div>
+            <div class="operator-card-header">
+              <div class="operator-icon-box" style="background: #005192;">
+                <i class="fas fa-bus"></i>
+              </div>
+              <div class="operator-title-area">
+                <h4 class="operator-name">CDC NSW - North Shore &amp; Forest District</h4>
+                <div class="operator-location">
+                  <i class="fas fa-map-marker-alt text-muted mr-1"></i> Sydney, New South Wales
+                </div>
+              </div>
+            </div>
+            <div class="operator-meta-badges">
+              <span class="meta-badge badge-mode">
+                <i class="fas fa-bus"></i> Bus & Transit
+              </span>
+              <span class="meta-badge badge-routes">
+                <i class="fas fa-route"></i> 365 Routes
+              </span>
+              <span class="meta-badge badge-stops">
+                <i class="fas fa-map-pin"></i> 2,254 Stops
+              </span>
+            </div>
+            <div class="operator-footer-links">
+              <div><a href="https://transportnsw.info/news" target="_blank" rel="noopener noreferrer" title="Official News & Service Alerts"><i class="fas fa-bell"></i> Alerts</a> &bull; <a href="https://transportnsw.info/help-contact" target="_blank" rel="noopener noreferrer" title="Customer Support"><i class="fas fa-headset"></i> Support</a></div>
+              <span class="track-pill"><i class="fas fa-satellite-dish mr-1"></i>Live</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 mb-4 operator-col" data-country="AU" data-region="New South Wales" data-mode="bus" data-search="coastal liner central coast new south wales bus &amp; transit au">
+          <div class="operator-card">
+            <div class="operator-card-top-accent" style="background: #005192;"></div>
+            <div class="operator-card-header">
+              <div class="operator-icon-box" style="background: #005192;">
+                <i class="fas fa-bus"></i>
+              </div>
+              <div class="operator-title-area">
+                <h4 class="operator-name">Coastal Liner</h4>
+                <div class="operator-location">
+                  <i class="fas fa-map-marker-alt text-muted mr-1"></i> Central Coast, New South Wales
+                </div>
+              </div>
+            </div>
+            <div class="operator-meta-badges">
+              <span class="meta-badge badge-mode">
+                <i class="fas fa-bus"></i> Bus & Transit
+              </span>
+              <span class="meta-badge badge-routes">
+                <i class="fas fa-route"></i> 29 Routes
+              </span>
+              <span class="meta-badge badge-stops">
+                <i class="fas fa-map-pin"></i> 553 Stops
+              </span>
+            </div>
+            <div class="operator-footer-links">
+              <div><a href="https://transportnsw.info/news" target="_blank" rel="noopener noreferrer" title="Official News & Service Alerts"><i class="fas fa-bell"></i> Alerts</a> &bull; <a href="https://transportnsw.info/help-contact" target="_blank" rel="noopener noreferrer" title="Customer Support"><i class="fas fa-headset"></i> Support</a></div>
+              <span class="track-pill"><i class="fas fa-satellite-dish mr-1"></i>Live</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 mb-4 operator-col" data-country="AU" data-region="New South Wales" data-mode="bus" data-search="dions bus service wollongong new south wales bus &amp; transit au">
+          <div class="operator-card">
+            <div class="operator-card-top-accent" style="background: #005192;"></div>
+            <div class="operator-card-header">
+              <div class="operator-icon-box" style="background: #005192;">
+                <i class="fas fa-bus"></i>
+              </div>
+              <div class="operator-title-area">
+                <h4 class="operator-name">Dions Bus Service</h4>
+                <div class="operator-location">
+                  <i class="fas fa-map-marker-alt text-muted mr-1"></i> Wollongong, New South Wales
+                </div>
+              </div>
+            </div>
+            <div class="operator-meta-badges">
+              <span class="meta-badge badge-mode">
+                <i class="fas fa-bus"></i> Bus & Transit
+              </span>
+              <span class="meta-badge badge-routes">
+                <i class="fas fa-route"></i> 15 Routes
+              </span>
+              <span class="meta-badge badge-stops">
+                <i class="fas fa-map-pin"></i> 214 Stops
+              </span>
+            </div>
+            <div class="operator-footer-links">
+              <div><a href="https://transportnsw.info/news" target="_blank" rel="noopener noreferrer" title="Official News & Service Alerts"><i class="fas fa-bell"></i> Alerts</a> &bull; <a href="https://transportnsw.info/help-contact" target="_blank" rel="noopener noreferrer" title="Customer Support"><i class="fas fa-headset"></i> Support</a></div>
+              <span class="track-pill"><i class="fas fa-satellite-dish mr-1"></i>Live</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 mb-4 operator-col" data-country="AU" data-region="New South Wales" data-mode="bus" data-search="hunter valley buses (central coast &amp;amp; toronto) toronto new south wales bus &amp; transit au">
+          <div class="operator-card">
+            <div class="operator-card-top-accent" style="background: #005192;"></div>
+            <div class="operator-card-header">
+              <div class="operator-icon-box" style="background: #005192;">
+                <i class="fas fa-bus"></i>
+              </div>
+              <div class="operator-title-area">
+                <h4 class="operator-name">Hunter Valley Buses (Central Coast &amp; Toronto)</h4>
+                <div class="operator-location">
+                  <i class="fas fa-map-marker-alt text-muted mr-1"></i> Toronto, New South Wales
+                </div>
+              </div>
+            </div>
+            <div class="operator-meta-badges">
+              <span class="meta-badge badge-mode">
+                <i class="fas fa-bus"></i> Bus & Transit
+              </span>
+              <span class="meta-badge badge-routes">
+                <i class="fas fa-route"></i> 253 Routes
+              </span>
+              <span class="meta-badge badge-stops">
+                <i class="fas fa-map-pin"></i> 1,873 Stops
+              </span>
+            </div>
+            <div class="operator-footer-links">
+              <div><a href="https://transportnsw.info/news" target="_blank" rel="noopener noreferrer" title="Official News & Service Alerts"><i class="fas fa-bell"></i> Alerts</a> &bull; <a href="https://transportnsw.info/help-contact" target="_blank" rel="noopener noreferrer" title="Customer Support"><i class="fas fa-headset"></i> Support</a></div>
+              <span class="track-pill"><i class="fas fa-satellite-dish mr-1"></i>Live</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 mb-4 operator-col" data-country="AU" data-region="New South Wales" data-mode="bus" data-search="hunter valley buses (maitland &amp;amp; raymond terrace) maitland new south wales bus &amp; transit au">
+          <div class="operator-card">
+            <div class="operator-card-top-accent" style="background: #005192;"></div>
+            <div class="operator-card-header">
+              <div class="operator-icon-box" style="background: #005192;">
+                <i class="fas fa-bus"></i>
+              </div>
+              <div class="operator-title-area">
+                <h4 class="operator-name">Hunter Valley Buses (Maitland &amp; Raymond Terrace)</h4>
+                <div class="operator-location">
+                  <i class="fas fa-map-marker-alt text-muted mr-1"></i> Maitland, New South Wales
+                </div>
+              </div>
+            </div>
+            <div class="operator-meta-badges">
+              <span class="meta-badge badge-mode">
+                <i class="fas fa-bus"></i> Bus & Transit
+              </span>
+              <span class="meta-badge badge-routes">
+                <i class="fas fa-route"></i> 444 Routes
+              </span>
+              <span class="meta-badge badge-stops">
+                <i class="fas fa-map-pin"></i> 2,345 Stops
+              </span>
+            </div>
+            <div class="operator-footer-links">
+              <div><a href="https://transportnsw.info/news" target="_blank" rel="noopener noreferrer" title="Official News & Service Alerts"><i class="fas fa-bell"></i> Alerts</a> &bull; <a href="https://transportnsw.info/help-contact" target="_blank" rel="noopener noreferrer" title="Customer Support"><i class="fas fa-headset"></i> Support</a></div>
+              <span class="track-pill"><i class="fas fa-satellite-dish mr-1"></i>Live</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 mb-4 operator-col" data-country="AU" data-region="New South Wales" data-mode="bus" data-search="keolis downer northern beaches sydney new south wales bus &amp; transit au">
+          <div class="operator-card">
+            <div class="operator-card-top-accent" style="background: #005192;"></div>
+            <div class="operator-card-header">
+              <div class="operator-icon-box" style="background: #005192;">
+                <i class="fas fa-bus"></i>
+              </div>
+              <div class="operator-title-area">
+                <h4 class="operator-name">Keolis Downer Northern Beaches</h4>
+                <div class="operator-location">
+                  <i class="fas fa-map-marker-alt text-muted mr-1"></i> Sydney, New South Wales
+                </div>
+              </div>
+            </div>
+            <div class="operator-meta-badges">
+              <span class="meta-badge badge-mode">
+                <i class="fas fa-bus"></i> Bus & Transit
+              </span>
+              <span class="meta-badge badge-routes">
+                <i class="fas fa-route"></i> 255 Routes
+              </span>
+              <span class="meta-badge badge-stops">
+                <i class="fas fa-map-pin"></i> 1,924 Stops
+              </span>
+            </div>
+            <div class="operator-footer-links">
+              <div><a href="https://transportnsw.info/news" target="_blank" rel="noopener noreferrer" title="Official News & Service Alerts"><i class="fas fa-bell"></i> Alerts</a> &bull; <a href="https://transportnsw.info/help-contact" target="_blank" rel="noopener noreferrer" title="Customer Support"><i class="fas fa-headset"></i> Support</a></div>
+              <span class="track-pill"><i class="fas fa-satellite-dish mr-1"></i>Live</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 mb-4 operator-col" data-country="AU" data-region="New South Wales" data-mode="ferry" data-search="manly fast ferries sydney new south wales ferry au">
+          <div class="operator-card">
+            <div class="operator-card-top-accent" style="background: #005192;"></div>
+            <div class="operator-card-header">
+              <div class="operator-icon-box" style="background: #005192;">
+                <i class="fas fa-ship"></i>
+              </div>
+              <div class="operator-title-area">
+                <h4 class="operator-name">Manly Fast Ferries</h4>
+                <div class="operator-location">
+                  <i class="fas fa-map-marker-alt text-muted mr-1"></i> Sydney, New South Wales
+                </div>
+              </div>
+            </div>
+            <div class="operator-meta-badges">
+              <span class="meta-badge badge-mode">
+                <i class="fas fa-ship"></i> Ferry
+              </span>
+              <span class="meta-badge badge-routes">
+                <i class="fas fa-route"></i> 1 Route
+              </span>
+              <span class="meta-badge badge-stops">
+                <i class="fas fa-map-pin"></i> 3 Stops
+              </span>
+            </div>
+            <div class="operator-footer-links">
+              <div><a href="https://transportnsw.info/news" target="_blank" rel="noopener noreferrer" title="Official News & Service Alerts"><i class="fas fa-bell"></i> Alerts</a> &bull; <a href="https://transportnsw.info/help-contact" target="_blank" rel="noopener noreferrer" title="Customer Support"><i class="fas fa-headset"></i> Support</a></div>
+              <span class="track-pill"><i class="fas fa-satellite-dish mr-1"></i>Live</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 mb-4 operator-col" data-country="AU" data-region="New South Wales" data-mode="bus" data-search="newcastle transport newcastle new south wales bus &amp; transit au">
+          <div class="operator-card">
+            <div class="operator-card-top-accent" style="background: #005192;"></div>
+            <div class="operator-card-header">
+              <div class="operator-icon-box" style="background: #005192;">
+                <i class="fas fa-bus"></i>
+              </div>
+              <div class="operator-title-area">
+                <h4 class="operator-name">Newcastle Transport</h4>
+                <div class="operator-location">
+                  <i class="fas fa-map-marker-alt text-muted mr-1"></i> Newcastle, New South Wales
+                </div>
+              </div>
+            </div>
+            <div class="operator-meta-badges">
+              <span class="meta-badge badge-mode">
+                <i class="fas fa-bus"></i> Bus & Transit
+              </span>
+              <span class="meta-badge badge-routes">
+                <i class="fas fa-route"></i> 1 Route
+              </span>
+              <span class="meta-badge badge-stops">
+                <i class="fas fa-map-pin"></i> 10 Stops
+              </span>
+            </div>
+            <div class="operator-footer-links">
+              <div><a href="https://transportnsw.info/news" target="_blank" rel="noopener noreferrer" title="Official News & Service Alerts"><i class="fas fa-bell"></i> Alerts</a> &bull; <a href="https://transportnsw.info/help-contact" target="_blank" rel="noopener noreferrer" title="Customer Support"><i class="fas fa-headset"></i> Support</a></div>
+              <span class="track-pill"><i class="fas fa-satellite-dish mr-1"></i>Live</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 mb-4 operator-col" data-country="AU" data-region="New South Wales" data-mode="bus" data-search="newcastle transport buses newcastle new south wales bus &amp; transit au">
+          <div class="operator-card">
+            <div class="operator-card-top-accent" style="background: #005192;"></div>
+            <div class="operator-card-header">
+              <div class="operator-icon-box" style="background: #005192;">
+                <i class="fas fa-bus"></i>
+              </div>
+              <div class="operator-title-area">
+                <h4 class="operator-name">Newcastle Transport Buses</h4>
+                <div class="operator-location">
+                  <i class="fas fa-map-marker-alt text-muted mr-1"></i> Newcastle, New South Wales
+                </div>
+              </div>
+            </div>
+            <div class="operator-meta-badges">
+              <span class="meta-badge badge-mode">
+                <i class="fas fa-bus"></i> Bus & Transit
+              </span>
+              <span class="meta-badge badge-routes">
+                <i class="fas fa-route"></i> 174 Routes
+              </span>
+              <span class="meta-badge badge-stops">
+                <i class="fas fa-map-pin"></i> 2,439 Stops
+              </span>
+            </div>
+            <div class="operator-footer-links">
+              <div><a href="https://transportnsw.info/news" target="_blank" rel="noopener noreferrer" title="Official News & Service Alerts"><i class="fas fa-bell"></i> Alerts</a> &bull; <a href="https://transportnsw.info/help-contact" target="_blank" rel="noopener noreferrer" title="Customer Support"><i class="fas fa-headset"></i> Support</a></div>
+              <span class="track-pill"><i class="fas fa-satellite-dish mr-1"></i>Live</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 mb-4 operator-col" data-country="AU" data-region="New South Wales" data-mode="train" data-search="nsw trains wollongong new south wales train / metro au">
+          <div class="operator-card">
+            <div class="operator-card-top-accent" style="background: #732A82;"></div>
+            <div class="operator-card-header">
+              <div class="operator-icon-box" style="background: #732A82;">
+                <i class="fas fa-train"></i>
+              </div>
+              <div class="operator-title-area">
+                <h4 class="operator-name">NSW Trains</h4>
+                <div class="operator-location">
+                  <i class="fas fa-map-marker-alt text-muted mr-1"></i> Wollongong, New South Wales
+                </div>
+              </div>
+            </div>
+            <div class="operator-meta-badges">
+              <span class="meta-badge badge-mode">
+                <i class="fas fa-train"></i> Train / Metro
+              </span>
+              <span class="meta-badge badge-routes">
+                <i class="fas fa-route"></i> 318 Routes
+              </span>
+              <span class="meta-badge badge-stops">
+                <i class="fas fa-map-pin"></i> 762 Stops
+              </span>
+            </div>
+            <div class="operator-footer-links">
+              <div><a href="https://transportnsw.info/news" target="_blank" rel="noopener noreferrer" title="Official News & Service Alerts"><i class="fas fa-bell"></i> Alerts</a> &bull; <a href="https://transportnsw.info/help-contact" target="_blank" rel="noopener noreferrer" title="Customer Support"><i class="fas fa-headset"></i> Support</a></div>
+              <span class="track-pill"><i class="fas fa-satellite-dish mr-1"></i>Live</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 mb-4 operator-col" data-country="AU" data-region="New South Wales" data-mode="tram" data-search="parramatta light rail sydney new south wales tram / light rail au">
+          <div class="operator-card">
+            <div class="operator-card-top-accent" style="background: #BB2043;"></div>
+            <div class="operator-card-header">
+              <div class="operator-icon-box" style="background: #BB2043;">
+                <i class="fas fa-subway"></i>
+              </div>
+              <div class="operator-title-area">
+                <h4 class="operator-name">Parramatta Light Rail</h4>
+                <div class="operator-location">
+                  <i class="fas fa-map-marker-alt text-muted mr-1"></i> Sydney, New South Wales
+                </div>
+              </div>
+            </div>
+            <div class="operator-meta-badges">
+              <span class="meta-badge badge-mode">
+                <i class="fas fa-subway"></i> Tram / Light Rail
+              </span>
+              <span class="meta-badge badge-routes">
+                <i class="fas fa-route"></i> 1 Route
+              </span>
+              <span class="meta-badge badge-stops">
+                <i class="fas fa-map-pin"></i> 32 Stops
+              </span>
+            </div>
+            <div class="operator-footer-links">
+              <div><a href="https://transportnsw.info/news" target="_blank" rel="noopener noreferrer" title="Official News & Service Alerts"><i class="fas fa-bell"></i> Alerts</a> &bull; <a href="https://transportnsw.info/help-contact" target="_blank" rel="noopener noreferrer" title="Customer Support"><i class="fas fa-headset"></i> Support</a></div>
+              <span class="track-pill"><i class="fas fa-satellite-dish mr-1"></i>Live</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 mb-4 operator-col" data-country="AU" data-region="New South Wales" data-mode="bus" data-search="port stephens coaches port stephens new south wales bus &amp; transit au">
+          <div class="operator-card">
+            <div class="operator-card-top-accent" style="background: #005192;"></div>
+            <div class="operator-card-header">
+              <div class="operator-icon-box" style="background: #005192;">
+                <i class="fas fa-bus"></i>
+              </div>
+              <div class="operator-title-area">
+                <h4 class="operator-name">Port Stephens Coaches</h4>
+                <div class="operator-location">
+                  <i class="fas fa-map-marker-alt text-muted mr-1"></i> Port Stephens, New South Wales
+                </div>
+              </div>
+            </div>
+            <div class="operator-meta-badges">
+              <span class="meta-badge badge-mode">
+                <i class="fas fa-bus"></i> Bus & Transit
+              </span>
+              <span class="meta-badge badge-routes">
+                <i class="fas fa-route"></i> 85 Routes
+              </span>
+              <span class="meta-badge badge-stops">
+                <i class="fas fa-map-pin"></i> 470 Stops
+              </span>
+            </div>
+            <div class="operator-footer-links">
+              <div><a href="https://transportnsw.info/news" target="_blank" rel="noopener noreferrer" title="Official News & Service Alerts"><i class="fas fa-bell"></i> Alerts</a> &bull; <a href="https://transportnsw.info/help-contact" target="_blank" rel="noopener noreferrer" title="Customer Support"><i class="fas fa-headset"></i> Support</a></div>
+              <span class="track-pill"><i class="fas fa-satellite-dish mr-1"></i>Live</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 mb-4 operator-col" data-country="AU" data-region="New South Wales" data-mode="bus" data-search="premier charters wollongong new south wales bus &amp; transit au">
+          <div class="operator-card">
+            <div class="operator-card-top-accent" style="background: #005192;"></div>
+            <div class="operator-card-header">
+              <div class="operator-icon-box" style="background: #005192;">
+                <i class="fas fa-bus"></i>
+              </div>
+              <div class="operator-title-area">
+                <h4 class="operator-name">Premier Charters</h4>
+                <div class="operator-location">
+                  <i class="fas fa-map-marker-alt text-muted mr-1"></i> Wollongong, New South Wales
+                </div>
+              </div>
+            </div>
+            <div class="operator-meta-badges">
+              <span class="meta-badge badge-mode">
+                <i class="fas fa-bus"></i> Bus & Transit
+              </span>
+              <span class="meta-badge badge-routes">
+                <i class="fas fa-route"></i> 32 Routes
+              </span>
+              <span class="meta-badge badge-stops">
+                <i class="fas fa-map-pin"></i> 295 Stops
+              </span>
+            </div>
+            <div class="operator-footer-links">
+              <div><a href="https://transportnsw.info/news" target="_blank" rel="noopener noreferrer" title="Official News & Service Alerts"><i class="fas fa-bell"></i> Alerts</a> &bull; <a href="https://transportnsw.info/help-contact" target="_blank" rel="noopener noreferrer" title="Customer Support"><i class="fas fa-headset"></i> Support</a></div>
+              <span class="track-pill"><i class="fas fa-satellite-dish mr-1"></i>Live</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 mb-4 operator-col" data-country="AU" data-region="New South Wales" data-mode="bus" data-search="premier illawarra wollongong new south wales bus &amp; transit au">
+          <div class="operator-card">
+            <div class="operator-card-top-accent" style="background: #005192;"></div>
+            <div class="operator-card-header">
+              <div class="operator-icon-box" style="background: #005192;">
+                <i class="fas fa-bus"></i>
+              </div>
+              <div class="operator-title-area">
+                <h4 class="operator-name">Premier Illawarra</h4>
+                <div class="operator-location">
+                  <i class="fas fa-map-marker-alt text-muted mr-1"></i> Wollongong, New South Wales
+                </div>
+              </div>
+            </div>
+            <div class="operator-meta-badges">
+              <span class="meta-badge badge-mode">
+                <i class="fas fa-bus"></i> Bus & Transit
+              </span>
+              <span class="meta-badge badge-routes">
+                <i class="fas fa-route"></i> 252 Routes
+              </span>
+              <span class="meta-badge badge-stops">
+                <i class="fas fa-map-pin"></i> 2,035 Stops
+              </span>
+            </div>
+            <div class="operator-footer-links">
+              <div><a href="https://transportnsw.info/news" target="_blank" rel="noopener noreferrer" title="Official News & Service Alerts"><i class="fas fa-bell"></i> Alerts</a> &bull; <a href="https://transportnsw.info/help-contact" target="_blank" rel="noopener noreferrer" title="Customer Support"><i class="fas fa-headset"></i> Support</a></div>
+              <span class="track-pill"><i class="fas fa-satellite-dish mr-1"></i>Live</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 mb-4 operator-col" data-country="AU" data-region="New South Wales" data-mode="bus" data-search="rover coaches cessnock new south wales bus &amp; transit au">
+          <div class="operator-card">
+            <div class="operator-card-top-accent" style="background: #005192;"></div>
+            <div class="operator-card-header">
+              <div class="operator-icon-box" style="background: #005192;">
+                <i class="fas fa-bus"></i>
+              </div>
+              <div class="operator-title-area">
+                <h4 class="operator-name">Rover Coaches</h4>
+                <div class="operator-location">
+                  <i class="fas fa-map-marker-alt text-muted mr-1"></i> Cessnock, New South Wales
+                </div>
+              </div>
+            </div>
+            <div class="operator-meta-badges">
+              <span class="meta-badge badge-mode">
+                <i class="fas fa-bus"></i> Bus & Transit
+              </span>
+              <span class="meta-badge badge-routes">
+                <i class="fas fa-route"></i> 106 Routes
+              </span>
+              <span class="meta-badge badge-stops">
+                <i class="fas fa-map-pin"></i> 894 Stops
+              </span>
+            </div>
+            <div class="operator-footer-links">
+              <div><a href="https://transportnsw.info/news" target="_blank" rel="noopener noreferrer" title="Official News & Service Alerts"><i class="fas fa-bell"></i> Alerts</a> &bull; <a href="https://transportnsw.info/help-contact" target="_blank" rel="noopener noreferrer" title="Customer Support"><i class="fas fa-headset"></i> Support</a></div>
+              <span class="track-pill"><i class="fas fa-satellite-dish mr-1"></i>Live</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 mb-4 operator-col" data-country="AU" data-region="New South Wales" data-mode="ferry" data-search="sydney ferries sydney new south wales ferry au">
+          <div class="operator-card">
+            <div class="operator-card-top-accent" style="background: #469B3B;"></div>
+            <div class="operator-card-header">
+              <div class="operator-icon-box" style="background: #469B3B;">
+                <i class="fas fa-ship"></i>
+              </div>
+              <div class="operator-title-area">
+                <h4 class="operator-name">Sydney Ferries</h4>
+                <div class="operator-location">
+                  <i class="fas fa-map-marker-alt text-muted mr-1"></i> Sydney, New South Wales
+                </div>
+              </div>
+            </div>
+            <div class="operator-meta-badges">
+              <span class="meta-badge badge-mode">
+                <i class="fas fa-ship"></i> Ferry
+              </span>
+              <span class="meta-badge badge-routes">
+                <i class="fas fa-route"></i> 10 Routes
+              </span>
+              <span class="meta-badge badge-stops">
+                <i class="fas fa-map-pin"></i> 54 Stops
+              </span>
+            </div>
+            <div class="operator-footer-links">
+              <div><a href="https://transportnsw.info/news" target="_blank" rel="noopener noreferrer" title="Official News & Service Alerts"><i class="fas fa-bell"></i> Alerts</a> &bull; <a href="https://transportnsw.info/help-contact" target="_blank" rel="noopener noreferrer" title="Customer Support"><i class="fas fa-headset"></i> Support</a></div>
+              <span class="track-pill"><i class="fas fa-satellite-dish mr-1"></i>Live</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 mb-4 operator-col" data-country="AU" data-region="New South Wales" data-mode="tram" data-search="sydney light rail - cbd &amp;amp; south east sydney new south wales tram / light rail au">
+          <div class="operator-card">
+            <div class="operator-card-top-accent" style="background: #DD1E25;"></div>
+            <div class="operator-card-header">
+              <div class="operator-icon-box" style="background: #DD1E25;">
+                <i class="fas fa-subway"></i>
+              </div>
+              <div class="operator-title-area">
+                <h4 class="operator-name">Sydney Light Rail - CBD &amp; South East</h4>
+                <div class="operator-location">
+                  <i class="fas fa-map-marker-alt text-muted mr-1"></i> Sydney, New South Wales
+                </div>
+              </div>
+            </div>
+            <div class="operator-meta-badges">
+              <span class="meta-badge badge-mode">
+                <i class="fas fa-subway"></i> Tram / Light Rail
+              </span>
+              <span class="meta-badge badge-routes">
+                <i class="fas fa-route"></i> 3 Routes
+              </span>
+              <span class="meta-badge badge-stops">
+                <i class="fas fa-map-pin"></i> 40 Stops
+              </span>
+            </div>
+            <div class="operator-footer-links">
+              <div><a href="https://transportnsw.info/news" target="_blank" rel="noopener noreferrer" title="Official News & Service Alerts"><i class="fas fa-bell"></i> Alerts</a> &bull; <a href="https://transportnsw.info/help-contact" target="_blank" rel="noopener noreferrer" title="Customer Support"><i class="fas fa-headset"></i> Support</a></div>
+              <span class="track-pill"><i class="fas fa-satellite-dish mr-1"></i>Live</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 mb-4 operator-col" data-country="AU" data-region="New South Wales" data-mode="tram" data-search="sydney light rail - inner west sydney new south wales tram / light rail au">
+          <div class="operator-card">
+            <div class="operator-card-top-accent" style="background: #BE1622;"></div>
+            <div class="operator-card-header">
+              <div class="operator-icon-box" style="background: #BE1622;">
+                <i class="fas fa-subway"></i>
+              </div>
+              <div class="operator-title-area">
+                <h4 class="operator-name">Sydney Light Rail - Inner West</h4>
+                <div class="operator-location">
+                  <i class="fas fa-map-marker-alt text-muted mr-1"></i> Sydney, New South Wales
+                </div>
+              </div>
+            </div>
+            <div class="operator-meta-badges">
+              <span class="meta-badge badge-mode">
+                <i class="fas fa-subway"></i> Tram / Light Rail
+              </span>
+              <span class="meta-badge badge-routes">
+                <i class="fas fa-route"></i> 1 Route
+              </span>
+              <span class="meta-badge badge-stops">
+                <i class="fas fa-map-pin"></i> 44 Stops
+              </span>
+            </div>
+            <div class="operator-footer-links">
+              <div><a href="https://transportnsw.info/news" target="_blank" rel="noopener noreferrer" title="Official News & Service Alerts"><i class="fas fa-bell"></i> Alerts</a> &bull; <a href="https://transportnsw.info/help-contact" target="_blank" rel="noopener noreferrer" title="Customer Support"><i class="fas fa-headset"></i> Support</a></div>
+              <span class="track-pill"><i class="fas fa-satellite-dish mr-1"></i>Live</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 mb-4 operator-col" data-country="AU" data-region="New South Wales" data-mode="train" data-search="sydney trains sydney new south wales train / metro au">
+          <div class="operator-card">
+            <div class="operator-card-top-accent" style="background: #D11F2F;"></div>
+            <div class="operator-card-header">
+              <div class="operator-icon-box" style="background: #D11F2F;">
+                <i class="fas fa-train"></i>
+              </div>
+              <div class="operator-title-area">
+                <h4 class="operator-name">Sydney Trains</h4>
+                <div class="operator-location">
+                  <i class="fas fa-map-marker-alt text-muted mr-1"></i> Sydney, New South Wales
+                </div>
+              </div>
+            </div>
+            <div class="operator-meta-badges">
+              <span class="meta-badge badge-mode">
+                <i class="fas fa-train"></i> Train / Metro
+              </span>
+              <span class="meta-badge badge-routes">
+                <i class="fas fa-route"></i> 75 Routes
+              </span>
+              <span class="meta-badge badge-stops">
+                <i class="fas fa-map-pin"></i> 782 Stops
+              </span>
+            </div>
+            <div class="operator-footer-links">
+              <div><a href="https://transportnsw.info/news" target="_blank" rel="noopener noreferrer" title="Official News & Service Alerts"><i class="fas fa-bell"></i> Alerts</a> &bull; <a href="https://transportnsw.info/help-contact" target="_blank" rel="noopener noreferrer" title="Customer Support"><i class="fas fa-headset"></i> Support</a></div>
+              <span class="track-pill"><i class="fas fa-satellite-dish mr-1"></i>Live</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 mb-4 operator-col" data-country="AU" data-region="New South Wales" data-mode="bus" data-search="transdev john holland sydney new south wales bus &amp; transit au">
+          <div class="operator-card">
+            <div class="operator-card-top-accent" style="background: #005192;"></div>
+            <div class="operator-card-header">
+              <div class="operator-icon-box" style="background: #005192;">
+                <i class="fas fa-bus"></i>
+              </div>
+              <div class="operator-title-area">
+                <h4 class="operator-name">Transdev John Holland</h4>
+                <div class="operator-location">
+                  <i class="fas fa-map-marker-alt text-muted mr-1"></i> Sydney, New South Wales
+                </div>
+              </div>
+            </div>
+            <div class="operator-meta-badges">
+              <span class="meta-badge badge-mode">
+                <i class="fas fa-bus"></i> Bus & Transit
+              </span>
+              <span class="meta-badge badge-routes">
+                <i class="fas fa-route"></i> 168 Routes
+              </span>
+              <span class="meta-badge badge-stops">
+                <i class="fas fa-map-pin"></i> 1,606 Stops
+              </span>
+            </div>
+            <div class="operator-footer-links">
+              <div><a href="https://transportnsw.info/news" target="_blank" rel="noopener noreferrer" title="Official News & Service Alerts"><i class="fas fa-bell"></i> Alerts</a> &bull; <a href="https://transportnsw.info/help-contact" target="_blank" rel="noopener noreferrer" title="Customer Support"><i class="fas fa-headset"></i> Support</a></div>
+              <span class="track-pill"><i class="fas fa-satellite-dish mr-1"></i>Live</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 mb-4 operator-col" data-country="AU" data-region="New South Wales" data-mode="bus" data-search="transit systems - inner west &amp;amp; cbd sydney new south wales bus &amp; transit au">
+          <div class="operator-card">
+            <div class="operator-card-top-accent" style="background: #005192;"></div>
+            <div class="operator-card-header">
+              <div class="operator-icon-box" style="background: #005192;">
+                <i class="fas fa-bus"></i>
+              </div>
+              <div class="operator-title-area">
+                <h4 class="operator-name">Transit Systems - Inner West &amp; CBD</h4>
+                <div class="operator-location">
+                  <i class="fas fa-map-marker-alt text-muted mr-1"></i> Sydney, New South Wales
+                </div>
+              </div>
+            </div>
+            <div class="operator-meta-badges">
+              <span class="meta-badge badge-mode">
+                <i class="fas fa-bus"></i> Bus & Transit
+              </span>
+              <span class="meta-badge badge-routes">
+                <i class="fas fa-route"></i> 211 Routes
+              </span>
+              <span class="meta-badge badge-stops">
+                <i class="fas fa-map-pin"></i> 2,672 Stops
+              </span>
+            </div>
+            <div class="operator-footer-links">
+              <div><a href="https://transportnsw.info/news" target="_blank" rel="noopener noreferrer" title="Official News & Service Alerts"><i class="fas fa-bell"></i> Alerts</a> &bull; <a href="https://transportnsw.info/help-contact" target="_blank" rel="noopener noreferrer" title="Customer Support"><i class="fas fa-headset"></i> Support</a></div>
+              <span class="track-pill"><i class="fas fa-satellite-dish mr-1"></i>Live</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 mb-4 operator-col" data-country="AU" data-region="New South Wales" data-mode="bus" data-search="transit systems - south west sydney sydney new south wales bus &amp; transit au">
+          <div class="operator-card">
+            <div class="operator-card-top-accent" style="background: #005192;"></div>
+            <div class="operator-card-header">
+              <div class="operator-icon-box" style="background: #005192;">
+                <i class="fas fa-bus"></i>
+              </div>
+              <div class="operator-title-area">
+                <h4 class="operator-name">Transit Systems - South West Sydney</h4>
+                <div class="operator-location">
+                  <i class="fas fa-map-marker-alt text-muted mr-1"></i> Sydney, New South Wales
+                </div>
+              </div>
+            </div>
+            <div class="operator-meta-badges">
+              <span class="meta-badge badge-mode">
+                <i class="fas fa-bus"></i> Bus & Transit
+              </span>
+              <span class="meta-badge badge-routes">
+                <i class="fas fa-route"></i> 476 Routes
+              </span>
+              <span class="meta-badge badge-stops">
+                <i class="fas fa-map-pin"></i> 2,748 Stops
+              </span>
+            </div>
+            <div class="operator-footer-links">
+              <div><a href="https://transportnsw.info/news" target="_blank" rel="noopener noreferrer" title="Official News & Service Alerts"><i class="fas fa-bell"></i> Alerts</a> &bull; <a href="https://transportnsw.info/help-contact" target="_blank" rel="noopener noreferrer" title="Customer Support"><i class="fas fa-headset"></i> Support</a></div>
+              <span class="track-pill"><i class="fas fa-satellite-dish mr-1"></i>Live</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 mb-4 operator-col" data-country="AU" data-region="New South Wales" data-mode="bus" data-search="transit systems - western sydney &amp;amp; inner west sydney new south wales bus &amp; transit au">
+          <div class="operator-card">
+            <div class="operator-card-top-accent" style="background: #005192;"></div>
+            <div class="operator-card-header">
+              <div class="operator-icon-box" style="background: #005192;">
+                <i class="fas fa-bus"></i>
+              </div>
+              <div class="operator-title-area">
+                <h4 class="operator-name">Transit Systems - Western Sydney &amp; Inner West</h4>
+                <div class="operator-location">
+                  <i class="fas fa-map-marker-alt text-muted mr-1"></i> Sydney, New South Wales
+                </div>
+              </div>
+            </div>
+            <div class="operator-meta-badges">
+              <span class="meta-badge badge-mode">
+                <i class="fas fa-bus"></i> Bus & Transit
+              </span>
+              <span class="meta-badge badge-routes">
+                <i class="fas fa-route"></i> 356 Routes
+              </span>
+              <span class="meta-badge badge-stops">
+                <i class="fas fa-map-pin"></i> 4,432 Stops
+              </span>
+            </div>
+            <div class="operator-footer-links">
+              <div><a href="https://transportnsw.info/news" target="_blank" rel="noopener noreferrer" title="Official News & Service Alerts"><i class="fas fa-bell"></i> Alerts</a> &bull; <a href="https://transportnsw.info/help-contact" target="_blank" rel="noopener noreferrer" title="Customer Support"><i class="fas fa-headset"></i> Support</a></div>
+              <span class="track-pill"><i class="fas fa-satellite-dish mr-1"></i>Live</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 mb-4 operator-col" data-country="AU" data-region="New South Wales" data-mode="bus" data-search="u-go mobility sydney new south wales bus &amp; transit au">
+          <div class="operator-card">
+            <div class="operator-card-top-accent" style="background: #005192;"></div>
+            <div class="operator-card-header">
+              <div class="operator-icon-box" style="background: #005192;">
+                <i class="fas fa-bus"></i>
+              </div>
+              <div class="operator-title-area">
+                <h4 class="operator-name">U-Go Mobility</h4>
+                <div class="operator-location">
+                  <i class="fas fa-map-marker-alt text-muted mr-1"></i> Sydney, New South Wales
+                </div>
+              </div>
+            </div>
+            <div class="operator-meta-badges">
+              <span class="meta-badge badge-mode">
+                <i class="fas fa-bus"></i> Bus & Transit
+              </span>
+              <span class="meta-badge badge-routes">
+                <i class="fas fa-route"></i> 305 Routes
+              </span>
+              <span class="meta-badge badge-stops">
+                <i class="fas fa-map-pin"></i> 3,832 Stops
+              </span>
+            </div>
+            <div class="operator-footer-links">
+              <div><a href="https://transportnsw.info/news" target="_blank" rel="noopener noreferrer" title="Official News & Service Alerts"><i class="fas fa-bell"></i> Alerts</a> &bull; <a href="https://transportnsw.info/help-contact" target="_blank" rel="noopener noreferrer" title="Customer Support"><i class="fas fa-headset"></i> Support</a></div>
+              <span class="track-pill"><i class="fas fa-satellite-dish mr-1"></i>Live</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 mb-4 operator-col" data-country="AU" data-region="Queensland" data-mode="bus" data-search="bus qld toowoomba toowoomba queensland bus &amp; transit au">
+          <div class="operator-card">
+            <div class="operator-card-top-accent" style="background: #005192;"></div>
+            <div class="operator-card-header">
+              <div class="operator-icon-box" style="background: #005192;">
+                <i class="fas fa-bus"></i>
+              </div>
+              <div class="operator-title-area">
+                <h4 class="operator-name">Bus Qld Toowoomba</h4>
+                <div class="operator-location">
+                  <i class="fas fa-map-marker-alt text-muted mr-1"></i> Toowoomba, Queensland
+                </div>
+              </div>
+            </div>
+            <div class="operator-meta-badges">
+              <span class="meta-badge badge-mode">
+                <i class="fas fa-bus"></i> Bus & Transit
+              </span>
+              <span class="meta-badge badge-routes">
+                <i class="fas fa-route"></i> 8 Routes
+              </span>
+              <span class="meta-badge badge-stops">
+                <i class="fas fa-map-pin"></i> 641 Stops
+              </span>
+            </div>
+            <div class="operator-footer-links">
+              <div><span class="text-muted small"><i class="fas fa-check-circle text-success mr-1"></i>Fleety Verified</span></div>
+              <span class="track-pill"><i class="fas fa-satellite-dish mr-1"></i>Live</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 mb-4 operator-col" data-country="AU" data-region="Queensland" data-mode="bus" data-search="haidleys panoramic coaches warwick queensland bus &amp; transit au">
+          <div class="operator-card">
+            <div class="operator-card-top-accent" style="background: #005192;"></div>
+            <div class="operator-card-header">
+              <div class="operator-icon-box" style="background: #005192;">
+                <i class="fas fa-bus"></i>
+              </div>
+              <div class="operator-title-area">
+                <h4 class="operator-name">Haidleys Panoramic Coaches</h4>
+                <div class="operator-location">
+                  <i class="fas fa-map-marker-alt text-muted mr-1"></i> Warwick, Queensland
+                </div>
+              </div>
+            </div>
+            <div class="operator-meta-badges">
+              <span class="meta-badge badge-mode">
+                <i class="fas fa-bus"></i> Bus & Transit
+              </span>
+              <span class="meta-badge badge-routes">
+                <i class="fas fa-route"></i> 5 Routes
+              </span>
+              <span class="meta-badge badge-stops">
+                <i class="fas fa-map-pin"></i> 79 Stops
+              </span>
+            </div>
+            <div class="operator-footer-links">
+              <div><span class="text-muted small"><i class="fas fa-check-circle text-success mr-1"></i>Fleety Verified</span></div>
+              <span class="track-pill"><i class="fas fa-satellite-dish mr-1"></i>Live</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 mb-4 operator-col" data-country="AU" data-region="Queensland" data-mode="bus" data-search="kinetic - cairns cairns queensland bus &amp; transit au">
+          <div class="operator-card">
+            <div class="operator-card-top-accent" style="background: #005192;"></div>
+            <div class="operator-card-header">
+              <div class="operator-icon-box" style="background: #005192;">
+                <i class="fas fa-bus"></i>
+              </div>
+              <div class="operator-title-area">
+                <h4 class="operator-name">Kinetic - Cairns</h4>
+                <div class="operator-location">
+                  <i class="fas fa-map-marker-alt text-muted mr-1"></i> Cairns, Queensland
+                </div>
+              </div>
+            </div>
+            <div class="operator-meta-badges">
+              <span class="meta-badge badge-mode">
+                <i class="fas fa-bus"></i> Bus & Transit
+              </span>
+              <span class="meta-badge badge-routes">
+                <i class="fas fa-route"></i> 22 Routes
+              </span>
+              <span class="meta-badge badge-stops">
+                <i class="fas fa-map-pin"></i> 460 Stops
+              </span>
+            </div>
+            <div class="operator-footer-links">
+              <div><span class="text-muted small"><i class="fas fa-check-circle text-success mr-1"></i>Fleety Verified</span></div>
+              <span class="track-pill"><i class="fas fa-satellite-dish mr-1"></i>Live</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 mb-4 operator-col" data-country="AU" data-region="Queensland" data-mode="bus" data-search="kinetic - magnetic island bus townsville queensland bus &amp; transit au">
+          <div class="operator-card">
+            <div class="operator-card-top-accent" style="background: #005192;"></div>
+            <div class="operator-card-header">
+              <div class="operator-icon-box" style="background: #005192;">
+                <i class="fas fa-bus"></i>
+              </div>
+              <div class="operator-title-area">
+                <h4 class="operator-name">Kinetic - Magnetic Island Bus</h4>
+                <div class="operator-location">
+                  <i class="fas fa-map-marker-alt text-muted mr-1"></i> Townsville, Queensland
+                </div>
+              </div>
+            </div>
+            <div class="operator-meta-badges">
+              <span class="meta-badge badge-mode">
+                <i class="fas fa-bus"></i> Bus & Transit
+              </span>
+              <span class="meta-badge badge-routes">
+                <i class="fas fa-route"></i> 1 Route
+              </span>
+              <span class="meta-badge badge-stops">
+                <i class="fas fa-map-pin"></i> 47 Stops
+              </span>
+            </div>
+            <div class="operator-footer-links">
+              <div><span class="text-muted small"><i class="fas fa-check-circle text-success mr-1"></i>Fleety Verified</span></div>
+              <span class="track-pill"><i class="fas fa-satellite-dish mr-1"></i>Live</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 mb-4 operator-col" data-country="AU" data-region="Queensland" data-mode="bus" data-search="kinetic - townsville townsville queensland bus &amp; transit au">
+          <div class="operator-card">
+            <div class="operator-card-top-accent" style="background: #005192;"></div>
+            <div class="operator-card-header">
+              <div class="operator-icon-box" style="background: #005192;">
+                <i class="fas fa-bus"></i>
+              </div>
+              <div class="operator-title-area">
+                <h4 class="operator-name">Kinetic - Townsville</h4>
+                <div class="operator-location">
+                  <i class="fas fa-map-marker-alt text-muted mr-1"></i> Townsville, Queensland
+                </div>
+              </div>
+            </div>
+            <div class="operator-meta-badges">
+              <span class="meta-badge badge-mode">
+                <i class="fas fa-bus"></i> Bus & Transit
+              </span>
+              <span class="meta-badge badge-routes">
+                <i class="fas fa-route"></i> 17 Routes
+              </span>
+              <span class="meta-badge badge-stops">
+                <i class="fas fa-map-pin"></i> 637 Stops
+              </span>
+            </div>
+            <div class="operator-footer-links">
+              <div><span class="text-muted small"><i class="fas fa-check-circle text-success mr-1"></i>Fleety Verified</span></div>
+              <span class="track-pill"><i class="fas fa-satellite-dish mr-1"></i>Live</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 mb-4 operator-col" data-country="AU" data-region="Queensland" data-mode="bus" data-search="mackay transit coaches mackay queensland bus &amp; transit au">
+          <div class="operator-card">
+            <div class="operator-card-top-accent" style="background: #005192;"></div>
+            <div class="operator-card-header">
+              <div class="operator-icon-box" style="background: #005192;">
+                <i class="fas fa-bus"></i>
+              </div>
+              <div class="operator-title-area">
+                <h4 class="operator-name">Mackay Transit Coaches</h4>
+                <div class="operator-location">
+                  <i class="fas fa-map-marker-alt text-muted mr-1"></i> Mackay, Queensland
+                </div>
+              </div>
+            </div>
+            <div class="operator-meta-badges">
+              <span class="meta-badge badge-mode">
+                <i class="fas fa-bus"></i> Bus & Transit
+              </span>
+              <span class="meta-badge badge-routes">
+                <i class="fas fa-route"></i> 11 Routes
+              </span>
+              <span class="meta-badge badge-stops">
+                <i class="fas fa-map-pin"></i> 277 Stops
+              </span>
+            </div>
+            <div class="operator-footer-links">
+              <div><span class="text-muted small"><i class="fas fa-check-circle text-success mr-1"></i>Fleety Verified</span></div>
+              <span class="track-pill"><i class="fas fa-satellite-dish mr-1"></i>Live</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 mb-4 operator-col" data-country="AU" data-region="Queensland" data-mode="bus" data-search="north stradbroke island buses brisbane queensland bus &amp; transit au">
+          <div class="operator-card">
+            <div class="operator-card-top-accent" style="background: #005192;"></div>
+            <div class="operator-card-header">
+              <div class="operator-icon-box" style="background: #005192;">
+                <i class="fas fa-bus"></i>
+              </div>
+              <div class="operator-title-area">
+                <h4 class="operator-name">North Stradbroke Island Buses</h4>
+                <div class="operator-location">
+                  <i class="fas fa-map-marker-alt text-muted mr-1"></i> Brisbane, Queensland
+                </div>
+              </div>
+            </div>
+            <div class="operator-meta-badges">
+              <span class="meta-badge badge-mode">
+                <i class="fas fa-bus"></i> Bus & Transit
+              </span>
+              <span class="meta-badge badge-routes">
+                <i class="fas fa-route"></i> 2 Routes
+              </span>
+              <span class="meta-badge badge-stops">
+                <i class="fas fa-map-pin"></i> 44 Stops
+              </span>
+            </div>
+            <div class="operator-footer-links">
+              <div><span class="text-muted small"><i class="fas fa-check-circle text-success mr-1"></i>Fleety Verified</span></div>
+              <span class="track-pill"><i class="fas fa-satellite-dish mr-1"></i>Live</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 mb-4 operator-col" data-country="AU" data-region="Queensland" data-mode="bus" data-search="polleys coaches gympie queensland bus &amp; transit au">
+          <div class="operator-card">
+            <div class="operator-card-top-accent" style="background: #005192;"></div>
+            <div class="operator-card-header">
+              <div class="operator-icon-box" style="background: #005192;">
+                <i class="fas fa-bus"></i>
+              </div>
+              <div class="operator-title-area">
+                <h4 class="operator-name">Polleys Coaches</h4>
+                <div class="operator-location">
+                  <i class="fas fa-map-marker-alt text-muted mr-1"></i> Gympie, Queensland
+                </div>
+              </div>
+            </div>
+            <div class="operator-meta-badges">
+              <span class="meta-badge badge-mode">
+                <i class="fas fa-bus"></i> Bus & Transit
+              </span>
+              <span class="meta-badge badge-routes">
+                <i class="fas fa-route"></i> 11 Routes
+              </span>
+              <span class="meta-badge badge-stops">
+                <i class="fas fa-map-pin"></i> 171 Stops
+              </span>
+            </div>
+            <div class="operator-footer-links">
+              <div><span class="text-muted small"><i class="fas fa-check-circle text-success mr-1"></i>Fleety Verified</span></div>
+              <span class="track-pill"><i class="fas fa-satellite-dish mr-1"></i>Live</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 mb-4 operator-col" data-country="AU" data-region="Queensland" data-mode="bus" data-search="trans north innisfail innisfail queensland bus &amp; transit au">
+          <div class="operator-card">
+            <div class="operator-card-top-accent" style="background: #005192;"></div>
+            <div class="operator-card-header">
+              <div class="operator-icon-box" style="background: #005192;">
+                <i class="fas fa-bus"></i>
+              </div>
+              <div class="operator-title-area">
+                <h4 class="operator-name">Trans North Innisfail</h4>
+                <div class="operator-location">
+                  <i class="fas fa-map-marker-alt text-muted mr-1"></i> Innisfail, Queensland
+                </div>
+              </div>
+            </div>
+            <div class="operator-meta-badges">
+              <span class="meta-badge badge-mode">
+                <i class="fas fa-bus"></i> Bus & Transit
+              </span>
+              <span class="meta-badge badge-routes">
+                <i class="fas fa-route"></i> 5 Routes
+              </span>
+              <span class="meta-badge badge-stops">
+                <i class="fas fa-map-pin"></i> 47 Stops
+              </span>
+            </div>
+            <div class="operator-footer-links">
+              <div><span class="text-muted small"><i class="fas fa-check-circle text-success mr-1"></i>Fleety Verified</span></div>
+              <span class="track-pill"><i class="fas fa-satellite-dish mr-1"></i>Live</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 mb-4 operator-col" data-country="AU" data-region="Queensland" data-mode="ferry" data-search="translink - magnetic island ferry townsville queensland ferry au">
+          <div class="operator-card">
+            <div class="operator-card-top-accent" style="background: #00447C;"></div>
+            <div class="operator-card-header">
+              <div class="operator-icon-box" style="background: #00447C;">
+                <i class="fas fa-ship"></i>
+              </div>
+              <div class="operator-title-area">
+                <h4 class="operator-name">Translink - Magnetic Island Ferry</h4>
+                <div class="operator-location">
+                  <i class="fas fa-map-marker-alt text-muted mr-1"></i> Townsville, Queensland
+                </div>
+              </div>
+            </div>
+            <div class="operator-meta-badges">
+              <span class="meta-badge badge-mode">
+                <i class="fas fa-ship"></i> Ferry
+              </span>
+              <span class="meta-badge badge-routes">
+                <i class="fas fa-route"></i> 1 Route
+              </span>
+              <span class="meta-badge badge-stops">
+                <i class="fas fa-map-pin"></i> 2 Stops
+              </span>
+            </div>
+            <div class="operator-footer-links">
+              <div><span class="text-muted small"><i class="fas fa-check-circle text-success mr-1"></i>Fleety Verified</span></div>
+              <span class="track-pill"><i class="fas fa-satellite-dish mr-1"></i>Live</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 mb-4 operator-col" data-country="AU" data-region="Queensland" data-mode="bus" data-search="translink - south east queensland brisbane queensland bus &amp; transit au">
+          <div class="operator-card">
+            <div class="operator-card-top-accent" style="background: #D20000;"></div>
+            <div class="operator-card-header">
+              <div class="operator-icon-box" style="background: #D20000;">
+                <i class="fas fa-bus"></i>
+              </div>
+              <div class="operator-title-area">
+                <h4 class="operator-name">Translink - South East Queensland</h4>
+                <div class="operator-location">
+                  <i class="fas fa-map-marker-alt text-muted mr-1"></i> Brisbane, Queensland
+                </div>
+              </div>
+            </div>
+            <div class="operator-meta-badges">
+              <span class="meta-badge badge-mode">
+                <i class="fas fa-bus"></i> Bus & Transit
+              </span>
+              <span class="meta-badge badge-routes">
+                <i class="fas fa-route"></i> 577 Routes
+              </span>
+              <span class="meta-badge badge-stops">
+                <i class="fas fa-map-pin"></i> 12,830 Stops
+              </span>
+            </div>
+            <div class="operator-footer-links">
+              <div><span class="text-muted small"><i class="fas fa-check-circle text-success mr-1"></i>Fleety Verified</span></div>
+              <span class="track-pill"><i class="fas fa-satellite-dish mr-1"></i>Live</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 mb-4 operator-col" data-country="AU" data-region="Queensland" data-mode="bus" data-search="whitsunday transit proserpine queensland bus &amp; transit au">
+          <div class="operator-card">
+            <div class="operator-card-top-accent" style="background: #005192;"></div>
+            <div class="operator-card-header">
+              <div class="operator-icon-box" style="background: #005192;">
+                <i class="fas fa-bus"></i>
+              </div>
+              <div class="operator-title-area">
+                <h4 class="operator-name">Whitsunday Transit</h4>
+                <div class="operator-location">
+                  <i class="fas fa-map-marker-alt text-muted mr-1"></i> Proserpine, Queensland
+                </div>
+              </div>
+            </div>
+            <div class="operator-meta-badges">
+              <span class="meta-badge badge-mode">
+                <i class="fas fa-bus"></i> Bus & Transit
+              </span>
+              <span class="meta-badge badge-routes">
+                <i class="fas fa-route"></i> 2 Routes
+              </span>
+              <span class="meta-badge badge-stops">
+                <i class="fas fa-map-pin"></i> 77 Stops
+              </span>
+            </div>
+            <div class="operator-footer-links">
+              <div><span class="text-muted small"><i class="fas fa-check-circle text-success mr-1"></i>Fleety Verified</span></div>
+              <span class="track-pill"><i class="fas fa-satellite-dish mr-1"></i>Live</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 mb-4 operator-col" data-country="AU" data-region="Queensland" data-mode="bus" data-search="wide bay transit maryborough queensland bus &amp; transit au">
+          <div class="operator-card">
+            <div class="operator-card-top-accent" style="background: #005192;"></div>
+            <div class="operator-card-header">
+              <div class="operator-icon-box" style="background: #005192;">
+                <i class="fas fa-bus"></i>
+              </div>
+              <div class="operator-title-area">
+                <h4 class="operator-name">Wide Bay Transit</h4>
+                <div class="operator-location">
+                  <i class="fas fa-map-marker-alt text-muted mr-1"></i> Maryborough, Queensland
+                </div>
+              </div>
+            </div>
+            <div class="operator-meta-badges">
+              <span class="meta-badge badge-mode">
+                <i class="fas fa-bus"></i> Bus & Transit
+              </span>
+              <span class="meta-badge badge-routes">
+                <i class="fas fa-route"></i> 14 Routes
+              </span>
+              <span class="meta-badge badge-stops">
+                <i class="fas fa-map-pin"></i> 389 Stops
+              </span>
+            </div>
+            <div class="operator-footer-links">
+              <div><span class="text-muted small"><i class="fas fa-check-circle text-success mr-1"></i>Fleety Verified</span></div>
+              <span class="track-pill"><i class="fas fa-satellite-dish mr-1"></i>Live</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 mb-4 operator-col" data-country="AU" data-region="South Australia" data-mode="train" data-search="adelaide metro adelaide south australia train / metro au">
+          <div class="operator-card">
+            <div class="operator-card-top-accent" style="background: #633293;"></div>
+            <div class="operator-card-header">
+              <div class="operator-icon-box" style="background: #633293;">
+                <i class="fas fa-train"></i>
+              </div>
+              <div class="operator-title-area">
+                <h4 class="operator-name">Adelaide Metro</h4>
+                <div class="operator-location">
+                  <i class="fas fa-map-marker-alt text-muted mr-1"></i> Adelaide, South Australia
+                </div>
+              </div>
+            </div>
+            <div class="operator-meta-badges">
+              <span class="meta-badge badge-mode">
+                <i class="fas fa-train"></i> Train / Metro
+              </span>
+              <span class="meta-badge badge-routes">
+                <i class="fas fa-route"></i> 731 Routes
+              </span>
+              <span class="meta-badge badge-stops">
+                <i class="fas fa-map-pin"></i> 9,054 Stops
+              </span>
+            </div>
+            <div class="operator-footer-links">
+              <div><a href="https://www.adelaidemetro.com.au/" target="_blank" rel="noopener noreferrer" title="Official News & Service Alerts"><i class="fas fa-bell"></i> Alerts</a> &bull; <a href="https://www.adelaidemetro.com.au/" target="_blank" rel="noopener noreferrer" title="Customer Support"><i class="fas fa-headset"></i> Support</a></div>
+              <span class="track-pill"><i class="fas fa-satellite-dish mr-1"></i>Live</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 mb-4 operator-col" data-country="AU" data-region="Victoria" data-mode="bus" data-search="ptv - bus melbourne victoria bus &amp; transit au">
+          <div class="operator-card">
+            <div class="operator-card-top-accent" style="background: #005192;"></div>
+            <div class="operator-card-header">
+              <div class="operator-icon-box" style="background: #005192;">
+                <i class="fas fa-bus"></i>
+              </div>
+              <div class="operator-title-area">
+                <h4 class="operator-name">PTV - Bus</h4>
+                <div class="operator-location">
+                  <i class="fas fa-map-marker-alt text-muted mr-1"></i> Melbourne, Victoria
+                </div>
+              </div>
+            </div>
+            <div class="operator-meta-badges">
+              <span class="meta-badge badge-mode">
+                <i class="fas fa-bus"></i> Bus & Transit
+              </span>
+              <span class="meta-badge badge-routes">
+                <i class="fas fa-route"></i> 480 Routes
+              </span>
+              <span class="meta-badge badge-stops">
+                <i class="fas fa-map-pin"></i> 22,124 Stops
+              </span>
+            </div>
+            <div class="operator-footer-links">
+              <div><a href="https://transport.vic.gov.au/news-and-resources/news" target="_blank" rel="noopener noreferrer" title="Official News & Service Alerts"><i class="fas fa-bell"></i> Alerts</a> &bull; <a href="https://transport.vic.gov.au/contact-us" target="_blank" rel="noopener noreferrer" title="Customer Support"><i class="fas fa-headset"></i> Support</a></div>
+              <span class="track-pill"><i class="fas fa-satellite-dish mr-1"></i>Live</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 mb-4 operator-col" data-country="AU" data-region="Victoria" data-mode="train" data-search="ptv - interstate train horsham victoria train / metro au">
+          <div class="operator-card">
+            <div class="operator-card-top-accent" style="background: #000000;"></div>
+            <div class="operator-card-header">
+              <div class="operator-icon-box" style="background: #000000;">
+                <i class="fas fa-train"></i>
+              </div>
+              <div class="operator-title-area">
+                <h4 class="operator-name">PTV - Interstate Train</h4>
+                <div class="operator-location">
+                  <i class="fas fa-map-marker-alt text-muted mr-1"></i> Horsham, Victoria
+                </div>
+              </div>
+            </div>
+            <div class="operator-meta-badges">
+              <span class="meta-badge badge-mode">
+                <i class="fas fa-train"></i> Train / Metro
+              </span>
+              <span class="meta-badge badge-routes">
+                <i class="fas fa-route"></i> 1 Route
+              </span>
+              <span class="meta-badge badge-stops">
+                <i class="fas fa-map-pin"></i> 10 Stops
+              </span>
+            </div>
+            <div class="operator-footer-links">
+              <div><a href="https://transport.vic.gov.au/news-and-resources/news" target="_blank" rel="noopener noreferrer" title="Official News & Service Alerts"><i class="fas fa-bell"></i> Alerts</a> &bull; <a href="https://transport.vic.gov.au/contact-us" target="_blank" rel="noopener noreferrer" title="Customer Support"><i class="fas fa-headset"></i> Support</a></div>
+              <span class="track-pill"><i class="fas fa-satellite-dish mr-1"></i>Live</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 mb-4 operator-col" data-country="AU" data-region="Victoria" data-mode="train" data-search="ptv - metro train  victoria train / metro au">
+          <div class="operator-card">
+            <div class="operator-card-top-accent" style="background: #BE1014;"></div>
+            <div class="operator-card-header">
+              <div class="operator-icon-box" style="background: #BE1014;">
+                <i class="fas fa-train"></i>
+              </div>
+              <div class="operator-title-area">
+                <h4 class="operator-name">PTV - Metro Train</h4>
+                <div class="operator-location">
+                  <i class="fas fa-map-marker-alt text-muted mr-1"></i> Victoria
+                </div>
+              </div>
+            </div>
+            <div class="operator-meta-badges">
+              <span class="meta-badge badge-mode">
+                <i class="fas fa-train"></i> Train / Metro
+              </span>
+              <span class="meta-badge badge-routes">
+                <i class="fas fa-route"></i> 25 Routes
+              </span>
+              <span class="meta-badge badge-stops">
+                <i class="fas fa-map-pin"></i> 555 Stops
+              </span>
+            </div>
+            <div class="operator-footer-links">
+              <div><a href="https://transport.vic.gov.au/news-and-resources/news" target="_blank" rel="noopener noreferrer" title="Official News & Service Alerts"><i class="fas fa-bell"></i> Alerts</a> &bull; <a href="https://transport.vic.gov.au/contact-us" target="_blank" rel="noopener noreferrer" title="Customer Support"><i class="fas fa-headset"></i> Support</a></div>
+              <span class="track-pill"><i class="fas fa-satellite-dish mr-1"></i>Live</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 mb-4 operator-col" data-country="AU" data-region="Victoria" data-mode="bus" data-search="ptv - regional bus melbourne victoria bus &amp; transit au">
+          <div class="operator-card">
+            <div class="operator-card-top-accent" style="background: #005192;"></div>
+            <div class="operator-card-header">
+              <div class="operator-icon-box" style="background: #005192;">
+                <i class="fas fa-bus"></i>
+              </div>
+              <div class="operator-title-area">
+                <h4 class="operator-name">PTV - Regional Bus</h4>
+                <div class="operator-location">
+                  <i class="fas fa-map-marker-alt text-muted mr-1"></i> Melbourne, Victoria
+                </div>
+              </div>
+            </div>
+            <div class="operator-meta-badges">
+              <span class="meta-badge badge-mode">
+                <i class="fas fa-bus"></i> Bus & Transit
+              </span>
+              <span class="meta-badge badge-routes">
+                <i class="fas fa-route"></i> 202 Routes
+              </span>
+              <span class="meta-badge badge-stops">
+                <i class="fas fa-map-pin"></i> 3,324 Stops
+              </span>
+            </div>
+            <div class="operator-footer-links">
+              <div><a href="https://transport.vic.gov.au/news-and-resources/news" target="_blank" rel="noopener noreferrer" title="Official News & Service Alerts"><i class="fas fa-bell"></i> Alerts</a> &bull; <a href="https://transport.vic.gov.au/contact-us" target="_blank" rel="noopener noreferrer" title="Customer Support"><i class="fas fa-headset"></i> Support</a></div>
+              <span class="track-pill"><i class="fas fa-satellite-dish mr-1"></i>Live</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 mb-4 operator-col" data-country="AU" data-region="Victoria" data-mode="train" data-search="ptv - skybus  victoria train / metro au">
+          <div class="operator-card">
+            <div class="operator-card-top-accent" style="background: #005192;"></div>
+            <div class="operator-card-header">
+              <div class="operator-icon-box" style="background: #005192;">
+                <i class="fas fa-train"></i>
+              </div>
+              <div class="operator-title-area">
+                <h4 class="operator-name">PTV - SkyBus</h4>
+                <div class="operator-location">
+                  <i class="fas fa-map-marker-alt text-muted mr-1"></i> Victoria
+                </div>
+              </div>
+            </div>
+            <div class="operator-meta-badges">
+              <span class="meta-badge badge-mode">
+                <i class="fas fa-train"></i> Train / Metro
+              </span>
+              <span class="meta-badge badge-routes">
+                <i class="fas fa-route"></i> 5 Routes
+              </span>
+              <span class="meta-badge badge-stops">
+                <i class="fas fa-map-pin"></i> 34 Stops
+              </span>
+            </div>
+            <div class="operator-footer-links">
+              <div><a href="https://transport.vic.gov.au/news-and-resources/news" target="_blank" rel="noopener noreferrer" title="Official News & Service Alerts"><i class="fas fa-bell"></i> Alerts</a> &bull; <a href="https://transport.vic.gov.au/contact-us" target="_blank" rel="noopener noreferrer" title="Customer Support"><i class="fas fa-headset"></i> Support</a></div>
+              <span class="track-pill"><i class="fas fa-satellite-dish mr-1"></i>Live</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 mb-4 operator-col" data-country="AU" data-region="Victoria" data-mode="tram" data-search="ptv - tram sunbury victoria tram / light rail au">
+          <div class="operator-card">
+            <div class="operator-card-top-accent" style="background: #007E92;"></div>
+            <div class="operator-card-header">
+              <div class="operator-icon-box" style="background: #007E92;">
+                <i class="fas fa-subway"></i>
+              </div>
+              <div class="operator-title-area">
+                <h4 class="operator-name">PTV - Tram</h4>
+                <div class="operator-location">
+                  <i class="fas fa-map-marker-alt text-muted mr-1"></i> Sunbury, Victoria
+                </div>
+              </div>
+            </div>
+            <div class="operator-meta-badges">
+              <span class="meta-badge badge-mode">
+                <i class="fas fa-subway"></i> Tram / Light Rail
+              </span>
+              <span class="meta-badge badge-routes">
+                <i class="fas fa-route"></i> 24 Routes
+              </span>
+              <span class="meta-badge badge-stops">
+                <i class="fas fa-map-pin"></i> 1,620 Stops
+              </span>
+            </div>
+            <div class="operator-footer-links">
+              <div><a href="https://transport.vic.gov.au/news-and-resources/news" target="_blank" rel="noopener noreferrer" title="Official News & Service Alerts"><i class="fas fa-bell"></i> Alerts</a> &bull; <a href="https://transport.vic.gov.au/contact-us" target="_blank" rel="noopener noreferrer" title="Customer Support"><i class="fas fa-headset"></i> Support</a></div>
+              <span class="track-pill"><i class="fas fa-satellite-dish mr-1"></i>Live</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 mb-4 operator-col" data-country="AU" data-region="Victoria" data-mode="train" data-search="ptv - v/line coach melbourne victoria train / metro au">
+          <div class="operator-card">
+            <div class="operator-card-top-accent" style="background: #005192;"></div>
+            <div class="operator-card-header">
+              <div class="operator-icon-box" style="background: #005192;">
+                <i class="fas fa-train"></i>
+              </div>
+              <div class="operator-title-area">
+                <h4 class="operator-name">PTV - V/Line Coach</h4>
+                <div class="operator-location">
+                  <i class="fas fa-map-marker-alt text-muted mr-1"></i> Melbourne, Victoria
+                </div>
+              </div>
+            </div>
+            <div class="operator-meta-badges">
+              <span class="meta-badge badge-mode">
+                <i class="fas fa-train"></i> Train / Metro
+              </span>
+              <span class="meta-badge badge-routes">
+                <i class="fas fa-route"></i> 54 Routes
+              </span>
+              <span class="meta-badge badge-stops">
+                <i class="fas fa-map-pin"></i> 871 Stops
+              </span>
+            </div>
+            <div class="operator-footer-links">
+              <div><a href="https://transport.vic.gov.au/news-and-resources/news" target="_blank" rel="noopener noreferrer" title="Official News & Service Alerts"><i class="fas fa-bell"></i> Alerts</a> &bull; <a href="https://transport.vic.gov.au/contact-us" target="_blank" rel="noopener noreferrer" title="Customer Support"><i class="fas fa-headset"></i> Support</a></div>
+              <span class="track-pill"><i class="fas fa-satellite-dish mr-1"></i>Live</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 mb-4 operator-col" data-country="AU" data-region="Victoria" data-mode="train" data-search="ptv - v/line train melbourne victoria train / metro au">
+          <div class="operator-card">
+            <div class="operator-card-top-accent" style="background: #005192;"></div>
+            <div class="operator-card-header">
+              <div class="operator-icon-box" style="background: #005192;">
+                <i class="fas fa-train"></i>
+              </div>
+              <div class="operator-title-area">
+                <h4 class="operator-name">PTV - V/Line Train</h4>
+                <div class="operator-location">
+                  <i class="fas fa-map-marker-alt text-muted mr-1"></i> Melbourne, Victoria
+                </div>
+              </div>
+            </div>
+            <div class="operator-meta-badges">
+              <span class="meta-badge badge-mode">
+                <i class="fas fa-train"></i> Train / Metro
+              </span>
+              <span class="meta-badge badge-routes">
+                <i class="fas fa-route"></i> 13 Routes
+              </span>
+              <span class="meta-badge badge-stops">
+                <i class="fas fa-map-pin"></i> 111 Stops
+              </span>
+            </div>
+            <div class="operator-footer-links">
+              <div><a href="https://transport.vic.gov.au/news-and-resources/news" target="_blank" rel="noopener noreferrer" title="Official News & Service Alerts"><i class="fas fa-bell"></i> Alerts</a> &bull; <a href="https://transport.vic.gov.au/contact-us" target="_blank" rel="noopener noreferrer" title="Customer Support"><i class="fas fa-headset"></i> Support</a></div>
+              <span class="track-pill"><i class="fas fa-satellite-dish mr-1"></i>Live</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 mb-4 operator-col" data-country="AU" data-region="Western Australia" data-mode="bus" data-search="transperth perth western australia bus &amp; transit au">
+          <div class="operator-card">
+            <div class="operator-card-top-accent" style="background: #949300;"></div>
+            <div class="operator-card-header">
+              <div class="operator-icon-box" style="background: #949300;">
+                <i class="fas fa-bus"></i>
+              </div>
+              <div class="operator-title-area">
+                <h4 class="operator-name">Transperth</h4>
+                <div class="operator-location">
+                  <i class="fas fa-map-marker-alt text-muted mr-1"></i> Perth, Western Australia
+                </div>
+              </div>
+            </div>
+            <div class="operator-meta-badges">
+              <span class="meta-badge badge-mode">
+                <i class="fas fa-bus"></i> Bus & Transit
+              </span>
+              <span class="meta-badge badge-routes">
+                <i class="fas fa-route"></i> 412 Routes
+              </span>
+              <span class="meta-badge badge-stops">
+                <i class="fas fa-map-pin"></i> 14,544 Stops
+              </span>
+            </div>
+            <div class="operator-footer-links">
+              <div><span class="text-muted small"><i class="fas fa-check-circle text-success mr-1"></i>Fleety Verified</span></div>
+              <span class="track-pill"><i class="fas fa-satellite-dish mr-1"></i>Live</span>
+            </div>
+          </div>
+        </div>
+    </div>
+
+    <!-- Empty Search State -->
+    <div class="no-results-box" id="noResultsBox">
+      <i class="fas fa-search"></i>
+      <h4 class="mb-2">No matching operators found</h4>
+      <p class="mb-3">Try adjusting your search query or clear the region and mode filters.</p>
+      <button class="btn btn-primary btn-sm rounded-pill px-4" id="resetFiltersBtn">Reset All Filters</button>
+    </div>
+
+    <!-- Download App CTA Banner -->
+    <div class="cta-banner text-center">
+      <h3 class="font-weight-bold mb-3">Track Real-Time Transit Anywhere with Fleety</h3>
+      <p class="lead mb-4 mx-auto" style="max-width: 600px; opacity: 0.95;">
+        Get accurate arrival times, live vehicle locations on interactive maps, and service alerts across hundreds of transit operators.
+      </p>
+      <div class="d-flex justify-content-center flex-wrap" style="gap: 15px;">
+        <a href="https://play.google.com/store/apps/details?id=com.transport.fleety" target="_blank">
+          <img src="../images/playstore.png" alt="Google Play" class="store-badge-cta">
+        </a>
+        <a href="https://apps.apple.com/us/app/id6748264047" target="_blank">
+          <img src="../images/appstore.png" alt="App Store" class="store-badge-cta">
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="operators-footer">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-6 text-center text-md-left mb-2 mb-md-0">
+          <p class="mb-0 text-muted small">&copy; 2026 Fleety. All rights reserved.</p>
+        </div>
+        <div class="col-md-6 text-center text-md-right">
+          <ul class="list-inline mb-0 small">
+            <li class="list-inline-item"><a href="../index.html" class="text-muted">Home</a></li>
+            <li class="list-inline-item mx-2 text-muted">&bull;</li>
+            <li class="list-inline-item"><a href="../tutorial/" class="text-muted">Tutorials</a></li>
+            <li class="list-inline-item mx-2 text-muted">&bull;</li>
+            <li class="list-inline-item"><a href="index.html" class="text-muted font-weight-bold">Operators</a></li>
+            <li class="list-inline-item mx-2 text-muted">&bull;</li>
+            <li class="list-inline-item"><a href="../privacy/" class="text-muted">Privacy Policy</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"
+    integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+    crossorigin="anonymous"></script>
+  <script>
+    $(document).ready(function () {
+      var $cards = $('.operator-col');
+      var $search = $('#operatorSearchInput');
+      var $clearBtn = $('#searchClearBtn');
+      var $noResults = $('#noResultsBox');
+      var $visibleCount = $('#visibleCount');
+
+      var activeRegion = 'all';
+      var activeMode = 'all';
+
+      function filterOperators() {
+        var query = $search.val().trim().toLowerCase();
+        var visible = 0;
+
+        if (query.length > 0) {
+          $clearBtn.show();
+        } else {
+          $clearBtn.hide();
+        }
+
+        $cards.each(function () {
+          var $card = $(this);
+          var cardRegion = $card.attr('data-region');
+          var cardMode = $card.attr('data-mode');
+          var cardSearch = $card.attr('data-search');
+
+          var matchesRegion = (activeRegion === 'all' || cardRegion === activeRegion);
+          var matchesMode = (activeMode === 'all' || cardMode === activeMode);
+          var matchesSearch = (query === '' || cardSearch.indexOf(query) !== -1);
+
+          if (matchesRegion && matchesMode && matchesSearch) {
+            $card.show();
+            visible++;
+          } else {
+            $card.hide();
+          }
+        });
+
+        $visibleCount.text(visible);
+
+        if (visible === 0) {
+          $noResults.show();
+        } else {
+          $noResults.hide();
+        }
+      }
+
+      // Live search input
+      $search.on('input', function () {
+        filterOperators();
+      });
+
+      // Clear search button
+      $clearBtn.on('click', function () {
+        $search.val('');
+        filterOperators();
+        $search.focus();
+      });
+
+      // Region filter pills
+      $('#regionPillsContainer').on('click', '.filter-pill', function () {
+        $('#regionPillsContainer .filter-pill').removeClass('active');
+        $(this).addClass('active');
+        activeRegion = $(this).attr('data-filter-region');
+        filterOperators();
+      });
+
+      // Mode filter buttons
+      $('#modeFilterGroup button').on('click', function () {
+        $('#modeFilterGroup button').removeClass('active');
+        $(this).addClass('active');
+        activeMode = $(this).attr('data-filter-mode');
+        filterOperators();
+      });
+
+      // Reset filters button
+      $('#resetFiltersBtn').on('click', function () {
+        $search.val('');
+        activeRegion = 'all';
+        activeMode = 'all';
+        $('#regionPillsContainer .filter-pill').removeClass('active');
+        $('#regionPillsContainer .filter-pill[data-filter-region="all"]').addClass('active');
+        $('#modeFilterGroup button').removeClass('active');
+        $('#modeFilterGroup button[data-filter-mode="all"]').addClass('active');
+        filterOperators();
+      });
+    });
+  </script>
+</body>
+
+</html>

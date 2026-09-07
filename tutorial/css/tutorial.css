@@ -32,6 +32,48 @@
   background: rgba(102, 126, 234, 0.08);
 }
 
+/* Clean text navbar brand */
+.tutorial-nav .navbar-brand,
+.tutorial-brand {
+  position: static !important;
+  width: auto !important;
+  height: auto !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 1.6rem !important;
+  font-weight: 800 !important;
+  color: #0076D0 !important;
+  letter-spacing: -0.4px;
+  line-height: 1 !important;
+  padding: 4px 0 !important;
+  margin: 0 !important;
+  text-decoration: none !important;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.tutorial-nav .navbar-brand:hover,
+.tutorial-brand:hover {
+  color: #005fad !important;
+  opacity: 0.92;
+  text-decoration: none !important;
+}
+
+.tutorial-nav .navbar-toggler {
+  border: none !important;
+  padding: 6px 10px !important;
+  font-size: 1.25rem !important;
+  color: #1e293b !important;
+  border-radius: 8px !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.tutorial-nav .navbar-toggler:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
 /* Breadcrumbs */
 .tutorial-breadcrumb {
   background: transparent;
