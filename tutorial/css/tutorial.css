@@ -47,7 +47,7 @@
   letter-spacing: -0.4px;
   line-height: 1 !important;
   padding: 4px 0 !important;
-  margin: 0 !important;
+  margin: 0 0 0 10px !important;
   text-decoration: none !important;
   transition: opacity 0.2s ease, transform 0.2s ease;
 }
