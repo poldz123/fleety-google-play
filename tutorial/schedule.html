@@ -85,6 +85,13 @@
         </div>
       </div>
     </div>
+    <div class="wave-bottom">
+      <svg viewBox="0 0 1440 320" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <path fill="#ffffff" fill-opacity="1"
+          d="M0,224L48,213.3C96,203,192,181,288,181.3C384,181,480,203,576,224C672,245,768,267,864,261.3C960,256,1056,224,1152,197.3C1248,171,1344,149,1392,138.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z">
+        </path>
+      </svg>
+    </div>
   </header>
 
   <!-- Main Content Layout (Mobile First) -->
@@ -486,7 +493,17 @@
     </div>
   </footer>
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js">
+    // Navbar scroll effect
+    .on("scroll load", function () {
+      if (.scrollTop() > 50) {
+        .addClass("nav-scroll");
+      } else {
+        .removeClass("nav-scroll");
+      }
+    });
+
+  </script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"
     integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
     crossorigin="anonymous"></script>
@@ -534,6 +551,16 @@
       $('#feedbackActions').addClass('d-none');
       $('#feedbackThanks').removeClass('d-none');
     }
+  </script>
+
+  <script>
+    $(window).on("scroll load", function () {
+      if ($(window).scrollTop() > 50) {
+        $(".tutorial-nav").addClass("nav-scroll");
+      } else {
+        $(".tutorial-nav").removeClass("nav-scroll");
+      }
+    });
   </script>
 </body>
 

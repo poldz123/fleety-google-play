@@ -17,23 +17,38 @@
 }
 
 .tutorial-nav {
-  background: rgba(255, 255, 255, 0.96);
-  backdrop-filter: blur(12px);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
-  padding: 12px 0;
-  transition: all 0.3s ease;
+  background: transparent;
+  padding: 15px 0;
+  transition: all 0.4s ease;
+}
+
+.tutorial-nav.nav-scroll {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  padding: 10px 0;
 }
 
 .tutorial-nav .nav-link {
-  color: var(--text-dark) !important;
+  color: rgba(255, 255, 255, 0.9) !important;
   font-weight: 500;
   padding: 8px 16px;
   border-radius: 8px;
   transition: all 0.2s ease;
 }
 
-.tutorial-nav .nav-link:hover,
-.tutorial-nav .nav-link.active {
+.tutorial-nav.nav-scroll .nav-link {
+  color: var(--text-dark) !important;
+}
+
+.tutorial-nav:not(.nav-scroll) .nav-link:hover,
+.tutorial-nav:not(.nav-scroll) .nav-link.active {
+  color: #ffffff !important;
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.tutorial-nav.nav-scroll .nav-link:hover,
+.tutorial-nav.nav-scroll .nav-link.active {
   color: var(--primary-color) !important;
   background: rgba(102, 126, 234, 0.08);
 }
@@ -47,37 +62,70 @@
   display: inline-flex !important;
   align-items: center !important;
   font-family: 'Poppins', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  font-size: 1.6rem !important;
+  font-size: 1.7rem !important;
   font-weight: 800 !important;
-  color: #0076D0 !important;
+  color: #ffffff !important;
   letter-spacing: -0.4px;
   line-height: 1 !important;
   padding: 4px 0 !important;
   margin: 0 !important;
   text-decoration: none !important;
-  transition: opacity 0.2s ease, transform 0.2s ease;
+  transition: all 0.3s ease;
 }
 
-.tutorial-nav .navbar-brand:hover,
-.tutorial-brand:hover {
+.tutorial-nav:not(.nav-scroll) .navbar-brand:hover,
+.tutorial-nav:not(.nav-scroll) .tutorial-brand:hover {
+  color: #ffffff !important;
+  opacity: 0.92;
+  transform: translateY(-1px);
+}
+
+.tutorial-nav.nav-scroll .navbar-brand,
+.tutorial-nav.nav-scroll .tutorial-brand {
+  color: #0076D0 !important;
+}
+
+.tutorial-nav.nav-scroll .navbar-brand:hover,
+.tutorial-nav.nav-scroll .tutorial-brand:hover {
   color: #005fad !important;
   opacity: 0.92;
-  text-decoration: none !important;
+  transform: translateY(-1px);
 }
 
 .tutorial-nav .navbar-toggler {
   border: none !important;
-  padding: 6px 10px !important;
+  padding: 6px 0 !important;
   font-size: 1.25rem !important;
-  color: #1e293b !important;
-  border-radius: 8px !important;
   outline: none !important;
   box-shadow: none !important;
+}
+
+.tutorial-nav .navbar-toggler .fa-bars {
+  color: #ffffff;
+  font-size: 1.3rem;
+  transition: color 0.3s ease;
+}
+
+.tutorial-nav.nav-scroll .navbar-toggler .fa-bars {
+  color: #1e293b;
 }
 
 .tutorial-nav .navbar-toggler:focus {
   outline: none !important;
   box-shadow: none !important;
+}
+
+@media (max-width: 991px) {
+  .tutorial-nav .navbar-nav {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    margin-top: 10px;
+  }
+  .tutorial-nav:not(.nav-scroll) .navbar-nav .nav-link {
+    color: var(--text-dark) !important;
+  }
 }
 
 /* Breadcrumbs */
@@ -115,14 +163,14 @@
 /* Hero Section */
 .tutorial-hero {
   background: var(--primary-gradient);
-  padding: 120px 0 70px 0;
+  padding: 130px 0 130px 0;
   position: relative;
   overflow: hidden;
   color: #fff;
 }
 
 .tutorial-hero-detail {
-  padding: 105px 0 45px 0;
+  padding: 120px 0 120px 0;
 }
 
 .tutorial-hero h1 {
@@ -560,8 +608,12 @@
 /* Responsive tweaks: Mobile First */
 @media (max-width: 991px) {
   .tutorial-hero {
-    padding: 105px 0 50px 0;
-  }
+  background: var(--primary-gradient);
+  padding: 130px 0 130px 0;
+  position: relative;
+  overflow: hidden;
+  color: #fff;
+}
   .tutorial-hero h1 {
     font-size: 2rem;
   }
@@ -576,8 +628,12 @@
 
 @media (max-width: 576px) {
   .tutorial-hero {
-    padding: 95px 0 40px 0;
-  }
+  background: var(--primary-gradient);
+  padding: 130px 0 130px 0;
+  position: relative;
+  overflow: hidden;
+  color: #fff;
+}
   .tutorial-hero h1 {
     font-size: 1.65rem;
   }
@@ -616,4 +672,9 @@
   .phone-mockup-screen {
     border-radius: 28px;
   }
+}
+
+.tutorial-hero .container {
+  position: relative;
+  z-index: 2;
 }
