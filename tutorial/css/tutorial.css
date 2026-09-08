@@ -10,6 +10,12 @@
 }
 
 /* Page Header / Navbar */
+
+.tutorial-nav > .container {
+  padding-left: 15px !important;
+  padding-right: 15px !important;
+}
+
 .tutorial-nav {
   background: rgba(255, 255, 255, 0.96);
   backdrop-filter: blur(12px);
@@ -47,7 +53,7 @@
   letter-spacing: -0.4px;
   line-height: 1 !important;
   padding: 4px 0 !important;
-  margin: 0 0 0 10px !important;
+  margin: 0 !important;
   text-decoration: none !important;
   transition: opacity 0.2s ease, transform 0.2s ease;
 }
